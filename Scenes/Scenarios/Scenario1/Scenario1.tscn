@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap/Tiling.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Scenarios/Scenario1/PlayerCamera.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Scenarios/Scenario1/PlayerCamera.gd" type="Script" id=4]
 
 [node name="Scenario1" type="Node" index="0"]
 
@@ -25,9 +26,10 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 1441792, 1, 0, 1441793, 1, 0, 1441794, 1, 0, 1441795, 1, 0, 1441796, 1, 0, 1441797, 1, 0, 1441798, 1, 0, 1441799, 1, 0, 1441800, 1, 0, 1441801, 1, 0, 1441802, 1, 0, 1441803, 1, 0, 1441804, 1, 0, 1441805, 1, 0, 1441806, 1, 0, 1441807, 1, 0, 1441808, 1, 0, 1441809, 1, 0, 1441810, 1, 0, 1441811, 1, 0, 1441812, 1, 0, 1441813, 1, 0, 1441814, 1, 0, 1441815, 1, 0, 1441816, 1, 0, 1441817, 1, 0, 1441818, 1, 0, 1441819, 1, 0, 1441820, 1, 0, 1441821, 1, 0, 1441822, 1, 0, 1441823, 1, 0, 1441824, 1, 0, 1441825, 1, 0, 1441826, 1, 0, 1441827, 1, 0, 1441828, 1, 0, 1441829, 1, 0, 1441830, 1, 0 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="Assasin" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Assasin" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 199.98, 294.725 )
 JUMP_CONSTANT = 27
@@ -57,6 +59,6 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 

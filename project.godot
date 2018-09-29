@@ -19,6 +19,7 @@ InputSystem="*res://Systems/InputSystem.gd"
 MovingSystem="*res://Systems/MovingSystem.gd"
 StateSystem="*res://Systems/StateSystem.gd"
 GravitySystem="*res://Systems/GravitySystem.gd"
+CollisionSystem="*res://Systems/CollisionSystem.gd"
 
 [rendering]
 
