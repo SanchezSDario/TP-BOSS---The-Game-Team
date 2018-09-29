@@ -1,4 +1,46 @@
-[gd_scene format=2]
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.gd" type="Script" id=1]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia1.png" type="Texture" id=2]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia2.png" type="Texture" id=3]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia3.png" type="Texture" id=4]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia4.png" type="Texture" id=5]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia5.png" type="Texture" id=6]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia6.png" type="Texture" id=7]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia7.png" type="Texture" id=8]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia8.png" type="Texture" id=9]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia9.png" type="Texture" id=10]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/IdleAssasin/ia10.png" type="Texture" id=11]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa1.png" type="Texture" id=12]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa2.png" type="Texture" id=13]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa3.png" type="Texture" id=14]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa4.png" type="Texture" id=15]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa5.png" type="Texture" id=16]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa6.png" type="Texture" id=17]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa7.png" type="Texture" id=18]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa8.png" type="Texture" id=19]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa9.png" type="Texture" id=20]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/WalkAssasin/wa10.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/AnimatedSprite.gd" type="Script" id=22]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.47046, 15.0444 )
 
 [node name="Assasin" type="KinematicBody2D" index="0"]
 
@@ -7,9 +49,16 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "Idle"
+script = ExtResource( 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
 
 

@@ -13,6 +13,12 @@ config_version=3
 config/name="BOSS"
 config/icon="res://icon.png"
 
+[autoload]
+
+InputSystem="*res://Systems/InputSystem.gd"
+MovingSystem="*res://Systems/MovingSystem.gd"
+StateSystem="*res://Systems/StateSystem.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
