@@ -1,5 +1,8 @@
 extends Node
 
+func jump(caster):
+	pass
+
 func move(caster):
 	move_left(caster)
 	move_right(caster)

@@ -1,0 +1,776 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Art/Enviroment/generic-platformer.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8.00681, 8.03535 )
+
+[node name="TileMap" type="Node"]
+
+[node name="GrassGround" type="Node" parent="." index="0"]
+
+[node name="GroundGrassLeftTop" type="StaticBody2D" parent="GrassGround" index="0"]
+
+editor/display_folded = true
+position = Vector2( 49.5238, 69.6994 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassLeftTop" type="Sprite" parent="GrassGround/GroundGrassLeftTop" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassGround/GroundGrassLeftTop" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassCentreTop" type="StaticBody2D" parent="GrassGround" index="1"]
+
+editor/display_folded = true
+position = Vector2( 108.2, 68.5019 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassCentreTop" type="Sprite" parent="GrassGround/GroundGrassCentreTop" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassGround/GroundGrassCentreTop" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassRightTop" type="StaticBody2D" parent="GrassGround" index="2"]
+
+position = Vector2( 160.29, 68.5019 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassRightTop" type="Sprite" parent="GrassGround/GroundGrassRightTop" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassGround/GroundGrassRightTop" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassLeftPlatform" type="StaticBody2D" parent="GrassGround" index="3"]
+
+position = Vector2( 48.9251, 112.351 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassLeftPlatform" type="Sprite" parent="GrassGround/GroundGrassLeftPlatform" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassGround/GroundGrassLeftPlatform" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassCentrePlatform" type="StaticBody2D" parent="GrassGround" index="4"]
+
+position = Vector2( 105.081, 111.519 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassCentrePlatform" type="Sprite" parent="GrassGround/GroundGrassCentrePlatform" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassGround/GroundGrassCentrePlatform" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassRightPlatform" type="StaticBody2D" parent="GrassGround" index="5"]
+
+position = Vector2( 161.251, 111.878 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GroundGrassRightPlatform" type="Sprite" parent="GrassGround/GroundGrassRightPlatform" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassGround/GroundGrassRightPlatform" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground" type="Node" parent="." index="1"]
+
+[node name="LeftGround" type="StaticBody2D" parent="Ground" index="0"]
+
+position = Vector2( 260.362, 69.4639 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LeftGround" type="Sprite" parent="Ground/LeftGround" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/LeftGround" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CentreGround" type="StaticBody2D" parent="Ground" index="1"]
+
+position = Vector2( 308.792, 68.8005 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CentreGround" type="Sprite" parent="Ground/CentreGround" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/CentreGround" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RightGround" type="StaticBody2D" parent="Ground" index="2"]
+
+position = Vector2( 357.885, 72.1176 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RightGround" type="Sprite" parent="Ground/RightGround" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/RightGround" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomLeftGround" type="StaticBody2D" parent="Ground" index="3"]
+
+position = Vector2( 260.362, 110.596 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomLeftGround" type="Sprite" parent="Ground/BottomLeftGround" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BottomLeftGround" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomCentreGround" type="StaticBody2D" parent="Ground" index="4"]
+
+position = Vector2( 308.128, 108.606 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomCentreGround" type="Sprite" parent="Ground/BottomCentreGround" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BottomCentreGround" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomRightGround" type="StaticBody2D" parent="Ground" index="5"]
+
+position = Vector2( 359.212, 111.923 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomRightGround" type="Sprite" parent="Ground/BottomRightGround" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BottomRightGround" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Stone" type="Node" parent="." index="2"]
+
+[node name="RockTopLeft" type="StaticBody2D" parent="Stone" index="0"]
+
+position = Vector2( 454.744, 68.8005 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockTopLeft" type="Sprite" parent="Stone/RockTopLeft" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockTopLeft" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockTopCentre" type="StaticBody2D" parent="Stone" index="1"]
+
+position = Vector2( 498.53, 68.137 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockTopCentre" type="Sprite" parent="Stone/RockTopCentre" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockTopCentre" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockTopRight" type="StaticBody2D" parent="Stone" index="2"]
+
+position = Vector2( 542.316, 68.1371 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockTopRight" type="Sprite" parent="Stone/RockTopRight" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockTopRight" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockLeft" type="StaticBody2D" parent="Stone" index="3"]
+
+position = Vector2( 454.744, 107.942 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockLeft" type="Sprite" parent="Stone/RockLeft" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockLeft" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockCentre" type="StaticBody2D" parent="Stone" index="4"]
+
+position = Vector2( 501.184, 106.615 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockCentre" type="Sprite" parent="Stone/RockCentre" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockCentre" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockRight" type="StaticBody2D" parent="Stone" index="5"]
+
+position = Vector2( 544.97, 101.971 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockRight" type="Sprite" parent="Stone/RockRight" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 16, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockRight" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockBottomLeft" type="StaticBody2D" parent="Stone" index="6"]
+
+position = Vector2( 455.408, 142.44 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockBottomLeft" type="Sprite" parent="Stone/RockBottomLeft" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockBottomLeft" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockBottomCentre" type="StaticBody2D" parent="Stone" index="7"]
+
+position = Vector2( 503.837, 148.411 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockBottomCentre" type="Sprite" parent="Stone/RockBottomCentre" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockBottomCentre" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockBottomRight" type="StaticBody2D" parent="Stone" index="8"]
+
+position = Vector2( 546.296, 147.084 )
+scale = Vector2( 0.248901, 0.249301 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RockBottomRight" type="Sprite" parent="Stone/RockBottomRight" index="0"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone/RockBottomRight" index="1"]
+
+position = Vector2( 0.0622559, 0.0296021 )
+scale = Vector2( 4.01767, 4.01122 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+
