@@ -1,5 +1,8 @@
 extends Node
 
+func action_just_pressed(input):
+	return Input.is_action_just_pressed(input)
+
 func action_pressed(input):
 	return Input.is_action_pressed(input)
 
