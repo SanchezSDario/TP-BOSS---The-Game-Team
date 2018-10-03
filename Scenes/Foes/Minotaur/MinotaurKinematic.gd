@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-#Determines the animation in the sprite
 var state_identifier
 export (int) var JUMP_CONSTANT
 export (int) var jump_force
@@ -9,11 +8,14 @@ var collision
 var jump
 
 func _ready():
-	set_meta("Type", "Player")
+	set_meta("Type", "Enemy")
 	pass
 
 func _process(delta):
 	StateSystem.update_state(self) #Update the state
 	MovingSystem.execute(self) #Moves the player
-	GravitySystem.apply(self, delta) #Applies gravitation
 	CollisionSystem.execute(self)
+
+
+#func _on_Area2D_body_entered(body):
+#	CollisionSystem.execute(self)
