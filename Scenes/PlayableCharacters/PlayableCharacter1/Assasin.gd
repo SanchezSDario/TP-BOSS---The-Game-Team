@@ -9,11 +9,17 @@ var collision
 var jump
 
 func _ready():
+	jump = false
 	set_meta("Type", "Player")
-	pass
 
 func _process(delta):
-	StateSystem.update_state(self) #Update the state
-	MovingSystem.execute(self) #Moves the player
-	GravitySystem.apply(self, delta) #Applies gravitation
-	CollisionSystem.execute(self)
+	$GravitySystem.apply(delta) #Applies gravitation
+	collision()
+	$MovingSystem.execute()
+	$StateSystem.update_state() #Update the state
+
+func collision():
+	if(collision != null):
+		match collision.collider.get_meta("Type"):
+			"Floor": jump = false
+			"Enemy": queue_free()

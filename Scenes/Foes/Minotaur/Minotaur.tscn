@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Foes/Minotaur/MinotaurKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im1.png" type="Texture" id=2]
@@ -19,8 +19,10 @@
 [ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm9.png" type="Texture" id=17]
 [ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm10.png" type="Texture" id=18]
 [ext_resource path="res://Scenes/Foes/Minotaur/AnimatedSprite.gd" type="Script" id=19]
+[ext_resource path="res://Systems/GravitySystem/GravitySystem.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Foes/Minotaur/MovingSystem.gd" type="Script" id=21]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
@@ -56,13 +58,13 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-JUMP_CONSTANT = null
+JUMP_CONSTANT = 28
 jump_force = 0
 movement_speed = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
 
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "Walk"
 frame = 1
 script = ExtResource( 19 )
@@ -70,5 +72,25 @@ script = ExtResource( 19 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
 shape = SubResource( 2 )
+
+[node name="GravitySystem" parent="KinematicBody2D" index="2" instance=ExtResource( 20 )]
+
+[node name="MovingSystem" type="Node" parent="KinematicBody2D" index="3"]
+
+script = ExtResource( 21 )
+
+[node name="RayCast2D" type="RayCast2D" parent="KinematicBody2D" index="4"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -200, 0 )
+collision_mask = 1
+
+[node name="RayCast2D2" type="RayCast2D" parent="KinematicBody2D" index="5"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 200, 0 )
+collision_mask = 1
 
 

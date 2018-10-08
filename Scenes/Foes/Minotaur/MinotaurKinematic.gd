@@ -9,13 +9,28 @@ var jump
 
 func _ready():
 	set_meta("Type", "Enemy")
-	pass
+	$MovingSystem.caster = self
 
 func _process(delta):
-	StateSystem.update_state(self) #Update the state
-	MovingSystem.execute(self) #Moves the player
-	CollisionSystem.execute(self)
+	$GravitySystem.apply(delta)
+	aproach_to_player()
 
+func aproach_to_player():
+	aproach_left()
+	aproach_right()
 
-#func _on_Area2D_body_entered(body):
-#	CollisionSystem.execute(self)
+func aproach_left():
+	if($RayCast2D.is_colliding() 
+	and $RayCast2D.get_collider().get_meta("Type") == "Player"):
+		$MovingSystem.move_left()
+		collide_player()
+
+func aproach_right():
+	if($RayCast2D2.is_colliding() 
+	and $RayCast2D2.get_collider().get_meta("Type") == "Player"):
+		$MovingSystem.move_right()
+		collide_player()
+
+func collide_player():
+	if(collision != null and collision.collider.get_meta("Type") == "Player"):
+		collision.collider.queue_free()
