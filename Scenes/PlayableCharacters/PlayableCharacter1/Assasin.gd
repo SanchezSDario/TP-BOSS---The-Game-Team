@@ -27,12 +27,24 @@ func collision():
 			"Floor": jump = false
 			"Enemy": queue_free()
 
-
+# Executes attack logic
 func attack():
-	if(InputSystem.action_just_pressed("ui_attack")):
-		attack = true
-	if(attack and ($AnimatedSprite.frame > 4 and $AnimatedSprite.frame < 6)):
-		$AttackCollision.disabled = false
+	attack_event()
+	turn_attack_on()
+	turn_attack_off()
+
+#Detects if input attack was pressed
+func attack_event():
+	if(InputSystem.action_just_pressed("ui_attack")): attack = true
+
+#Activates the attack collision
+func turn_attack_on():
+	if(attack and 
+	  ($AnimatedSprite.frame > 4 and
+	   $AnimatedSprite.frame < 6)): $AttackCollision.disabled = false
+
+#Disable the attack collision
+func turn_attack_off():
 	if(attack and $AnimatedSprite.frame == 9):
 		$AttackCollision.disabled = true
 		attack = false
