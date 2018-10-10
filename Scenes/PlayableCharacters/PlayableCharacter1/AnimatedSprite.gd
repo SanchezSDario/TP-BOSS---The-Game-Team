@@ -5,8 +5,10 @@ var sprite_animation
 
 func _ready():
 	frames.set_animation_loop("Jump", false)
-	frames.set_animation_speed("Jump", 7)
+	frames.set_animation_speed("Jump", 10)
 	frames.set_animation_speed("Walk", 10)
+	frames.set_animation_loop("Attack", false)
+	frames.set_animation_speed("Attack", 10)
 	assasin = get_parent()
 
 func _process(delta):
@@ -22,4 +24,5 @@ func select_animation():
 			flip_h = true
 			sprite_animation = "Walk"
 		"Jump": sprite_animation = "Jump"
+		"Attack": sprite_animation = "Attack"
 		_: sprite_animation = "Idle"

@@ -41,7 +41,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 15.8572, 17.1249 )
 
-[node name="Minotaur" type="Node2D" index="0"]
+[node name="Minotaur" type="Node2D"]
 
 position = Vector2( 852.476, 292.178 )
 __meta__ = {
@@ -60,7 +60,7 @@ __meta__ = {
 }
 JUMP_CONSTANT = 28
 jump_force = 0
-movement_speed = 2
+movement_speed = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
 

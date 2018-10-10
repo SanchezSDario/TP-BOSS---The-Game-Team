@@ -6,9 +6,11 @@ func _ready():
 	caster = get_parent()
 
 func update_state():
-	idle_state()
-	jump_state()
-	walk_state()
+	if(!caster.attack):
+		idle_state()
+		jump_state()
+		walk_state()
+	else: attack_state()
 
 func idle_state(): 
 	if(InputSystem.not_walking()): caster.state_identifier = "Idle"
@@ -22,3 +24,6 @@ func walk_state():
 
 func jump_state():
 	if(InputSystem.action_pressed("ui_up")): caster.state_identifier = "Jump"
+
+func attack_state():
+	if(InputSystem.action_just_pressed("ui_attack")): caster.state_identifier = "Attack"

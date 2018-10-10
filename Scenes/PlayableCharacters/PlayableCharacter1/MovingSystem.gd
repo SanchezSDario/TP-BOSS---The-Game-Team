@@ -4,9 +4,10 @@ func _ready():
 	caster = get_parent()
 
 func execute():
-	if(InputSystem.action_pressed("ui_right")): .move_right()
-	if(InputSystem.action_pressed("ui_left")): .move_left()
-	if(can_jump()):jump()
+	if(!caster.attack):
+		if(InputSystem.action_pressed("ui_right")): .move_right()
+		if(InputSystem.action_pressed("ui_left")): .move_left()
+		if(can_jump()):jump()
 
 func jump():
 	caster.jump = true

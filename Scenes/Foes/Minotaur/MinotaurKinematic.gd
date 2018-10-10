@@ -21,16 +21,19 @@ func aproach_to_player():
 
 func aproach_left():
 	if($RayCast2D.is_colliding() 
-	and $RayCast2D.get_collider().get_meta("Type") == "Player"):
+	and ($RayCast2D.get_collider().get_meta("Type") == "Player")):
 		$MovingSystem.move_left()
 		collide_player()
 
 func aproach_right():
 	if($RayCast2D2.is_colliding() 
-	and $RayCast2D2.get_collider().get_meta("Type") == "Player"):
+	and ($RayCast2D.get_collider().get_meta("Type") == "Player")):
 		$MovingSystem.move_right()
 		collide_player()
 
 func collide_player():
-	if(collision != null and collision.collider.get_meta("Type") == "Player"):
-		collision.collider.queue_free()
+	if(collision != null):
+		var collider = collision.collider
+		if(collider.get_meta("Type") == "Player"):
+			if(collider.attack): queue_free()
+			else: collider.queue_free()
