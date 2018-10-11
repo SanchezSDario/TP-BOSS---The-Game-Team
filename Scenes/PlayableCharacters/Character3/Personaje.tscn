@@ -8,8 +8,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 7.10112
-height = 21.088
+radius = 7.89736
+height = 16.0122
 
 [sub_resource type="Animation" id=2]
 
@@ -160,28 +160,54 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27, 28, 29, 30, 31 ]
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
-position = Vector2( 125.623, 32.0682 )
 scale = Vector2( 1.88816, 1.88816 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 3.09938, 4.45536 )
+position = Vector2( -5, 0 )
+scale = Vector2( 0.827572, 1.17082 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CharacterController" parent="." index="1" instance=ExtResource( 2 )]
 
+position = Vector2( -3.25563, 0 )
 velocidadMovimiento = 3
-salto = 20
+salto = 17
 gravedad = 10
 
+[node name="RayCast2D" type="RayCast2D" parent="CharacterController" index="0"]
+
+position = Vector2( -4, -10 )
+scale = Vector2( 1, 9 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( -14, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCast2D2" type="RayCast2D" parent="CharacterController" index="1"]
+
+position = Vector2( 5, -10 )
+scale = Vector2( 1, 9 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 14, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
 [node name="AnimationController" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -2.57023, -3.25563 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationController" index="0"]
 
@@ -203,8 +229,10 @@ blend_times = [  ]
 [node name="Sprite" type="Sprite" parent="AnimationController" index="1"]
 
 texture = ExtResource( 4 )
+flip_h = true
 vframes = 7
 hframes = 8
-_sections_unfolded = [ "Animation", "Offset" ]
+frame = 21
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 

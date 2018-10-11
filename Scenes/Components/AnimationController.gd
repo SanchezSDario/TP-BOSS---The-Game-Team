@@ -30,8 +30,11 @@ func Ataque():
 	if animacion.current_animation != "Ataque":
 		animacion.play("Ataque")
 	
-func Salto():
-	if animacion.current_animation != "Salto":
+func Salto(estoyEnElAire):
+	if animacion.current_animation != "Salto" and estoyEnElAire:
 		animacion.play("Salto")	
+	
 
+func Flip():
+	return sprite.flip_h
 	
