@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Art/Nivel3/houses.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28.8557, 3.82764 )
+
+[node name="Casa3" type="Sprite"]
+
+position = Vector2( 590.431, -0.543144 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 460, 71, 227, 183 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( -0.526978, 74.3125 )
+shape = SubResource( 1 )
+
+

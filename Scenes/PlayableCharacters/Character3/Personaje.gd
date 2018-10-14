@@ -16,6 +16,7 @@ func _ready():
 	CharacterController = get_node("CharacterController")
 	AnimationController = get_node("AnimationController")
 	collisionShape = get_node("CollisionShape2D")
+	set_meta("Type","Player")
 	pass
 
 func _process(delta):
@@ -31,7 +32,7 @@ func _process(delta):
 func golpieAlguien(ray):
 	if ray.is_colliding():
 		ray.enabled = false
-		CharacterController.Golpie()
+		CharacterController.Golpie(ray.get_collider())
 		
 func colisionAtaque():
 	if AnimationController.Flip():
@@ -43,12 +44,12 @@ func Movimientos():
 	if Input.is_action_pressed("ui_right"):
 		collision = CharacterController.Movimiento(1)	
 		AnimationController.CaminandoDerecha()
-		collisionShape.position.x = -5
+		collisionShape.position.x = -2
 		
 	elif Input.is_action_pressed("ui_left"):
 		collision = CharacterController.Movimiento(-1)	
 		AnimationController.CaminandoIzquierda()
-		collisionShape.position.x = 0
+		collisionShape.position.x = 1
 		
 	elif Input.is_action_just_pressed("ui_accept"):
 		AnimationController.Ataque()
@@ -75,8 +76,10 @@ func Salto():
 		CharacterController.Salto(puedoSaltar)
 
 func puedoSaltar():
-	if caida != null and caida.collider.get_meta("Type") == "Floor" :
+	if caida != null :
 		puedoSaltar = true
 		apreteSaltar = false
 	else:
 		puedoSaltar = false		
+		
+	
