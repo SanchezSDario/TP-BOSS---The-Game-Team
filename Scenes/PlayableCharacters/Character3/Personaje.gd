@@ -10,6 +10,7 @@ var collision
 var apreteSaltar
 var puedoSaltar = false
 var caida
+var puedoMoverme = true
 func _ready():
 	ray = get_node("CharacterController/RayCast2D")
 	rayder = get_node("CharacterController/RayCast2D2")
@@ -32,7 +33,7 @@ func _process(delta):
 func golpieAlguien(ray):
 	if ray.is_colliding():
 		ray.enabled = false
-		CharacterController.Golpie(ray.get_collider())
+		CharacterController.Golpie(ray.get_collider(),"Enemy")
 		
 func colisionAtaque():
 	if AnimationController.Flip():
@@ -41,17 +42,17 @@ func colisionAtaque():
 		Ataque(ray)
 		
 func Movimientos():
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") and puedoMoverme:
 		collision = CharacterController.Movimiento(1)	
 		AnimationController.CaminandoDerecha()
-		collisionShape.position.x = -2
+		collisionShape.position.x = -5
 		
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left") and puedoMoverme:
 		collision = CharacterController.Movimiento(-1)	
 		AnimationController.CaminandoIzquierda()
 		collisionShape.position.x = 1
 		
-	elif Input.is_action_just_pressed("ui_accept"):
+	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar:
 		AnimationController.Ataque()
 		colisionAtaque()
 	else:
@@ -62,10 +63,12 @@ func caer():
 	caida = CharacterController.Gravedad()
 		
 func Ataque(ray):
+	puedoMoverme = false
 	yield(get_tree().create_timer(0.4),"timeout")
 	ray.enabled = true
 	yield(get_tree().create_timer(0.4),"timeout")
 	ray.enabled = false
+	puedoMoverme = true
 
 func Cayendo():
 	if 	!puedoSaltar:
@@ -82,4 +85,5 @@ func puedoSaltar():
 	else:
 		puedoSaltar = false		
 		
-	
+func recibiGolpe():
+	print("AY")	

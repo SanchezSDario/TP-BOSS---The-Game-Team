@@ -6,6 +6,7 @@ var animacion
 var sprite 
 var estoyAtacando
 func _ready():
+	
 	animado = get_parent()
 	animacion = get_node("AnimationPlayer")
 	sprite = get_node("Sprite")
@@ -34,6 +35,11 @@ func Salto(estoyEnElAire):
 	if animacion.current_animation != "Salto" and estoyEnElAire:
 		animacion.play("Salto")	
 	
+func flipContrario():
+	if sprite.flip_h == true:
+		sprite.flip_h = false
+	else:
+		sprite.flip_h = true
 
 func Flip():
 	return sprite.flip_h

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Scenarios/Scene3/Casa2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Casa3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.tscn" type="PackedScene" id=9]
 
 [node name="Scenario3" type="Node" index="0"]
 
@@ -90,12 +91,12 @@ position = Vector2( 342.676, 113.249 )
 
 [node name="Casa3" parent="Casas" index="2" instance=ExtResource( 7 )]
 
-[node name="KinematicBody2D" parent="Casas" index="3" instance=ExtResource( 8 )]
+[node name="Personaje" parent="Casas" index="3" instance=ExtResource( 8 )]
 
 editor/display_folded = true
 position = Vector2( -211.066, -23.7461 )
 
-[node name="Camera2D" type="Camera2D" parent="Casas/KinematicBody2D" index="3"]
+[node name="Camera2D" type="Camera2D" parent="Casas/Personaje" index="3"]
 
 offset = Vector2( 0, -45 )
 anchor_mode = 1
@@ -120,5 +121,9 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="Esqueleto" parent="." index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 514.496, 166.785 )
 
 

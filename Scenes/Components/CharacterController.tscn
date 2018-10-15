@@ -2,10 +2,11 @@
 
 [ext_resource path="res://Scenes/Components/CharacterController.gd" type="Script" id=1]
 
-[node name="CharacterController" type="Node2D" index="0"]
+[node name="CharacterController" type="Node2D"]
 
 script = ExtResource( 1 )
 velocidadMovimiento = 0
 salto = 0
+gravedad = 0
 
 

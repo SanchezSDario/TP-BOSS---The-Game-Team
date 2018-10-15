@@ -9,7 +9,6 @@ var character
 var difGravity = 0
 func _ready():
 	character = get_parent()
-	set_meta("Type","Player")
 func _process(delta):
 	pass
 
@@ -17,11 +16,9 @@ func Gravedad():
 	difGravity = gravedad - fuerzaSaltoRestante
 	return character.move_and_collide(Vector2(0,difGravity))
 
-func Golpie(target):
-	if target.get_meta("Type") == "Enemy":
-		target.perdiUnaVida()
-	else:
-		print("pared")
+func Golpie(target,tag):
+	if target.get_meta("Type") == tag:
+		print("PAAAAAAAAAAM")
 	
 func Movimiento(dir):
 	return character.move_and_collide(Vector2(dir * velocidadMovimiento,0))
