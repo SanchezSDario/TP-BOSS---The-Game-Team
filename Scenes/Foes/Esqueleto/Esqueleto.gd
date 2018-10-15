@@ -22,25 +22,26 @@ func _ready():
 
 
 func _process(delta):
-	AnimationController.Normal()
 	SeguirDer()
 	SeguirIzq()
 	CharacterController.Gravedad()
 	Atacar(rayAtaqueDer)
 	Atacar(rayAtaqueIzq)
+	AnimationController.Normal()
 
 func SeguirDer():
 	if seguidorDer.is_colliding() and seguidorDer.get_collider().get_meta("Type") == "Player" and !voyAtacar:
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
 		AnimationController.flipContrario()
+	
 		
 func SeguirIzq():
 	if seguidorIzq.is_colliding() and seguidorIzq.get_collider().get_meta("Type") == "Player" and !voyAtacar:
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
 		AnimationController.flipContrario()
-
+	
 
 func Atacar(ray):
 	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player" and !estoyAtacando:

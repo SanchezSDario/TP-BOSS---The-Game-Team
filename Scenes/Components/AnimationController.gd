@@ -43,4 +43,6 @@ func flipContrario():
 
 func Flip():
 	return sprite.flip_h
-	
+
+func Stop():
+	animacion.stop()

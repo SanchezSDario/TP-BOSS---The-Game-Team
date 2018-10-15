@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Art/Nivel3/tileset.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16.0562, 19.7071 )
@@ -29,18 +29,23 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Piso/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Detalle" type="Sprite" parent="." index="1"]
 
-position = Vector2( 15.8687, 19.6505 )
+modulate = Color( 0.335938, 0.311005, 0.311005, 1 )
+position = Vector2( 86.5762, 19.7182 )
+scale = Vector2( 1.10869, 2.31203 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 379, 150, 0, 0 )
-_sections_unfolded = [ "Region" ]
+region_rect = Rect2( 322, 158, 29, 17 )
+region_filter_clip = true
+_sections_unfolded = [ "Animation", "Region", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Detalle" index="0"]
 
+position = Vector2( 0.0568161, -0.0292683 )
+scale = Vector2( 0.901967, 0.43252 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -51,6 +56,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detalle/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 
