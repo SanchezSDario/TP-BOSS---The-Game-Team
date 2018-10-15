@@ -5,6 +5,7 @@ var animado
 var animacion
 var sprite 
 var estoyAtacando
+var estoyMuriendo
 func _ready():
 	
 	animado = get_parent()
@@ -34,6 +35,9 @@ func Ataque():
 func Salto(estoyEnElAire):
 	if animacion.current_animation != "Salto" and estoyEnElAire:
 		animacion.play("Salto")	
+
+
+	
 	
 func flipContrario():
 	if sprite.flip_h == true:

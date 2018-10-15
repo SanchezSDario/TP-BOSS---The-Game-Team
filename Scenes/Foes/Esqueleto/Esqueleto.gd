@@ -9,6 +9,7 @@ var seguidorIzq
 var collision
 var voyAtacar = false
 var estoyAtacando = false
+var estoyMuriendo = false
 func _ready():
 	set_meta("Type" ,"Enemy")
 	rayAtaqueIzq = get_node("rayAtaqueIzq")
@@ -30,29 +31,35 @@ func _process(delta):
 	AnimationController.Normal()
 
 func SeguirDer():
-	if seguidorDer.is_colliding() and seguidorDer.get_collider().get_meta("Type") == "Player" and !voyAtacar:
+	if seguidorDer.is_colliding() and seguidorDer.get_collider().get_meta("Type") == "Player" and !voyAtacar and !estoyMuriendo:
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
 		AnimationController.flipContrario()
 	
 		
 func SeguirIzq():
-	if seguidorIzq.is_colliding() and seguidorIzq.get_collider().get_meta("Type") == "Player" and !voyAtacar:
+	if seguidorIzq.is_colliding() and seguidorIzq.get_collider().get_meta("Type") == "Player" and !voyAtacar and !estoyMuriendo:
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
 		AnimationController.flipContrario()
 	
 
 func Atacar(ray):
-	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player" and !estoyAtacando:
+	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player" and !estoyAtacando and !estoyMuriendo:
 		ray.enabled = false
 		Ataque(ray)
 		AnimationController.Ataque()
 
 func golpie(ray):
-	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player":
-		ray.get_collider().recibiGolpe()
+	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player" and !estoyMuriendo:
+		CharacterController.Golpie(ray.get_collider(),"Player")
 		
+func fuiGolpeado():
+	estoyMuriendo = true
+	AnimationController.estoyMuriendo = true
+	AnimationController.muerte()
+	CharacterController.gravedad = 0
+	self.collisionShape.disabled = true
 		
 func Ataque(ray):
 	voyAtacar = true

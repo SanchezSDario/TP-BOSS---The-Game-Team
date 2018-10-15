@@ -18,7 +18,7 @@ func Gravedad():
 
 func Golpie(target,tag):
 	if target.get_meta("Type") == tag:
-		print("PAAAAAAAAAAM")
+		target.fuiGolpeado()
 	
 func Movimiento(dir):
 	return character.move_and_collide(Vector2(dir * velocidadMovimiento,0))

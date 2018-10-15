@@ -3,7 +3,7 @@ extends Node2D
 var animado
 # necesita un nodo animationPlayer y su sprite
 var animacion
-
+var estoyMuriendo = false
 var estoyAtacando
 func _ready():
 	
@@ -14,22 +14,26 @@ func _ready():
 	
 func CaminandoDerecha():
 	animacion.flip_h = true
-	if animacion.animation != "Caminando":
+	if animacion.animation != "Caminando" and !estoyMuriendo:
 		animacion.play("Caminando")
 	
 func CaminandoIzquierda():
 		animacion.flip_h = false
-		if animacion.animation != "Caminando" :
+		if animacion.animation != "Caminando" and !estoyMuriendo :
 			animacion.play("Caminando")
 	
 			
 func Normal():
-	if animacion.animation != "Normal" and animacion.animation != "Ataque" and animacion.animation != "Caminando" :
+	if animacion.animation != "Normal" and animacion.animation != "Ataque" and animacion.animation != "Caminando" and !estoyMuriendo:
 		animacion.play("Normal")
 
 func Ataque():
-	if animacion.animation != "Ataque":
+	if animacion.animation != "Ataque" and !estoyMuriendo:
 		animacion.play("Ataque")
+
+func muerte():
+	if animacion.animation != "Muerte" and estoyMuriendo:
+		animacion.play("Muerte")
 		
 func flipContrario():
 	if animacion.flip_h == true:

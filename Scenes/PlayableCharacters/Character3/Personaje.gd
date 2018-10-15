@@ -85,5 +85,6 @@ func puedoSaltar():
 	else:
 		puedoSaltar = false		
 		
-func recibiGolpe():
+	
+func fuiGolpeado():
 	print("AY")	
