@@ -193,14 +193,14 @@ position = Vector2( 2, -6 )
 scale = Vector2( 1, 7 )
 enabled = false
 exclude_parent = true
-cast_to = Vector2( 15, 0 )
+cast_to = Vector2( 16, 0 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationController" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -2.57023, -3.25563 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationController" index="0"]
 

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Art/Nivel3/props.png" type="Texture" id=1]
+
+[node name="Carreta" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 104, 78, 104, 84 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -39.3117, -10.052, -30.9408, -28.0815, -12.9113, -35.5939, -3.25256, -37.7402, 8.33788, -38.1695, 21.8601, -35.1646, 32.8066, -28.9401, 39.8896, -14.9886, 41.1775, -9.19341, 18.4259, -32.3743, 4.04512, -33.0182, -9.04779, -33.0182, -27.0774, -24.4327 )
+one_way_collision = true
+
+
