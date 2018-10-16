@@ -16,9 +16,9 @@ func Gravedad():
 	difGravity = gravedad - fuerzaSaltoRestante
 	return character.move_and_collide(Vector2(0,difGravity))
 
-func Golpie(target,tag):
+func Golpie(target,tag,golpeador):
 	if target.get_meta("Type") == tag:
-		target.fuiGolpeado()
+		target.fuiGolpeado(golpeador)
 	
 func Movimiento(dir):
 	return character.move_and_collide(Vector2(dir * velocidadMovimiento,0))

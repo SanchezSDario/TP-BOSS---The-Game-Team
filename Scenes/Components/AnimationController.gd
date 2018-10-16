@@ -25,7 +25,7 @@ func CaminandoIzquierda():
 	
 			
 func Normal():
-	if animacion.current_animation != "Normal" and animacion.current_animation != "Ataque" :
+	if animacion.current_animation != "Normal" and animacion.current_animation != "Ataque" and animacion.current_animation != "Tirado" :
 		animacion.play("Normal")
 
 func Ataque():
@@ -36,8 +36,12 @@ func Salto(estoyEnElAire):
 	if animacion.current_animation != "Salto" and estoyEnElAire:
 		animacion.play("Salto")	
 
-
-	
+func Tirado():
+	if animacion.current_animation != "Tirado":
+		animacion.play("Tirado")
+		
+func terminoAnimacion(animacionActual):
+	return animacion.current_animation != animacionActual 
 	
 func flipContrario():
 	if sprite.flip_h == true:

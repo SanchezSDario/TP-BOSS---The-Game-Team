@@ -11,6 +11,7 @@ var apreteSaltar
 var puedoSaltar = false
 var caida
 var puedoMoverme = true
+var meGolpiaron = false
 func _ready():
 	ray = get_node("CharacterController/RayCast2D")
 	rayder = get_node("CharacterController/RayCast2D2")
@@ -29,11 +30,13 @@ func _process(delta):
 	puedoSaltar()
 	Salto()
 	CharacterController.Caer(delta)
+	terminoCaida()
+
 
 func golpieAlguien(ray):
 	if ray.is_colliding():
 		ray.enabled = false
-		CharacterController.Golpie(ray.get_collider(),"Enemy")
+		CharacterController.Golpie(ray.get_collider(),"Enemy",self)
 		
 func colisionAtaque():
 	if AnimationController.Flip():
@@ -42,17 +45,17 @@ func colisionAtaque():
 		Ataque(ray)
 		
 func Movimientos():
-	if Input.is_action_pressed("ui_right") and puedoMoverme:
+	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron:
 		collision = CharacterController.Movimiento(1)	
 		AnimationController.CaminandoDerecha()
 		collisionShape.position.x = -5
 		
-	elif Input.is_action_pressed("ui_left") and puedoMoverme:
+	elif Input.is_action_pressed("ui_left") and puedoMoverme and !meGolpiaron:
 		collision = CharacterController.Movimiento(-1)	
 		AnimationController.CaminandoIzquierda()
 		collisionShape.position.x = 1
 		
-	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar:
+	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar and !meGolpiaron:
 		AnimationController.Ataque()
 		colisionAtaque()
 	else:
@@ -75,7 +78,7 @@ func Cayendo():
 		AnimationController.Salto(!puedoSaltar)
 		
 func Salto():
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") and !meGolpiaron:
 		CharacterController.Salto(puedoSaltar)
 
 func puedoSaltar():
@@ -86,5 +89,15 @@ func puedoSaltar():
 		puedoSaltar = false		
 		
 	
-func fuiGolpeado():
+func fuiGolpeado(golpeador):
 	print("AY")	
+	meGolpiaron = true
+	AnimationController.Tirado()
+	
+
+func terminoCaida():
+	if AnimationController.terminoAnimacion("Tirado"):
+		meGolpiaron = false	
+
+		
+	

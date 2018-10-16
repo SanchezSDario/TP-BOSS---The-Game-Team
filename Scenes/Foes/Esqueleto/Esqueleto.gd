@@ -10,7 +10,13 @@ var collision
 var voyAtacar = false
 var estoyAtacando = false
 var estoyMuriendo = false
+var timer
+
 func _ready():
+	timer = Timer.new()
+	timer.wait_time = 15
+	add_child(timer)
+	timer.connect("timeout",self,"borrar")
 	set_meta("Type" ,"Enemy")
 	rayAtaqueIzq = get_node("rayAtaqueIzq")
 	rayAtaqueDer = get_node("rayAtaqueDer")
@@ -29,6 +35,9 @@ func _process(delta):
 	Atacar(rayAtaqueDer)
 	Atacar(rayAtaqueIzq)
 	AnimationController.Normal()
+
+func borrar():
+	self.queue_free()
 
 func SeguirDer():
 	if seguidorDer.is_colliding() and seguidorDer.get_collider().get_meta("Type") == "Player" and !voyAtacar and !estoyMuriendo:
@@ -52,14 +61,15 @@ func Atacar(ray):
 
 func golpie(ray):
 	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player" and !estoyMuriendo:
-		CharacterController.Golpie(ray.get_collider(),"Player")
+		CharacterController.Golpie(ray.get_collider(),"Player",self)
 		
-func fuiGolpeado():
+func fuiGolpeado(golpeador):
 	estoyMuriendo = true
 	AnimationController.estoyMuriendo = true
 	AnimationController.muerte()
 	CharacterController.gravedad = 0
 	self.collisionShape.disabled = true
+	timer.start()
 		
 func Ataque(ray):
 	voyAtacar = true
