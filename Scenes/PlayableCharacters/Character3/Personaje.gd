@@ -12,6 +12,7 @@ var puedoSaltar = false
 var caida
 var puedoMoverme = true
 var meGolpiaron = false
+var camera
 func _ready():
 	ray = get_node("CharacterController/RayCast2D")
 	rayder = get_node("CharacterController/RayCast2D2")
@@ -19,7 +20,7 @@ func _ready():
 	AnimationController = get_node("AnimationController")
 	collisionShape = get_node("CollisionShape2D")
 	set_meta("Type","Player")
-	pass
+	camera = get_node("Camera2D")
 
 func _process(delta):
 	caer()
@@ -93,6 +94,7 @@ func fuiGolpeado(golpeador):
 	print("AY")	
 	meGolpiaron = true
 	AnimationController.Tirado()
+	camera._on_Player_hit()
 	
 
 func terminoCaida():
