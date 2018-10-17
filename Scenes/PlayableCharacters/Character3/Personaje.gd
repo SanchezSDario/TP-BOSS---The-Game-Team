@@ -14,7 +14,7 @@ var puedoMoverme = true
 var meGolpiaron = false
 var camera
 var timer
-
+# https://youtu.be/wh8otZwtefI 
 func _ready():
 	ray = get_node("CharacterController/RayCast2D")
 	rayder = get_node("CharacterController/RayCast2D2")
