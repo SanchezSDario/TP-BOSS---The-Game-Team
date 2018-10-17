@@ -83,7 +83,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 
 resource_name = "Muerto"
-length = 0.5
+length = 1.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -93,10 +93,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 38, 39 ]
+"values": [ 38, 39, 38, 39, 38, 39, 38, 39 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -226,7 +226,7 @@ texture = ExtResource( 4 )
 flip_h = true
 vframes = 7
 hframes = 8
-frame = 31
+frame = 23
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]

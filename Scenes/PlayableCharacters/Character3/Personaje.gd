@@ -13,6 +13,8 @@ var caida
 var puedoMoverme = true
 var meGolpiaron = false
 var camera
+var timer
+
 func _ready():
 	ray = get_node("CharacterController/RayCast2D")
 	rayder = get_node("CharacterController/RayCast2D2")
@@ -21,6 +23,10 @@ func _ready():
 	collisionShape = get_node("CollisionShape2D")
 	set_meta("Type","Player")
 	camera = get_node("Camera2D")
+	timer = Timer.new()
+	timer.wait_time = 1.4
+	add_child(timer)
+	timer.connect("timeout",self,"Mori")
 
 func _process(delta):
 	caer()
@@ -33,6 +39,12 @@ func _process(delta):
 	CharacterController.Caer(delta)
 	terminoCaida()
 
+func meMori():
+	if GameManager.vidas <=  0:
+		return true
+	else:
+		return false
+	
 
 func golpieAlguien(ray):
 	if ray.is_colliding():
@@ -89,16 +101,23 @@ func puedoSaltar():
 	else:
 		puedoSaltar = false		
 		
-	
+func Mori():
+	self.queue_free()
+ 	
 func fuiGolpeado(golpeador):
 	print("AY")	
+	GameManager.vidas -= 1
 	meGolpiaron = true
-	AnimationController.Tirado()
+	AnimationController.Tirado(GameManager.vidas)
 	camera._on_Player_hit()
-	
+	if GameManager.vidas == 0:
+		timer.start()
+		
+			
 
+		
 func terminoCaida():
-	if AnimationController.terminoAnimacion("Tirado"):
+	if AnimationController.terminoAnimacion("Tirado") :
 		meGolpiaron = false	
 
 		

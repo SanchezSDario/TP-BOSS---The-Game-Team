@@ -2,6 +2,8 @@
 
 [ext_resource path="res://StateSystem.gd" type="Script" id=1]
 
+
+
 [node name="StateSystem" type="Node"]
 
 script = ExtResource( 1 )
