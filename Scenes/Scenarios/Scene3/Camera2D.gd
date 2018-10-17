@@ -12,9 +12,9 @@ func _ready():
 
 func _process(delta):
 	if moverCamara:
-		set_offset(Vector2( \
+		offset = (Vector2( offset.x +
         rand_range(-1.0, 1.0) * shake_amount, \
-        -60 
+        -200 
     	))
 func _on_Player_hit():
 	moverCamara = true

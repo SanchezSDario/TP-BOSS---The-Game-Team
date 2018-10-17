@@ -77,6 +77,7 @@ func Movimientos():
 
 func caer():
 	caida = CharacterController.Gravedad()
+
 		
 func Ataque(ray):
 	puedoMoverme = false

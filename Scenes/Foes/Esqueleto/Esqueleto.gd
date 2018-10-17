@@ -40,27 +40,27 @@ func borrar():
 	self.queue_free()
 
 func SeguirDer():
-	if seguidorDer.is_colliding() and seguidorDer.get_collider().get_meta("Type") == "Player" and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
+	if seguidorDer.is_colliding() and seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
 		AnimationController.flipContrario()
 	
 		
 func SeguirIzq():
-	if seguidorIzq.is_colliding() and seguidorIzq.get_collider().get_meta("Type") == "Player" and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
+	if seguidorIzq.is_colliding() and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
 		AnimationController.flipContrario()
 	
 
 func Atacar(ray):
-	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player" and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
+	if ray.is_colliding() and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
 		ray.enabled = false
 		Ataque(ray)
 		AnimationController.Ataque()
 
 func golpie(ray):
-	if ray.is_colliding() and ray.get_collider().get_meta("Type") == "Player" and !estoyMuriendo:
+	if ray.is_colliding() and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 		
 func fuiGolpeado(golpeador):
