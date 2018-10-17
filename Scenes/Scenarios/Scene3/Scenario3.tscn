@@ -219,13 +219,21 @@ position = Vector2( 3154.89, 60.0218 )
 
 position = Vector2( 514.496, 166.785 )
 
-[node name="Player" parent="." index="4" instance=ExtResource( 13 )]
+[node name="EnemyEsqueleto2" parent="." index="4" instance=ExtResource( 12 )]
+
+position = Vector2( 1052.25, 160.646 )
+
+[node name="EnemyEsqueleto3" parent="." index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 811.609, 160.646 )
+
+[node name="Player" parent="." index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 131.61, 89.5029 )
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]
 
-offset = Vector2( 150, -200 )
+offset = Vector2( 100, -60 )
 anchor_mode = 1
 rotating = false
 current = true

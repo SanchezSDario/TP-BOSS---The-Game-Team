@@ -81,9 +81,9 @@ func caer():
 		
 func Ataque(ray):
 	puedoMoverme = false
-	yield(get_tree().create_timer(0.3),"timeout")
+	yield(get_tree().create_timer(0.4),"timeout")
 	ray.enabled = true
-	yield(get_tree().create_timer(0.3),"timeout")
+	yield(get_tree().create_timer(0.4),"timeout")
 	ray.enabled = false
 	puedoMoverme = true
 

@@ -57,8 +57,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 4.3308
-height = 14.8399
+radius = 2.79832
+height = 15.8602
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -97,7 +97,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 3, 3.97082 )
+position = Vector2( 3.68225, 4.33043 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -106,8 +106,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="AnimatedSprite" type="AnimatedSprite" parent="SpriteAnimatedController" index="0"]
 
 frames = SubResource( 2 )
-animation = "Muerte"
-frame = 11
+animation = "Normal"
+frame = 9
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
