@@ -89,7 +89,7 @@ func Ataque(ray):
 	voyAtacar = true
 	estoyAtacando = true
 	ray.enabled = true
-	yield(get_tree().create_timer(1),"timeout")
+	yield(get_tree().create_timer(0.8),"timeout")
 	golpie(ray)
 	yield(get_tree().create_timer(0.4),"timeout")
 	estoyAtacando = false

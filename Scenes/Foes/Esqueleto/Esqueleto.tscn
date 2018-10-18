@@ -55,11 +55,11 @@
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=53]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=54]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 2.79832
-height = 15.8602
+radius = 2.80619
+height = 13.1612
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -103,8 +103,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 3.68225, 4.33043 )
-shape = SubResource( 1 )
+position = Vector2( 2.74496, 6.5317 )
+rotation = 3.13813
+shape = SubResource( 3 )
+one_way_collision = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="SpriteAnimatedController" parent="." index="1" instance=ExtResource( 2 )]
@@ -113,7 +115,6 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Normal"
-frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]

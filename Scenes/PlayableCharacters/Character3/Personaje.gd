@@ -58,17 +58,17 @@ func colisionAtaque():
 		Ataque(ray)
 		
 func Movimientos():
-	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron:
+	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron and !meMori():
 		collision = CharacterController.Movimiento(1)	
 		AnimationController.CaminandoDerecha()
 		collisionShape.position.x = -5
 		
-	elif Input.is_action_pressed("ui_left") and puedoMoverme and !meGolpiaron:
+	elif Input.is_action_pressed("ui_left") and puedoMoverme and !meGolpiaron and !meMori():
 		collision = CharacterController.Movimiento(-1)	
 		AnimationController.CaminandoIzquierda()
 		collisionShape.position.x = 1
 		
-	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar and !meGolpiaron:
+	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar and !meGolpiaron and !meMori():
 		AnimationController.Ataque()
 		colisionAtaque()
 	else:
@@ -113,6 +113,7 @@ func fuiGolpeado(golpeador):
 	camera._on_Player_hit()
 	if GameManager.vidas == 0:
 		timer.start()
+		
 		
 			
 
