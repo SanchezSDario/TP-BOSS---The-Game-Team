@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
+[ext_resource path="res://HUD/Vida3.png" type="Texture" id=2]
+[ext_resource path="res://HUD/Vida4.png" type="Texture" id=3]
+[ext_resource path="res://HUD/Vida5.png" type="Texture" id=4]
+[ext_resource path="res://HUD/Vida6.png" type="Texture" id=5]
+[ext_resource path="res://HUD/Vida0.png" type="Texture" id=6]
+[ext_resource path="res://HUD/Vida1.png" type="Texture" id=7]
+[ext_resource path="res://HUD/Vida2.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Vida3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Vida4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Vida5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Vida6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Vida0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Vida1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Vida2",
+"speed": 5.0
+} ]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( 657.944, 24.154 )
+scale = Vector2( 0.420651, 0.420651 )
+frames = SubResource( 1 )
+animation = "Vida0"
+
+

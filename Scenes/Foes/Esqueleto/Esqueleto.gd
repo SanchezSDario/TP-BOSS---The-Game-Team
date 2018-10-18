@@ -12,6 +12,7 @@ var estoyAtacando = false
 var estoyMuriendo = false
 var timer
 var life
+export var puntaje = 0
 
 func _ready():
 	timer = Timer.new()
@@ -42,10 +43,12 @@ func borrar():
 		
 func seguidores():
 	if seguidorDer.is_colliding() and seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
+		collisionShape.position.x = -4
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
 		AnimationController.flipContrario()
 	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
+		collisionShape.position.x = 3.2
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
 		AnimationController.flipContrario()	
@@ -73,7 +76,7 @@ func fuiGolpeado(golpeador):
 		CharacterController.gravedad = 0
 		estoyMuriendo = true
 		AnimationController.Golpeado()
-		yield(get_tree().create_timer(0.6),"timeout")
+		yield(get_tree().create_timer(0.8),"timeout")
 		estoyMuriendo = false
 		collisionShape.disabled = false
 		AnimationController.animacion.play("Normal")
@@ -85,6 +88,7 @@ func fuiGolpeado(golpeador):
 		AnimationController.estoyMuriendo = true
 		AnimationController.muerte()
 		timer.start()
+		GameManager.puntaje += puntaje
 		
 func Ataque(ray):
 	voyAtacar = true

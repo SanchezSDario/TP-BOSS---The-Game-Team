@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Camera2D.gd" type="Script" id=14]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=15]
 
 [node name="Scenario3" type="Node" index="0"]
 
@@ -57,32 +58,30 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
-editor/display_folded = true
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 800, 600 )
+motion_mirroring = Vector2( 960, 0 )
 _sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 0, -238.831 )
-scale = Vector2( 2.10764, 2.10764 )
+position = Vector2( 0, -428.093 )
+scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
 
-editor/display_folded = true
 motion_scale = Vector2( 0.8, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 800, 600 )
+motion_mirroring = Vector2( 960, 0 )
 _sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2" index="0"]
 
 position = Vector2( 0, -238.831 )
-scale = Vector2( 2.10764, 2.10764 )
+scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 4 )
 centered = false
 _sections_unfolded = [ "Offset" ]
@@ -258,5 +257,7 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 14 )
 _sections_unfolded = [ "Limit" ]
+
+[node name="CanvasLayer" parent="." index="7" instance=ExtResource( 15 )]
 
 

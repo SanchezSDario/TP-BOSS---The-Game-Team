@@ -1,6 +1,6 @@
 extends Node
-
-var vidas = 5
+var puntaje = 0
+var vidas = 6
 
 func _ready():
 
