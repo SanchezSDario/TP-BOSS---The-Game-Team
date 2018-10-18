@@ -31,8 +31,7 @@ func _ready():
 
 
 func _process(delta):
-	SeguirDer()
-	SeguirIzq()
+	seguidores()
 	CharacterController.Gravedad()
 	Atacar(rayAtaqueDer)
 	Atacar(rayAtaqueIzq)
@@ -40,18 +39,19 @@ func _process(delta):
 func borrar():
 	self.queue_free()
 
-func SeguirDer():
+		
+func seguidores():
 	if seguidorDer.is_colliding() and seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
 		AnimationController.flipContrario()
-	
-		
-func SeguirIzq():
-	if seguidorIzq.is_colliding() and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
+	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
-		AnimationController.flipContrario()
+		AnimationController.flipContrario()	
+	else:
+		AnimationController.Normal()
+
 	
 
 func Atacar(ray):

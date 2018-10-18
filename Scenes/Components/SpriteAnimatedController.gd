@@ -24,7 +24,7 @@ func CaminandoIzquierda():
 	
 			
 func Normal():
-	if animacion.animation != "Normal":
+	if animacion.animation != "Normal" and animacion.animation != "Ataque" and animacion.animation != "Muerte" and animacion.animation != "Golpeado" and !estoyMuriendo:
 		animacion.play("Normal")
 
 func Ataque():
