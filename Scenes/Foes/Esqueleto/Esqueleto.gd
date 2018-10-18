@@ -76,7 +76,7 @@ func fuiGolpeado(golpeador):
 		yield(get_tree().create_timer(0.8),"timeout")
 		estoyMuriendo = false
 		collisionShape.disabled = false
-		AnimationController.Normal()
+		AnimationController.animacion.play("Normal")
 	else:
 		estoyMuriendo = true
 		AnimationController.estoyMuriendo = true

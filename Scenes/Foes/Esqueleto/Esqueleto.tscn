@@ -75,7 +75,7 @@ animations = [ {
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 27 ) ],
-"loop": true,
+"loop": false,
 "name": "Golpeado",
 "speed": 8.0
 }, {
@@ -113,7 +113,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Normal"
-frame = 3
+frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
