@@ -24,7 +24,7 @@ func CaminandoIzquierda():
 	
 			
 func Normal():
-	if animacion.animation != "Normal" and animacion.animation != "Ataque" and animacion.animation != "Caminando" and !estoyMuriendo:
+	if animacion.animation != "Normal":
 		animacion.play("Normal")
 
 func Ataque():
@@ -34,6 +34,10 @@ func Ataque():
 func muerte():
 	if animacion.animation != "Muerte" and estoyMuriendo:
 		animacion.play("Muerte")
+
+func Golpeado():
+	if animacion.animation != "Golpeado":
+		animacion.play("Golpeado")
 		
 func flipContrario():
 	if animacion.flip_h == true:

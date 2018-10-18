@@ -11,6 +11,7 @@ var voyAtacar = false
 var estoyAtacando = false
 var estoyMuriendo = false
 var timer
+var life
 
 func _ready():
 	timer = Timer.new()
@@ -25,6 +26,7 @@ func _ready():
 	CharacterController = get_node("CharacterController")
 	AnimationController = get_node("SpriteAnimatedController")
 	collisionShape = get_node("CollisionShape2D")
+	life = get_node("Life")
 
 
 
@@ -34,7 +36,6 @@ func _process(delta):
 	CharacterController.Gravedad()
 	Atacar(rayAtaqueDer)
 	Atacar(rayAtaqueIzq)
-	AnimationController.Normal()
 
 func borrar():
 	self.queue_free()
@@ -59,17 +60,30 @@ func Atacar(ray):
 		Ataque(ray)
 		AnimationController.Ataque()
 
+
 func golpie(ray):
 	if ray.is_colliding() and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 		
 func fuiGolpeado(golpeador):
-	estoyMuriendo = true
-	AnimationController.estoyMuriendo = true
-	AnimationController.muerte()
-	CharacterController.gravedad = 0
-	self.collisionShape.disabled = true
-	timer.start()
+	life.vida -= 1
+	if life.vida > 0:
+		var gravedadAnterior = CharacterController.gravedad
+		collisionShape.disabled = true
+		CharacterController.gravedad = 0
+		estoyMuriendo = true
+		AnimationController.Golpeado()
+		yield(get_tree().create_timer(0.8),"timeout")
+		estoyMuriendo = false
+		collisionShape.disabled = false
+		AnimationController.Normal()
+	else:
+		estoyMuriendo = true
+		AnimationController.estoyMuriendo = true
+		AnimationController.muerte()
+		CharacterController.gravedad = 0
+		self.collisionShape.disabled = true
+		timer.start()
 		
 func Ataque(ray):
 	voyAtacar = true

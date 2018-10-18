@@ -193,7 +193,7 @@ position = Vector2( 2, -6 )
 scale = Vector2( 1, 7 )
 enabled = false
 exclude_parent = true
-cast_to = Vector2( 16, 0 )
+cast_to = Vector2( 18, 0 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
