@@ -47,7 +47,8 @@ func meMori():
 	
 
 func golpieAlguien(ray):
-	if ray.is_colliding():
+	if ray.is_colliding() and ray.get_collider().name.begins_with("Enemy"):
+		print("hit")
 		ray.enabled = false
 		CharacterController.Golpie(ray.get_collider(),"Enemy",self)
 		
@@ -68,7 +69,7 @@ func Movimientos():
 		AnimationController.CaminandoIzquierda()
 		collisionShape.position.x = 1
 		
-	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar and !meGolpiaron and !meMori():
+	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar and !meGolpiaron and !meMori() and puedoMoverme:
 		AnimationController.Ataque()
 		colisionAtaque()
 	else:

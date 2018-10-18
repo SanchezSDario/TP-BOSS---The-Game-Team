@@ -73,23 +73,24 @@ func fuiGolpeado(golpeador):
 		CharacterController.gravedad = 0
 		estoyMuriendo = true
 		AnimationController.Golpeado()
-		yield(get_tree().create_timer(0.8),"timeout")
+		yield(get_tree().create_timer(0.6),"timeout")
 		estoyMuriendo = false
 		collisionShape.disabled = false
 		AnimationController.animacion.play("Normal")
+		print(life.vida)
 	else:
+		CharacterController.gravedad = 0
+		self.collisionShape.disabled = true
 		estoyMuriendo = true
 		AnimationController.estoyMuriendo = true
 		AnimationController.muerte()
-		CharacterController.gravedad = 0
-		self.collisionShape.disabled = true
 		timer.start()
 		
 func Ataque(ray):
 	voyAtacar = true
 	estoyAtacando = true
 	ray.enabled = true
-	yield(get_tree().create_timer(0.8),"timeout")
+	yield(get_tree().create_timer(1),"timeout")
 	golpie(ray)
 	yield(get_tree().create_timer(0.4),"timeout")
 	estoyAtacando = false
