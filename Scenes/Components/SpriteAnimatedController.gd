@@ -27,6 +27,9 @@ func Normal():
 	if animacion.animation != "Normal" and animacion.animation != "Ataque" and animacion.animation != "Muerte" and animacion.animation != "Golpeado" and !estoyMuriendo:
 		animacion.play("Normal")
 
+func setFlip(flip):
+	animacion.flip_h = flip
+		
 func Ataque():
 	if animacion.animation != "Ataque" and !estoyMuriendo:
 		animacion.play("Ataque")

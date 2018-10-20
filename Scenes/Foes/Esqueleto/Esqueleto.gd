@@ -73,17 +73,19 @@ func fuiGolpeado(golpeador):
 	if life.vida > 0:
 		var gravedadAnterior = CharacterController.gravedad
 		collisionShape.disabled = true
+		collisionShape.position.x += 1000
 		CharacterController.gravedad = 0
 		estoyMuriendo = true
 		AnimationController.Golpeado()
-		yield(get_tree().create_timer(0.8),"timeout")
+		yield(get_tree().create_timer(0.5),"timeout")
 		estoyMuriendo = false
 		collisionShape.disabled = false
+		collisionShape.position.x -= 1000
 		AnimationController.animacion.play("Normal")
-		print(life.vida)
 	else:
 		CharacterController.gravedad = 0
 		self.collisionShape.disabled = true
+		collisionShape.position.x += 1000
 		estoyMuriendo = true
 		AnimationController.estoyMuriendo = true
 		AnimationController.muerte()

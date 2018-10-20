@@ -38,6 +38,7 @@ func _process(delta):
 	Salto()
 	CharacterController.Caer(delta)
 	terminoCaida()
+	teclaAtaque()
 
 func meMori():
 	if GameManager.vidas <=  0:
@@ -48,7 +49,7 @@ func meMori():
 
 func golpieAlguien(ray):
 	if ray.is_colliding() and ray.get_collider().name.begins_with("Enemy"):
-		print("hit")
+
 		ray.enabled = false
 		CharacterController.Golpie(ray.get_collider(),"Enemy",self)
 		
@@ -68,13 +69,13 @@ func Movimientos():
 		collision = CharacterController.Movimiento(-1)	
 		AnimationController.CaminandoIzquierda()
 		collisionShape.position.x = 1
-		
-	elif Input.is_action_just_pressed("ui_accept") and puedoSaltar and !meGolpiaron and !meMori() and puedoMoverme:
-		AnimationController.Ataque()
-		colisionAtaque()
 	else:
 		AnimationController.Normal()
 		
+func teclaAtaque():
+	if Input.is_action_just_pressed("ui_accept")  and !meGolpiaron and !meMori() :
+		AnimationController.Ataque()
+		colisionAtaque()
 
 func caer():
 	caida = CharacterController.Gravedad()
@@ -82,9 +83,9 @@ func caer():
 		
 func Ataque(ray):
 	puedoMoverme = false
-	yield(get_tree().create_timer(0.4),"timeout")
+	yield(get_tree().create_timer(0.2),"timeout")
 	ray.enabled = true
-	yield(get_tree().create_timer(0.4),"timeout")
+	yield(get_tree().create_timer(0.2),"timeout")
 	ray.enabled = false
 	puedoMoverme = true
 

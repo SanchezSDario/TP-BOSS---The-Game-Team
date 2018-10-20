@@ -27,13 +27,14 @@ func CaminandoIzquierda():
 func Normal():
 	if animacion.current_animation != "Normal" and animacion.current_animation != "Ataque" and animacion.current_animation != "Tirado" and animacion.current_animation != "Muerto" :
 		animacion.play("Normal")
+		
 
 func Ataque():
 	if animacion.current_animation != "Ataque":
 		animacion.play("Ataque")
 	
 func Salto(estoyEnElAire):
-	if animacion.current_animation != "Salto" and estoyEnElAire:
+	if animacion.current_animation != "Salto" and animacion.current_animation != "Ataque" and estoyEnElAire:
 		animacion.play("Salto")	
 
 func Tirado(vida):
