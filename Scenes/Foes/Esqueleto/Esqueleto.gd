@@ -60,8 +60,9 @@ func seguidores():
 func Atacar(ray):
 	if ray.is_colliding() and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
 		ray.enabled = false
-		Ataque(ray)
 		AnimationController.Ataque()
+		Ataque(ray)
+		
 
 
 func golpie(ray):
@@ -96,8 +97,9 @@ func Ataque(ray):
 	voyAtacar = true
 	estoyAtacando = true
 	ray.enabled = true
-	yield(get_tree().create_timer(1),"timeout")
-	golpie(ray)
-	yield(get_tree().create_timer(0.4),"timeout")
+	yield(get_tree().create_timer(0.6),"timeout")
+	if !estoyMuriendo:
+		golpie(ray)
+	yield(get_tree().create_timer(0.6),"timeout")
 	estoyAtacando = false
 	voyAtacar = false		

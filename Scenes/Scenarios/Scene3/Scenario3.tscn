@@ -217,7 +217,7 @@ position = Vector2( 3154.89, 60.0218 )
 
 [node name="EnemyEsqueleto" parent="." index="3" instance=ExtResource( 12 )]
 
-position = Vector2( 1350.26, 202.544 )
+position = Vector2( 1317.29, 139.784 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="EnemyEsqueleto2" parent="." index="4" instance=ExtResource( 12 )]
@@ -228,7 +228,11 @@ position = Vector2( 1052.25, 160.646 )
 
 position = Vector2( 332.423, 146.526 )
 
-[node name="Player" parent="." index="6" instance=ExtResource( 13 )]
+[node name="EnemyEsqueleto4" parent="." index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 438.479, 96.4771 )
+
+[node name="Player" parent="." index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 131.61, 89.5029 )
 
@@ -260,9 +264,9 @@ editor_draw_drag_margin = false
 script = ExtResource( 14 )
 _sections_unfolded = [ "Limit" ]
 
-[node name="CanvasLayer" parent="." index="7" instance=ExtResource( 15 )]
+[node name="CanvasLayer" parent="." index="8" instance=ExtResource( 15 )]
 
-[node name="Summoner" parent="." index="8" instance=ExtResource( 16 )]
+[node name="Summoner" parent="." index="9" instance=ExtResource( 16 )]
 
 position = Vector2( 496.339, -22.4125 )
 
