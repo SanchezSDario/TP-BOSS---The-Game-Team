@@ -29,7 +29,7 @@
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=28]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
@@ -40,7 +40,7 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "Ataque",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 4 ) ],
 "loop": true,
@@ -58,7 +58,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -79,7 +79,7 @@ puntaje = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController" index="0"]
 
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Normal"
 playing = true
 flip_h = true
@@ -96,6 +96,7 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 250, 0 )
 collision_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [node name="rayizq" type="RayCast2D" parent="." index="3"]
 
@@ -103,6 +104,7 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( -250, 0 )
 collision_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [node name="rayAtaqueDer" type="RayCast2D" parent="." index="4"]
 
@@ -110,6 +112,7 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 100, 0 )
 collision_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [node name="rayAtaqueIzq" type="RayCast2D" parent="." index="5"]
 
@@ -117,6 +120,7 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( -100, 0 )
 collision_mask = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Life" parent="." index="6" instance=ExtResource( 28 )]
 
@@ -125,6 +129,6 @@ vida = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="7"]
 
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 

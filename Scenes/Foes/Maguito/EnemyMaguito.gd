@@ -75,7 +75,9 @@ func fuiGolpeado(golpeador):
 		CharacterController.gravedad = 0
 		estoyMuriendo = true
 		AnimationController.Golpeado()
-		yield(get_tree().create_timer(1),"timeout")
+		set_process(false)
+		yield(get_tree().create_timer(0.6),"timeout")
+		set_process(true)
 		puedoDisparar = true 
 		estoyMuriendo = false
 		collisionShape.disabled = false
@@ -97,7 +99,7 @@ func disparar(pos,izquierda):
 		voyAtacar = true
 		timer.start()
 		AnimationController.Ataque()
-		yield(get_tree().create_timer(1),"timeout")
+		yield(get_tree().create_timer(0.4),"timeout")
 		if puedoDisparar:
 			puedoDisparar = false
 			var scene_instance = bala

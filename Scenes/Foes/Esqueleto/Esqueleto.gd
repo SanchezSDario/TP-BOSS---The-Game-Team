@@ -15,6 +15,7 @@ var life
 export var puntaje = 0
 
 func _ready():
+	
 	timer = Timer.new()
 	timer.wait_time = 15
 	add_child(timer)
