@@ -107,7 +107,7 @@ func puedoSaltar():
 
 func rebote():
 	if caida != null and caida.collider.name.begins_with("Enemy"):
-		CharacterController.fuerzaSaltoRestante -= 2
+		CharacterController.fuerzaSaltoRestante -= 3
 		if self.AnimationController.sprite.flip_h:
 			self.position.x += 3
 		else:
