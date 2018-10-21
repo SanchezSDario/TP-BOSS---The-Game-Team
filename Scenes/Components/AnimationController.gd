@@ -34,7 +34,7 @@ func Ataque():
 		animacion.play("Ataque")
 	
 func Salto(estoyEnElAire):
-	if animacion.current_animation != "Salto" and animacion.current_animation != "Ataque" and estoyEnElAire:
+	if animacion.current_animation != "Salto" and animacion.current_animation != "Ataque" and estoyEnElAire and animacion.current_animation != "Tirado" and animacion.current_animation != "Muerto":
 		animacion.play("Salto")	
 
 func Tirado(vida):

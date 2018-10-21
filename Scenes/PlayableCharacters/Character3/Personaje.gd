@@ -42,7 +42,7 @@ func _process(delta):
 	rebote()
 
 func meMori():
-	if GameManager.vidas <=  0:
+	if GameManager.vidas ==  0:
 		return true
 	else:
 		return false
@@ -95,7 +95,7 @@ func Cayendo():
 		AnimationController.Salto(!puedoSaltar)
 		
 func Salto():
-	if Input.is_action_just_pressed("ui_up") and !meGolpiaron:
+	if Input.is_action_just_pressed("ui_up") and !meGolpiaron and !meMori():
 		CharacterController.Salto(puedoSaltar)
 
 func puedoSaltar():
@@ -108,14 +108,15 @@ func puedoSaltar():
 func rebote():
 	if caida != null and caida.collider.name.begins_with("Enemy"):
 		CharacterController.fuerzaSaltoRestante -= 3
-		if self.AnimationController.sprite.flip_h:
+		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y:
 			self.position.x += 3
-		else:
+		elif self.position.y < caida.collider.position.y:
 			self.position.x -= 3
 func Mori():
 	self.queue_free()
  	
 func fuiGolpeado(golpeador):
+	CharacterController.fuerzaSaltoRestante = 0
 	print("AY")	
 	GameManager.vidas -= 1
 	meGolpiaron = true

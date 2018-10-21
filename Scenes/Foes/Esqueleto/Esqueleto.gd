@@ -32,10 +32,11 @@ func _ready():
 
 
 func _process(delta):
-	seguidores()
-	CharacterController.Gravedad()
-	Atacar(rayAtaqueDer)
-	Atacar(rayAtaqueIzq)
+	if self.visible:
+		seguidores()
+		CharacterController.Gravedad()
+		Atacar(rayAtaqueDer)
+		Atacar(rayAtaqueIzq)
 
 func borrar():
 	self.queue_free()

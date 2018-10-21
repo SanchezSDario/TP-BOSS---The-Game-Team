@@ -36,6 +36,7 @@ func _ready():
 	
 	
 func _process(delta):
+	
 	seguidores()
 	CharacterController.Gravedad()
 	Atacar()
