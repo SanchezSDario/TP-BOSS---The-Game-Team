@@ -39,6 +39,7 @@ func _process(delta):
 	CharacterController.Caer(delta)
 	terminoCaida()
 	teclaAtaque()
+	rebote()
 
 func meMori():
 	if GameManager.vidas <=  0:
@@ -103,7 +104,14 @@ func puedoSaltar():
 		apreteSaltar = false
 	else:
 		puedoSaltar = false		
-		
+
+func rebote():
+	if caida != null and caida.collider.name.begins_with("Enemy"):
+		CharacterController.fuerzaSaltoRestante -= 2
+		if self.AnimationController.sprite.flip_h:
+			self.position.x += 3
+		else:
+			self.position.x -= 3
 func Mori():
 	self.queue_free()
  	

@@ -29,8 +29,8 @@
 [ext_resource path="res://Art/Foes/Summoner/Ataque/Ataque13.png" type="Texture" id=27]
 [ext_resource path="res://Art/Foes/Summoner/Ataque/Ataque15.png" type="Texture" id=28]
 [ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte1.png" type="Texture" id=29]
-[ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte2.png" type="Texture" id=30]
-[ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte3.png" type="Texture" id=31]
+[ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte3.png" type="Texture" id=30]
+[ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte2.png" type="Texture" id=31]
 [ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte4.png" type="Texture" id=32]
 [ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte5.png" type="Texture" id=33]
 [ext_resource path="res://Art/Foes/Summoner/Muerte/Muerte6.png" type="Texture" id=34]
@@ -61,14 +61,14 @@ animations = [ {
 "name": "Ataque",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": false,
-"name": "Muerte",
-"speed": 9.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 31 ), ExtResource( 30 ) ],
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": false,
 "name": "Golpeado",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": false,
+"name": "Muerte",
 "speed": 9.0
 } ]
 
@@ -95,7 +95,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController" index="0"]
 
-scale = Vector2( 1, 1 )
 frames = SubResource( 2 )
 animation = "Ataque"
 frame = 13

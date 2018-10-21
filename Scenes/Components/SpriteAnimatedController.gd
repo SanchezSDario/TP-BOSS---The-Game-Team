@@ -13,12 +13,12 @@ func _ready():
 	
 	
 func CaminandoDerecha():
-	animacion.flip_h = true
+	animacion.flip_h = false
 	if animacion.animation != "Caminando" and !estoyMuriendo:
 		animacion.play("Caminando")
 	
 func CaminandoIzquierda():
-		animacion.flip_h = false
+		animacion.flip_h = true
 		if animacion.animation != "Caminando" and !estoyMuriendo :
 			animacion.play("Caminando")
 	

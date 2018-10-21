@@ -46,12 +46,10 @@ func seguidores():
 		collisionShape.position.x = -4
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
-		AnimationController.flipContrario()
 	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
 		collisionShape.position.x = 3.2
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
-		AnimationController.flipContrario()	
 	else:
 		AnimationController.Normal()
 
@@ -78,7 +76,7 @@ func fuiGolpeado(golpeador):
 		CharacterController.gravedad = 0
 		estoyMuriendo = true
 		AnimationController.Golpeado()
-		yield(get_tree().create_timer(0.5),"timeout")
+		yield(get_tree().create_timer(0.6),"timeout")
 		estoyMuriendo = false
 		collisionShape.disabled = false
 		collisionShape.position.x -= 1000
@@ -97,9 +95,9 @@ func Ataque(ray):
 	voyAtacar = true
 	estoyAtacando = true
 	ray.enabled = true
-	yield(get_tree().create_timer(0.6),"timeout")
+	yield(get_tree().create_timer(0.5),"timeout")
 	if !estoyMuriendo:
 		golpie(ray)
-	yield(get_tree().create_timer(0.6),"timeout")
+	yield(get_tree().create_timer(0.5),"timeout")
 	estoyAtacando = false
 	voyAtacar = false		

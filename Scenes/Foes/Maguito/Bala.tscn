@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Foes/Maguito/Bala.gd" type="Script" id=1]
+[ext_resource path="res://Art/Foes/Maguito/Bala.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 3.05398
+height = 22.7785
+
+[node name="Bala" type="KinematicBody2D"]
+
+position = Vector2( -1.14848, 1.58745 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+velocidadDeMovimiento = 5
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 9.62453, -1.73557 )
+rotation = 1.57735
+shape = SubResource( 1 )
+
+
