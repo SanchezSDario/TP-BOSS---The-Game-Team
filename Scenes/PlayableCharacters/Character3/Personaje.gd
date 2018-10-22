@@ -49,7 +49,7 @@ func meMori():
 	
 
 func golpieAlguien(ray):
-	if ray.is_colliding() and ray.get_collider().name.begins_with("Enemy"):
+	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):
 
 		ray.enabled = false
 		CharacterController.Golpie(ray.get_collider(),"Enemy",self)

@@ -44,11 +44,11 @@ func borrar():
 
 		
 func seguidores():
-	if seguidorDer.is_colliding() and seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
+	if seguidorDer.is_colliding() and seguidorDer.get_collider() != null and  seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
 		collisionShape.position.x = -4
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
-	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
+	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
 		collisionShape.position.x = 3.2
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
@@ -58,7 +58,7 @@ func seguidores():
 	
 
 func Atacar(ray):
-	if ray.is_colliding() and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
+	if ray.is_colliding()  and ray.get_collider() != null and  ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
 		ray.enabled = false
 		AnimationController.Ataque()
 		Ataque(ray)
@@ -66,7 +66,7 @@ func Atacar(ray):
 
 
 func golpie(ray):
-	if ray.is_colliding() and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
+	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 		
 func fuiGolpeado(golpeador):

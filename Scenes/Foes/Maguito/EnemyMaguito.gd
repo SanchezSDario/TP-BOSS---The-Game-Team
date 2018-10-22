@@ -45,12 +45,12 @@ func borrar():
 	self.queue_free()
 	
 func seguidores():
-	if rayder.is_colliding() and rayder.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !rayder.get_collider().meMori():
+	if rayder.is_colliding() and rayder.get_collider() != null and rayder.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !rayder.get_collider().meMori():
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
 		
 		
-	elif rayizq.is_colliding() and rayizq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !rayizq.get_collider().meMori():
+	elif rayizq.is_colliding() and rayizq.get_collider() != null and rayizq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !rayizq.get_collider().meMori():
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
 		
@@ -58,10 +58,10 @@ func seguidores():
 		AnimationController.Normal()	
 
 func Atacar():
-	if rayAtaqueDer.is_colliding() and rayAtaqueDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !rayAtaqueDer.get_collider().meMori():
+	if rayAtaqueDer.is_colliding() and rayAtaqueDer.get_collider() != null and rayAtaqueDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !rayAtaqueDer.get_collider().meMori():
 		disparar(40,false)
 		
-	elif rayAtaqueIzq.is_colliding() and rayAtaqueIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !rayAtaqueIzq.get_collider().meMori():
+	elif rayAtaqueIzq.is_colliding() and rayAtaqueIzq.get_collider() != null and rayAtaqueIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !rayAtaqueIzq.get_collider().meMori():
 		disparar(-40,true)
 		
 		

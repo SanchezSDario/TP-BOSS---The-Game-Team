@@ -179,7 +179,7 @@ gravedad = 10.0
 
 [node name="RayCast2D" type="RayCast2D" parent="CharacterController" index="0"]
 
-position = Vector2( -1, -6 )
+position = Vector2( 0, -6 )
 scale = Vector2( 1, 7 )
 enabled = false
 exclude_parent = true
