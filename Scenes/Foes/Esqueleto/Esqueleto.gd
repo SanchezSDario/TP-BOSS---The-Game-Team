@@ -45,11 +45,11 @@ func borrar():
 		
 func seguidores():
 	if seguidorDer.is_colliding() and seguidorDer.get_collider() != null and  seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
-		collisionShape.position.x = -4
+		collisionShape.position.x = 2.470024
 		collision = CharacterController.Movimiento(1)
 		AnimationController.CaminandoDerecha()
 	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
-		collisionShape.position.x = 3.2
+		collisionShape.position.x = -2.931763
 		collision = CharacterController.Movimiento(-1)
 		AnimationController.CaminandoIzquierda()
 	else:

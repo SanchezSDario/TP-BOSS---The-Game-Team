@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/Scenarios/Scene3/Camera2D.gd" type="Script" id=14]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Foes/EsqueletoVerde/EsqueletoVerde.tscn" type="PackedScene" id=17]
 
 [node name="Scenario3" type="Node" index="0"]
 
@@ -237,18 +238,28 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="EnemyEsqueleto7" parent="." index="7" instance=ExtResource( 12 )]
 
-position = Vector2( 2669.13, 164.655 )
+position = Vector2( 2667.7, 155.334 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="EnemyEsqueleto2" parent="." index="8" instance=ExtResource( 12 )]
+[node name="EnemyEsqueleto8" parent="." index="8" instance=ExtResource( 12 )]
+
+position = Vector2( 2776.68, 152.825 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="EnemyEsqueleto9" parent="." index="9" instance=ExtResource( 12 )]
+
+position = Vector2( 2940.5, 153.9 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="EnemyEsqueleto2" parent="." index="10" instance=ExtResource( 12 )]
 
 position = Vector2( 549.945, 155.282 )
 
-[node name="EnemyEsqueleto3" parent="." index="9" instance=ExtResource( 12 )]
+[node name="EnemyEsqueleto3" parent="." index="11" instance=ExtResource( 12 )]
 
 position = Vector2( 830.358, 157.232 )
 
-[node name="Player" parent="." index="10" instance=ExtResource( 13 )]
+[node name="Player" parent="." index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 131.61, 89.5029 )
 
@@ -280,34 +291,38 @@ editor_draw_drag_margin = false
 script = ExtResource( 14 )
 _sections_unfolded = [ "Limit" ]
 
-[node name="CanvasLayer" parent="." index="11" instance=ExtResource( 15 )]
+[node name="CanvasLayer" parent="." index="13" instance=ExtResource( 15 )]
 
-[node name="EnemyMaguito" parent="." index="12" instance=ExtResource( 16 )]
+[node name="EnemyMaguito" parent="." index="14" instance=ExtResource( 16 )]
 
 position = Vector2( 396.699, 81.9765 )
 
-[node name="EnemyMaguito2" parent="." index="13" instance=ExtResource( 16 )]
+[node name="EnemyMaguito2" parent="." index="15" instance=ExtResource( 16 )]
 
 position = Vector2( 636.635, 82.9519 )
 
-[node name="EnemyMaguito3" parent="." index="14" instance=ExtResource( 16 )]
+[node name="EnemyMaguito3" parent="." index="16" instance=ExtResource( 16 )]
 
 position = Vector2( 983.86, 85.3902 )
 
-[node name="EnemyMaguito4" parent="." index="15" instance=ExtResource( 16 )]
+[node name="EnemyMaguito4" parent="." index="17" instance=ExtResource( 16 )]
 
 position = Vector2( 1782.67, 169.758 )
 
-[node name="EnemyMaguito5" parent="." index="16" instance=ExtResource( 16 )]
+[node name="EnemyMaguito5" parent="." index="18" instance=ExtResource( 16 )]
 
 position = Vector2( 2385.93, 77.0997 )
 
-[node name="EnemyMaguito6" parent="." index="17" instance=ExtResource( 16 )]
+[node name="EnemyMaguito6" parent="." index="19" instance=ExtResource( 16 )]
 
 position = Vector2( 2923.83, 85.8779 )
 
-[node name="EnemyMaguito7" parent="." index="18" instance=ExtResource( 16 )]
+[node name="EnemyMaguito7" parent="." index="20" instance=ExtResource( 16 )]
 
 position = Vector2( 3117.93, 71.7353 )
+
+[node name="EnemyEsquletoVerde" parent="." index="21" instance=ExtResource( 17 )]
+
+position = Vector2( 346.164, 132.764 )
 
 
