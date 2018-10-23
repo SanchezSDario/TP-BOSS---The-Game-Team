@@ -83,6 +83,7 @@ func fuiGolpeado(golpeador):
 		collisionShape.disabled = false
 		collisionShape.position.x -= 1000
 		AnimationController.animacion.play("Normal")
+		
 	else:
 		CharacterController.gravedad = 0
 		self.collisionShape.disabled = true

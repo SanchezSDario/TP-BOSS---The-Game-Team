@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Foes/EsqueletoVerde/EsqueletoVerde.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Foes/Summoner/Summoner.tscn" type="PackedScene" id=18]
 
 [node name="Scenario3" type="Node" index="0"]
 
@@ -324,5 +325,9 @@ position = Vector2( 3117.93, 71.7353 )
 [node name="EnemyEsquletoVerde" parent="." index="21" instance=ExtResource( 17 )]
 
 position = Vector2( 346.164, 132.764 )
+
+[node name="EnemySummoner" parent="." index="22" instance=ExtResource( 18 )]
+
+position = Vector2( 220.614, 115.132 )
 
 
