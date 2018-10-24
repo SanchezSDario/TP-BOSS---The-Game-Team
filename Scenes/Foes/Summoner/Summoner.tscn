@@ -99,8 +99,8 @@ vida = 5
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController" index="0"]
 
 frames = SubResource( 2 )
-animation = "Normal"
-frame = 10
+animation = "Muerte"
+frame = 11
 playing = true
 
 [node name="CharacterController" parent="." index="3" instance=ExtResource( 40 )]

@@ -82,6 +82,7 @@ puntaje = 100
 
 frames = SubResource( 1 )
 animation = "Normal"
+frame = 1
 playing = true
 flip_h = true
 

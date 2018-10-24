@@ -59,7 +59,7 @@ func seguidores():
 
 func Atacar():
 	if rayAtaqueDer.is_colliding() and rayAtaqueDer.get_collider() != null and rayAtaqueDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !rayAtaqueDer.get_collider().meMori():
-		disparar(40,false)
+		disparar(30,false)
 		
 	elif rayAtaqueIzq.is_colliding() and rayAtaqueIzq.get_collider() != null and rayAtaqueIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !rayAtaqueIzq.get_collider().meMori():
 		disparar(-40,true)

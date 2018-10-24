@@ -4,19 +4,19 @@
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap.gd" type="Script" id=2]
 [ext_resource path="res://Art/Nivel3/background.png" type="Texture" id=3]
 [ext_resource path="res://Art/Nivel3/middleground.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Casa1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Casa2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Casa3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Carreta.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Scenarios/Scene3/PozoDeAgua.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Caja.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Barril.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Camera2D.gd" type="Script" id=14]
-[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Foes/Summoner/Summoner.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Carreta.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Scenarios/Scene3/PozoDeAgua.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Caja.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Barril.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Casa3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Casa2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Casa1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Camera2D.gd" type="Script" id=13]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Foes/Summoner/Summoner.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.tscn" type="PackedScene" id=17]
 
 [node name="Scenario3" type="Node" index="0"]
 
@@ -45,6 +45,7 @@ _sections_unfolded = [ "Cell", "Collision", "Occluder" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -75,6 +76,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
 
+editor/display_folded = true
 motion_scale = Vector2( 0.8, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 960, 0 )
@@ -90,176 +92,155 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="Elementos" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 342.676, 113.249 )
 
-[node name="Casa1" parent="Elementos" index="0" instance=ExtResource( 5 )]
-
-position = Vector2( 7.16238, -12.7234 )
-
-[node name="Casa4" parent="Elementos" index="1" instance=ExtResource( 5 )]
-
-position = Vector2( 590.248, -13.1362 )
-
-[node name="Casa5" parent="Elementos" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 1335.57, -12.499 )
-
-[node name="Casa8" parent="Elementos" index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 2550.77, -10.6342 )
-
-[node name="Casa2" parent="Elementos" index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 271.237, -44.1703 )
-
-[node name="Casa6" parent="Elementos" index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 1983.92, -43.8875 )
-
-[node name="Casa3" parent="Elementos" index="6" instance=ExtResource( 7 )]
-
-position = Vector2( 1057.59, -10.7847 )
-
-[node name="Casa7" parent="Elementos" index="7" instance=ExtResource( 7 )]
-
-position = Vector2( 2254.09, -7.85242 )
-
-[node name="Carreta" parent="Elementos" index="8" instance=ExtResource( 8 )]
+[node name="Carreta" parent="Elementos" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 826.929, 44.9066 )
 
-[node name="Pozo" parent="Elementos" index="9" instance=ExtResource( 9 )]
+[node name="Pozo" parent="Elementos" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 1515.26, 47.2619 )
 
-[node name="Caja" parent="Elementos" index="10" instance=ExtResource( 10 )]
+[node name="BoqueCajas" type="Node2D" parent="Elementos" index="2"]
 
-position = Vector2( 1764.52, 61.1999 )
-
-[node name="Caja2" parent="Elementos" index="11" instance=ExtResource( 10 )]
-
-position = Vector2( 1732.5, 60.137 )
-
-[node name="Caja3" parent="Elementos" index="12" instance=ExtResource( 10 )]
-
-position = Vector2( 1749.39, 28.9469 )
-
-[node name="Cajas" type="Node2D" parent="Elementos" index="13"]
-
+editor/display_folded = true
 position = Vector2( -335.325, -123.54 )
 
-[node name="Caja5" parent="Elementos/Cajas" index="0" instance=ExtResource( 10 )]
+[node name="Caja5" parent="Elementos/BoqueCajas" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 3148.92, 183.873 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Caja6" parent="Elementos/Cajas" index="1" instance=ExtResource( 10 )]
+[node name="Caja6" parent="Elementos/BoqueCajas" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 3118.08, 184.136 )
 
-[node name="Caja10" parent="Elementos/Cajas" index="2" instance=ExtResource( 10 )]
+[node name="Caja10" parent="Elementos/BoqueCajas" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 3148.92, 150.775 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Caja11" parent="Elementos/Cajas" index="3" instance=ExtResource( 10 )]
+[node name="Caja11" parent="Elementos/BoqueCajas" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 3118.28, 151.292 )
 
-[node name="Caja9" parent="Elementos/Cajas" index="4" instance=ExtResource( 10 )]
+[node name="Caja9" parent="Elementos/BoqueCajas" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 3088.22, 151.728 )
 
-[node name="Caja12" parent="Elementos/Cajas" index="5" instance=ExtResource( 10 )]
+[node name="Caja12" parent="Elementos/BoqueCajas" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 3148.92, 118.261 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Caja13" parent="Elementos/Cajas" index="6" instance=ExtResource( 10 )]
+[node name="Caja13" parent="Elementos/BoqueCajas" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 3118.61, 118.261 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Caja14" parent="Elementos/Cajas" index="7" instance=ExtResource( 10 )]
+[node name="Caja14" parent="Elementos/BoqueCajas" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 3088.31, 118.261 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Caja15" parent="Elementos/Cajas" index="8" instance=ExtResource( 10 )]
+[node name="Caja15" parent="Elementos/BoqueCajas" index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 3058.01, 118.261 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Caja4" parent="Elementos/Cajas" index="9" instance=ExtResource( 10 )]
+[node name="Caja4" parent="Elementos/BoqueCajas" index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 3058.01, 151.79 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Caja7" parent="Elementos/Cajas" index="10" instance=ExtResource( 10 )]
+[node name="Caja7" parent="Elementos/BoqueCajas" index="10" instance=ExtResource( 7 )]
 
 position = Vector2( 3087, 184.822 )
 
-[node name="Caja8" parent="Elementos/Cajas" index="11" instance=ExtResource( 10 )]
+[node name="Caja8" parent="Elementos/BoqueCajas" index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 3058.01, 184.559 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Barril" parent="Elementos" index="14" instance=ExtResource( 11 )]
+[node name="Barriles" type="Node2D" parent="Elementos" index="3"]
 
-position = Vector2( 2957.28, 60.5577 )
+editor/display_folded = true
+position = Vector2( -342.676, -113.249 )
 
-[node name="Barril2" parent="Elementos" index="15" instance=ExtResource( 11 )]
+[node name="Barril2" parent="Elementos/Barriles" index="0" instance=ExtResource( 8 )]
 
-position = Vector2( 3064.92, 61.6887 )
+position = Vector2( 3407.6, 174.938 )
 
-[node name="Barril3" parent="Elementos" index="16" instance=ExtResource( 11 )]
+[node name="Barril3" parent="Elementos/Barriles" index="1" instance=ExtResource( 8 )]
 
-position = Vector2( 3154.89, 60.0218 )
+position = Vector2( 3497.57, 173.271 )
 
-[node name="EnemyEsqueleto" parent="." index="3" instance=ExtResource( 12 )]
+[node name="Barril" parent="Elementos/Barriles" index="2" instance=ExtResource( 8 )]
 
-position = Vector2( 1317.29, 156.853 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+position = Vector2( 3299.96, 173.807 )
 
-[node name="EnemyEsqueleto4" parent="." index="4" instance=ExtResource( 12 )]
+[node name="CajasTriple" type="Node2D" parent="Elementos" index="4"]
 
-position = Vector2( 1500.17, 154.902 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+editor/display_folded = true
+position = Vector2( -335.325, -123.54 )
 
-[node name="EnemyEsqueleto5" parent="." index="5" instance=ExtResource( 12 )]
+[node name="Caja" parent="Elementos/CajasTriple" index="0" instance=ExtResource( 7 )]
 
-position = Vector2( 1711.82, 68.5834 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+position = Vector2( 2099.84, 184.74 )
 
-[node name="EnemyEsqueleto6" parent="." index="6" instance=ExtResource( 12 )]
+[node name="Caja2" parent="Elementos/CajasTriple" index="1" instance=ExtResource( 7 )]
 
-position = Vector2( 2298.49, 161.729 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+position = Vector2( 2067.82, 183.677 )
 
-[node name="EnemyEsqueleto7" parent="." index="7" instance=ExtResource( 12 )]
+[node name="Caja3" parent="Elementos/CajasTriple" index="2" instance=ExtResource( 7 )]
 
-position = Vector2( 2667.7, 155.334 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+position = Vector2( 2084.71, 152.487 )
 
-[node name="EnemyEsqueleto8" parent="." index="8" instance=ExtResource( 12 )]
+[node name="Casas" type="Node2D" parent="Elementos" index="5"]
 
-position = Vector2( 2776.68, 152.825 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+[node name="Casa7" parent="Elementos/Casas" index="0" instance=ExtResource( 9 )]
 
-[node name="EnemyEsqueleto9" parent="." index="9" instance=ExtResource( 12 )]
+position = Vector2( 2254.09, -7.85242 )
 
-position = Vector2( 2940.5, 153.9 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+[node name="Casa3" parent="Elementos/Casas" index="1" instance=ExtResource( 9 )]
 
-[node name="EnemyEsqueleto2" parent="." index="10" instance=ExtResource( 12 )]
+position = Vector2( 1057.59, -10.7847 )
 
-position = Vector2( 549.945, 155.282 )
+[node name="Casa10" parent="Elementos/Casas" index="2" instance=ExtResource( 10 )]
 
-[node name="EnemyEsqueleto3" parent="." index="11" instance=ExtResource( 12 )]
+position = Vector2( 4034.26, -43.8589 )
 
-position = Vector2( 830.358, 157.232 )
+[node name="Casa6" parent="Elementos/Casas" index="3" instance=ExtResource( 10 )]
 
-[node name="Player" parent="." index="12" instance=ExtResource( 13 )]
+position = Vector2( 1983.92, -43.8875 )
+
+[node name="Casa2" parent="Elementos/Casas" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 271.237, -44.1703 )
+
+[node name="Casa9" parent="Elementos/Casas" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( 3665.67, -11.2205 )
+
+[node name="Casa8" parent="Elementos/Casas" index="6" instance=ExtResource( 11 )]
+
+position = Vector2( 2550.77, -10.6342 )
+
+[node name="Casa5" parent="Elementos/Casas" index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 1335.57, -12.499 )
+
+[node name="Casa4" parent="Elementos/Casas" index="8" instance=ExtResource( 11 )]
+
+position = Vector2( 590.248, -13.1362 )
+
+[node name="Casa1" parent="Elementos/Casas" index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 7.16238, -12.7234 )
+
+[node name="Player" parent="." index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 131.61, 89.5029 )
 
@@ -288,41 +269,101 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 14 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Limit" ]
 
-[node name="CanvasLayer" parent="." index="13" instance=ExtResource( 15 )]
+[node name="CanvasLayer" parent="." index="4" instance=ExtResource( 14 )]
 
-[node name="EnemyMaguito" parent="." index="14" instance=ExtResource( 16 )]
+[node name="EnemySummoner" parent="." index="5" instance=ExtResource( 15 )]
 
-position = Vector2( 396.699, 81.9765 )
+position = Vector2( 4184.37, 109.15 )
 
-[node name="EnemyMaguito2" parent="." index="15" instance=ExtResource( 16 )]
+[node name="EnemigosEsqueletos" type="Node2D" parent="." index="6"]
 
-position = Vector2( 636.635, 82.9519 )
+editor/display_folded = true
+position = Vector2( 342.676, 113.249 )
 
-[node name="EnemyMaguito3" parent="." index="16" instance=ExtResource( 16 )]
+[node name="EnemyEsqueleto4" parent="EnemigosEsqueletos" index="0" instance=ExtResource( 16 )]
 
-position = Vector2( 983.86, 85.3902 )
+position = Vector2( 1157.49, 41.653 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="EnemyMaguito4" parent="." index="17" instance=ExtResource( 16 )]
+[node name="EnemyEsqueleto6" parent="EnemigosEsqueletos" index="1" instance=ExtResource( 16 )]
 
-position = Vector2( 1782.67, 169.758 )
+position = Vector2( 1955.81, 48.48 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="EnemyMaguito5" parent="." index="18" instance=ExtResource( 16 )]
+[node name="EnemyEsqueleto7" parent="EnemigosEsqueletos" index="2" instance=ExtResource( 16 )]
 
-position = Vector2( 2385.93, 77.0997 )
+position = Vector2( 2325.02, 42.085 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="EnemyMaguito6" parent="." index="19" instance=ExtResource( 16 )]
+[node name="EnemyEsqueleto8" parent="EnemigosEsqueletos" index="3" instance=ExtResource( 16 )]
 
-position = Vector2( 2923.83, 85.8779 )
+position = Vector2( 2434, 39.576 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="EnemyMaguito7" parent="." index="20" instance=ExtResource( 16 )]
+[node name="EnemyEsqueleto" parent="EnemigosEsqueletos" index="4" instance=ExtResource( 16 )]
+
+position = Vector2( 974.614, 43.604 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="EnemyEsqueleto5" parent="EnemigosEsqueletos" index="5" instance=ExtResource( 16 )]
+
+position = Vector2( 1369.14, -44.6656 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="EnemyEsqueleto9" parent="EnemigosEsqueletos" index="6" instance=ExtResource( 16 )]
+
+position = Vector2( 2597.82, 40.651 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="EnemyEsqueleto2" parent="EnemigosEsqueletos" index="7" instance=ExtResource( 16 )]
+
+position = Vector2( 207.269, 42.033 )
+
+[node name="EnemyEsqueleto3" parent="EnemigosEsqueletos" index="8" instance=ExtResource( 16 )]
+
+position = Vector2( 487.682, 43.983 )
+
+[node name="Maguitos" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="EnemyMaguito9" parent="Maguitos" index="0" instance=ExtResource( 17 )]
+
+position = Vector2( 4397.56, 82.5503 )
+
+[node name="EnemyMaguito8" parent="Maguitos" index="1" instance=ExtResource( 17 )]
+
+position = Vector2( 4067.5, 89.1661 )
+
+[node name="EnemyMaguito7" parent="Maguitos" index="2" instance=ExtResource( 17 )]
 
 position = Vector2( 3117.93, 71.7353 )
 
-[node name="EnemySummoner" parent="." index="21" instance=ExtResource( 17 )]
+[node name="EnemyMaguito6" parent="Maguitos" index="3" instance=ExtResource( 17 )]
 
-position = Vector2( 266.964, 102.014 )
+position = Vector2( 2923.83, 85.8779 )
+
+[node name="EnemyMaguito5" parent="Maguitos" index="4" instance=ExtResource( 17 )]
+
+position = Vector2( 2385.93, 77.0997 )
+
+[node name="EnemyMaguito4" parent="Maguitos" index="5" instance=ExtResource( 17 )]
+
+position = Vector2( 1782.67, 169.758 )
+
+[node name="EnemyMaguito3" parent="Maguitos" index="6" instance=ExtResource( 17 )]
+
+position = Vector2( 983.86, 85.3902 )
+
+[node name="EnemyMaguito2" parent="Maguitos" index="7" instance=ExtResource( 17 )]
+
+position = Vector2( 636.635, 82.9519 )
+
+[node name="EnemyMaguito" parent="Maguitos" index="8" instance=ExtResource( 17 )]
+
+position = Vector2( 396.699, 81.9765 )
 
 
