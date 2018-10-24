@@ -4,91 +4,91 @@
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile000.png" type="Texture" id=5]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile001.png" type="Texture" id=6]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile002.png" type="Texture" id=7]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile003.png" type="Texture" id=8]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile004.png" type="Texture" id=9]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile005.png" type="Texture" id=10]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile006.png" type="Texture" id=11]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile007.png" type="Texture" id=12]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile008.png" type="Texture" id=13]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile009.png" type="Texture" id=14]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile010.png" type="Texture" id=15]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile011.png" type="Texture" id=16]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile012.png" type="Texture" id=17]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile013.png" type="Texture" id=18]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile014.png" type="Texture" id=19]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile015.png" type="Texture" id=20]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile016.png" type="Texture" id=21]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile017.png" type="Texture" id=22]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile000.png" type="Texture" id=23]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile001.png" type="Texture" id=24]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile002.png" type="Texture" id=25]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile003.png" type="Texture" id=26]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile004.png" type="Texture" id=27]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile005.png" type="Texture" id=28]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile006.png" type="Texture" id=29]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile007.png" type="Texture" id=30]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile008.png" type="Texture" id=31]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile009.png" type="Texture" id=32]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile010.png" type="Texture" id=33]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile011.png" type="Texture" id=34]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile012.png" type="Texture" id=35]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile013.png" type="Texture" id=36]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile014.png" type="Texture" id=37]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile015.png" type="Texture" id=38]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile016.png" type="Texture" id=39]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile017.png" type="Texture" id=40]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile018.png" type="Texture" id=41]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile019.png" type="Texture" id=42]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile003.png" type="Texture" id=43]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile000.png" type="Texture" id=44]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile001.png" type="Texture" id=45]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile002.png" type="Texture" id=46]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile003.png" type="Texture" id=47]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile004.png" type="Texture" id=48]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile005.png" type="Texture" id=49]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile006.png" type="Texture" id=50]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile007.png" type="Texture" id=51]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile008.png" type="Texture" id=52]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile009.png" type="Texture" id=53]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile010.png" type="Texture" id=54]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile011.png" type="Texture" id=55]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile012.png" type="Texture" id=56]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile000.png" type="Texture" id=57]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile001.png" type="Texture" id=58]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile002.png" type="Texture" id=59]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile003.png" type="Texture" id=60]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile004.png" type="Texture" id=61]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile005.png" type="Texture" id=62]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile006.png" type="Texture" id=63]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile007.png" type="Texture" id=64]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile008.png" type="Texture" id=65]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile009.png" type="Texture" id=66]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile010.png" type="Texture" id=67]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile011.png" type="Texture" id=68]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile012.png" type="Texture" id=69]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile013.png" type="Texture" id=70]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile014.png" type="Texture" id=71]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile015.png" type="Texture" id=72]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile016.png" type="Texture" id=73]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile017.png" type="Texture" id=74]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile018.png" type="Texture" id=75]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile019.png" type="Texture" id=76]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile002.png" type="Texture" id=77]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile004.png" type="Texture" id=78]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile005.png" type="Texture" id=79]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile006.png" type="Texture" id=80]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile007.png" type="Texture" id=81]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile008.png" type="Texture" id=82]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile009.png" type="Texture" id=83]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile010.png" type="Texture" id=84]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile011.png" type="Texture" id=85]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile012.png" type="Texture" id=86]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile013.png" type="Texture" id=87]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile014.png" type="Texture" id=88]
-[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile015.png" type="Texture" id=89]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile000.png" type="Texture" id=5]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile001.png" type="Texture" id=6]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile002.png" type="Texture" id=7]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile003.png" type="Texture" id=8]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile004.png" type="Texture" id=9]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile005.png" type="Texture" id=10]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile006.png" type="Texture" id=11]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile007.png" type="Texture" id=12]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile008.png" type="Texture" id=13]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile009.png" type="Texture" id=14]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile010.png" type="Texture" id=15]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile011.png" type="Texture" id=16]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile012.png" type="Texture" id=17]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile013.png" type="Texture" id=18]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile014.png" type="Texture" id=19]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile015.png" type="Texture" id=20]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile016.png" type="Texture" id=21]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile017.png" type="Texture" id=22]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile018.png" type="Texture" id=23]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Ataque/tile019.png" type="Texture" id=24]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile000.png" type="Texture" id=25]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile001.png" type="Texture" id=26]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile002.png" type="Texture" id=27]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile003.png" type="Texture" id=28]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile004.png" type="Texture" id=29]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile005.png" type="Texture" id=30]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile006.png" type="Texture" id=31]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile007.png" type="Texture" id=32]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile008.png" type="Texture" id=33]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile009.png" type="Texture" id=34]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile010.png" type="Texture" id=35]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile011.png" type="Texture" id=36]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile012.png" type="Texture" id=37]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile013.png" type="Texture" id=38]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile014.png" type="Texture" id=39]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile015.png" type="Texture" id=40]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile016.png" type="Texture" id=41]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Normal/tile017.png" type="Texture" id=42]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile002.png" type="Texture" id=43]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile003.png" type="Texture" id=44]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile004.png" type="Texture" id=45]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile005.png" type="Texture" id=46]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile006.png" type="Texture" id=47]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile007.png" type="Texture" id=48]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile008.png" type="Texture" id=49]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile009.png" type="Texture" id=50]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile010.png" type="Texture" id=51]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile011.png" type="Texture" id=52]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile012.png" type="Texture" id=53]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile013.png" type="Texture" id=54]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile014.png" type="Texture" id=55]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Golpeado/tile015.png" type="Texture" id=56]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile000.png" type="Texture" id=57]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile001.png" type="Texture" id=58]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile002.png" type="Texture" id=59]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile003.png" type="Texture" id=60]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile004.png" type="Texture" id=61]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile005.png" type="Texture" id=62]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile006.png" type="Texture" id=63]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile007.png" type="Texture" id=64]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile008.png" type="Texture" id=65]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile009.png" type="Texture" id=66]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile010.png" type="Texture" id=67]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile011.png" type="Texture" id=68]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Muerte/tile012.png" type="Texture" id=69]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile000.png" type="Texture" id=70]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile001.png" type="Texture" id=71]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile002.png" type="Texture" id=72]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile003.png" type="Texture" id=73]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile004.png" type="Texture" id=74]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile005.png" type="Texture" id=75]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile006.png" type="Texture" id=76]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile007.png" type="Texture" id=77]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile008.png" type="Texture" id=78]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile009.png" type="Texture" id=79]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile010.png" type="Texture" id=80]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile011.png" type="Texture" id=81]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile012.png" type="Texture" id=82]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile013.png" type="Texture" id=83]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile014.png" type="Texture" id=84]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile015.png" type="Texture" id=85]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile016.png" type="Texture" id=86]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile017.png" type="Texture" id=87]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile018.png" type="Texture" id=88]
+[ext_resource path="res://Art/Foes/EsqueletoVerde/Caminando/tile019.png" type="Texture" id=89]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -99,30 +99,30 @@ height = 18.1376
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "Normal",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "Ataque",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "Normal",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "Golpeado",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
 "loop": false,
 "name": "Muerte",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ) ],
+"frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ) ],
 "loop": true,
 "name": "Caminando",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 77 ), ExtResource( 43 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ) ],
-"loop": true,
-"name": "Golpeado",
-"speed": 12.0
 } ]
 
 [node name="EnemyEsquletoVerde" type="KinematicBody2D"]
@@ -134,7 +134,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-puntaje = 0
+puntaje = 100
 
 [node name="rayAtaqueDer" type="RayCast2D" parent="." index="0"]
 
@@ -186,7 +186,8 @@ vida = 3
 position = Vector2( -2.93176, 3.9524 )
 rotation = -0.00508529
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+disabled = true
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="SpriteAnimatedController" parent="." index="7" instance=ExtResource( 4 )]
 

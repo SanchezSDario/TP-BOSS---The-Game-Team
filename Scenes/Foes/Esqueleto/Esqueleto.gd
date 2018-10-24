@@ -29,6 +29,7 @@ func _ready():
 	AnimationController = get_node("SpriteAnimatedController")
 	collisionShape = get_node("CollisionShape2D")
 	life = get_node("Life")
+	
 
 
 

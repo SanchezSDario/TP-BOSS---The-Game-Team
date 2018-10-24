@@ -54,6 +54,7 @@ func golpieAlguien(ray):
 		ray.enabled = false
 		CharacterController.Golpie(ray.get_collider(),"Enemy",self)
 		
+		
 func colisionAtaque():
 	if AnimationController.Flip():
 		Ataque(rayder)

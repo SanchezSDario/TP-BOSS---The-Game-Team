@@ -9,7 +9,8 @@ var rayAtaqueIzq
 var voyAtacar = false
 var estoyMuriendo = false
 var timer
-export(PackedScene) var Esqueleto
+var esqueleto
+var siguiente = 0
 export var puntaje = 0
 func _ready():
 	timer = Timer.new()
@@ -22,6 +23,7 @@ func _ready():
 	CharacterController = get_node("CharacterController")
 	rayAtaqueDer = get_node("rayAtaqueDer")
 	rayAtaqueIzq = get_node("rayAtaqueIzq")
+
 
 func _process(delta):
 	seguidores()
@@ -41,18 +43,18 @@ func seguidores():
 		AnimationController.Normal()
 		
 func Ataque():
-	voyAtacar = true
-	AnimationController.Ataque()
-	yield(get_tree().create_timer(1.2),"timeout")
-	var scene_instance = Esqueleto
-	scene_instance = scene_instance.instance()
-	scene_instance.set_name("Esqueleto")
-	add_child(scene_instance)
-	scene_instance.position.x += 100
-	scene_instance.scale = Vector2(1,1)
+	if siguiente <= 8:
+		voyAtacar = true
+		siguiente += 1
+		AnimationController.Ataque()
+		yield(get_tree().create_timer(1),"timeout")
+  ### poner bicho
+		esqueleto = get_node("EnemyEsquletoVerde" + String(siguiente))
+		esqueleto.visible = true 
+		esqueleto.collisionShape.disabled = false
 	if !estoyMuriendo:
 		AnimationController.animacion.play("Normal")
-	yield(get_tree().create_timer(1),"timeout")
+	yield(get_tree().create_timer(2),"timeout")
 	voyAtacar = false
 		
 		
