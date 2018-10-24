@@ -88,6 +88,7 @@ puntaje = 300
 position = Vector2( -0.633365, 0.977977 )
 rotation = 3.1341
 shape = SubResource( 1 )
+disabled = true
 
 [node name="Life" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -99,7 +100,7 @@ vida = 5
 
 frames = SubResource( 2 )
 animation = "Normal"
-frame = 3
+frame = 10
 playing = true
 
 [node name="CharacterController" parent="." index="3" instance=ExtResource( 40 )]
@@ -125,52 +126,49 @@ _sections_unfolded = [ "Transform" ]
 [node name="EnemyEsquletoVerde1" parent="." index="6" instance=ExtResource( 41 )]
 
 visible = false
-position = Vector2( -41.7583, 12.1829 )
-scale = Vector2( 1, 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
-
-[node name="EnemyEsquletoVerde7" parent="." index="7" instance=ExtResource( 41 )]
-
-visible = false
-position = Vector2( -53.2294, -22.9951 )
-scale = Vector2( 1, 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
-
-[node name="EnemyEsquletoVerde8" parent="." index="8" instance=ExtResource( 41 )]
-
-visible = false
-position = Vector2( -53.2294, -22.9951 )
-scale = Vector2( 1, 1 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
-
-[node name="EnemyEsquletoVerde2" parent="." index="9" instance=ExtResource( 41 )]
-
-visible = false
-position = Vector2( -53.2294, -22.9951 )
+position = Vector2( -31.3543, -8.02976 )
 scale = Vector2( 1, 1 )
 
-[node name="EnemyEsquletoVerde3" parent="." index="10" instance=ExtResource( 41 )]
+[node name="EnemyEsquletoVerde2" parent="." index="7" instance=ExtResource( 41 )]
 
 visible = false
-position = Vector2( -53.2294, -22.9951 )
+position = Vector2( -31.3543, -8.02976 )
 scale = Vector2( 1, 1 )
 
-[node name="EnemyEsquletoVerde4" parent="." index="11" instance=ExtResource( 41 )]
+[node name="EnemyEsquletoVerde3" parent="." index="8" instance=ExtResource( 41 )]
 
 visible = false
-position = Vector2( -53.2294, -22.9951 )
+position = Vector2( -31.3543, -8.02976 )
 scale = Vector2( 1, 1 )
 
-[node name="EnemyEsquletoVerde5" parent="." index="12" instance=ExtResource( 41 )]
+[node name="EnemyEsquletoVerde4" parent="." index="9" instance=ExtResource( 41 )]
 
 visible = false
-position = Vector2( -53.2294, -22.9951 )
+position = Vector2( -31.3543, -8.02976 )
 scale = Vector2( 1, 1 )
 
-[node name="EnemyEsquletoVerde6" parent="." index="13" instance=ExtResource( 41 )]
+[node name="EnemyEsquletoVerde5" parent="." index="10" instance=ExtResource( 41 )]
 
 visible = false
-position = Vector2( -53.2294, -22.9951 )
+position = Vector2( -31.3543, -8.02976 )
+scale = Vector2( 1, 1 )
+
+[node name="EnemyEsquletoVerde6" parent="." index="11" instance=ExtResource( 41 )]
+
+visible = false
+position = Vector2( -31.3543, -8.02976 )
+scale = Vector2( 1, 1 )
+
+[node name="EnemyEsquletoVerde7" parent="." index="12" instance=ExtResource( 41 )]
+
+visible = false
+position = Vector2( -31.3543, -8.02976 )
+scale = Vector2( 1, 1 )
+
+[node name="EnemyEsquletoVerde8" parent="." index="13" instance=ExtResource( 41 )]
+
+visible = false
+position = Vector2( -31.3543, -8.02976 )
 scale = Vector2( 1, 1 )
 
 

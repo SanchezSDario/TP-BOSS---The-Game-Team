@@ -50,6 +50,7 @@ func Ataque():
 		yield(get_tree().create_timer(1),"timeout")
   ### poner bicho
 		esqueleto = get_node("EnemyEsquletoVerde" + String(siguiente))
+		esqueleto.position.x += siguiente * -1
 		esqueleto.visible = true 
 		esqueleto.collisionShape.disabled = false
 	if !estoyMuriendo:

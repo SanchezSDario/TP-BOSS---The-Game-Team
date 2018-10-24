@@ -35,10 +35,11 @@ func _ready():
 func _process(delta):
 	if self.visible:
 		seguidores()
-		CharacterController.Gravedad()
+		collision = CharacterController.Gravedad()
 		Atacar(rayAtaqueDer)
 		Atacar(rayAtaqueIzq)
-
+		collision()
+		
 func borrar():
 	self.queue_free()
 
@@ -55,7 +56,11 @@ func seguidores():
 	else:
 		AnimationController.Normal()
 
-	
+func collision():
+	if self.collision != null and self.collision.collider.name.begins_with("Enemy"):
+		collisionShape.disabled = true
+	else:
+		collisionShape.disabled = false	
 
 func Atacar(ray):
 	if ray.is_colliding()  and ray.get_collider() != null and  ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
