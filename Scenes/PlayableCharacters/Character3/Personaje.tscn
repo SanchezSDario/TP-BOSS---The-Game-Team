@@ -162,7 +162,7 @@ height = 21.1384
 
 [node name="Player" type="KinematicBody2D"]
 
-scale = Vector2( 1.88816, 1.88816 )
+scale = Vector2( 2.29356, 2.29356 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -173,7 +173,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CharacterController" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( -3.25563, 0 )
-velocidadMovimiento = 2.5
+velocidadMovimiento = 3.0
 salto = 16.5
 gravedad = 10.0
 

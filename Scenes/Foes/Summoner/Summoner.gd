@@ -43,7 +43,7 @@ func seguidores():
 		AnimationController.Normal()
 		
 func Ataque():
-	if siguiente <= 8:
+	if siguiente < 8:
 		voyAtacar = true
 		siguiente += 1
 		AnimationController.Ataque()
