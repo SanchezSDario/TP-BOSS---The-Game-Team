@@ -162,7 +162,7 @@ height = 21.1384
 
 [node name="Player" type="KinematicBody2D"]
 
-scale = Vector2( 2.29356, 2.29356 )
+scale = Vector2( 2.24452, 2.24452 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -180,7 +180,7 @@ gravedad = 10.0
 [node name="RayCast2D" type="RayCast2D" parent="CharacterController" index="0"]
 
 position = Vector2( 0, -6 )
-scale = Vector2( 1, 7 )
+scale = Vector2( 1, 8 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( -17, 0 )
@@ -190,7 +190,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="RayCast2D2" type="RayCast2D" parent="CharacterController" index="1"]
 
 position = Vector2( 2, -6 )
-scale = Vector2( 1, 7 )
+scale = Vector2( 1, 8 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( 18, 0 )

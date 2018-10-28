@@ -107,11 +107,11 @@ func puedoSaltar():
 		puedoSaltar = false		
 
 func rebote():
-	if caida != null and caida.collider.name.begins_with("Enemy"):
+	if caida != null and caida.collider.name.begins_with("Enemy") and collision == null :
 		CharacterController.fuerzaSaltoRestante -= 3
-		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y:
+		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y  +80:
 			self.position.x += 3
-		elif self.position.y < caida.collider.position.y:
+		elif self.position.y < caida.collider.position.y +80 :
 			self.position.x -= 3
 func Mori():
 	self.queue_free()

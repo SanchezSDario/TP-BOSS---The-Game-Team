@@ -45,7 +45,6 @@ _sections_unfolded = [ "Cell", "Collision", "Occluder" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -76,7 +75,6 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
 
-editor/display_folded = true
 motion_scale = Vector2( 0.8, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 960, 0 )
@@ -270,7 +268,7 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 13 )
-_sections_unfolded = [ "Limit" ]
+_sections_unfolded = [ "Limit", "Transform" ]
 
 [node name="CanvasLayer" parent="." index="4" instance=ExtResource( 14 )]
 
@@ -280,7 +278,6 @@ position = Vector2( 4184.37, 109.15 )
 
 [node name="EnemigosEsqueletos" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( 342.676, 113.249 )
 
 [node name="EnemyEsqueleto4" parent="EnemigosEsqueletos" index="0" instance=ExtResource( 16 )]
@@ -327,8 +324,6 @@ position = Vector2( 207.269, 42.033 )
 position = Vector2( 487.682, 43.983 )
 
 [node name="Maguitos" type="Node2D" parent="." index="7"]
-
-editor/display_folded = true
 
 [node name="EnemyMaguito9" parent="Maguitos" index="0" instance=ExtResource( 17 )]
 

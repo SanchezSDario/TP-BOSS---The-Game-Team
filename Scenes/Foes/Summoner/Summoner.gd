@@ -50,6 +50,10 @@ func Ataque():
 		yield(get_tree().create_timer(1),"timeout")
   ### poner bicho
 		esqueleto = get_node("EnemyEsquletoVerde" + String(siguiente))
+		if AnimationController.Flip():
+			esqueleto.position.x = 31
+		else:
+			esqueleto.position.x = -31
 		esqueleto.position.x += siguiente * -1
 		esqueleto.visible = true 
 		esqueleto.collisionShape.disabled = false
