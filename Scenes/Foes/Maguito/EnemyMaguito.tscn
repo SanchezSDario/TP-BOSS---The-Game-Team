@@ -3,18 +3,18 @@
 [ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Foes/Maguito/Bala.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque1.png" type="Texture" id=4]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque2.png" type="Texture" id=5]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque3.png" type="Texture" id=6]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque4.png" type="Texture" id=7]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque5.png" type="Texture" id=8]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque6.png" type="Texture" id=9]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque9.png" type="Texture" id=10]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque7.png" type="Texture" id=11]
-[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque8.png" type="Texture" id=12]
-[ext_resource path="res://Art/Foes/Maguito/Normal/rogue like idle_Animation 1_0.png" type="Texture" id=13]
-[ext_resource path="res://Art/Foes/Maguito/Normal/rogue like idle_Animation 1_2.png" type="Texture" id=14]
-[ext_resource path="res://Art/Foes/Maguito/Normal/rogue like idle_Animation 1_1.png" type="Texture" id=15]
+[ext_resource path="res://Art/Foes/Maguito/Normal/rogue like idle_Animation 1_0.png" type="Texture" id=4]
+[ext_resource path="res://Art/Foes/Maguito/Normal/rogue like idle_Animation 1_2.png" type="Texture" id=5]
+[ext_resource path="res://Art/Foes/Maguito/Normal/rogue like idle_Animation 1_1.png" type="Texture" id=6]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque1.png" type="Texture" id=7]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque2.png" type="Texture" id=8]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque3.png" type="Texture" id=9]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque4.png" type="Texture" id=10]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque5.png" type="Texture" id=11]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque6.png" type="Texture" id=12]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque9.png" type="Texture" id=13]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque7.png" type="Texture" id=14]
+[ext_resource path="res://Art/Foes/Maguito/Ataque/Ataque8.png" type="Texture" id=15]
 [ext_resource path="res://Art/Foes/Maguito/Muerte/Muerte1.png" type="Texture" id=16]
 [ext_resource path="res://Art/Foes/Maguito/Muerte/Muerte2.png" type="Texture" id=17]
 [ext_resource path="res://Art/Foes/Maguito/Muerte/Muerte3.png" type="Texture" id=18]
@@ -32,17 +32,17 @@
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": false,
-"name": "Ataque",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Normal",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "Ataque",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Golpeado",
 "speed": 8.0
@@ -82,7 +82,7 @@ puntaje = 100
 
 frames = SubResource( 1 )
 animation = "Normal"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
