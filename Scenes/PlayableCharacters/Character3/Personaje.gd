@@ -14,6 +14,7 @@ var puedoMoverme = true
 var meGolpiaron = false
 var camera
 var timer
+var EnElAire
 
 func _ready():
 	ray = get_node("CharacterController/RayCast2D")
@@ -103,15 +104,15 @@ func puedoSaltar():
 	if caida != null :
 		puedoSaltar = true
 		apreteSaltar = false
-	else:
+	elif caida == null or caida != null and !caida.collider.name.begins_with("Enemy"):
 		puedoSaltar = false		
 
 func rebote():
-	if caida != null and caida.collider.name.begins_with("Enemy") and collision == null :
+	if caida != null and caida.collider.name.begins_with("Enemy")  :
 		CharacterController.fuerzaSaltoRestante -= 3
-		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y  +80:
+		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y  :
 			self.position.x += 3
-		elif self.position.y < caida.collider.position.y +80 :
+		elif self.position.y < caida.collider.position.y :
 			self.position.x -= 3
 func Mori():
 	self.queue_free()

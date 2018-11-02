@@ -12,6 +12,7 @@ var timer
 var esqueleto
 var siguiente = 0
 export var puntaje = 0
+export var cantidadEsqueletos = 0
 func _ready():
 	timer = Timer.new()
 	timer.wait_time = 15
@@ -33,17 +34,17 @@ func borrar():
 		
 	
 func seguidores():
-	if rayAtaqueDer.is_colliding() and rayAtaqueDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !rayAtaqueDer.get_collider().meMori():
+	if rayAtaqueDer.is_colliding() and rayAtaqueDer.get_collider() != null and rayAtaqueDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !rayAtaqueDer.get_collider().meMori():
 		AnimationController.setFlip(true)
 		Ataque()
-	elif rayAtaqueIzq.is_colliding() and rayAtaqueIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !rayAtaqueIzq.get_collider().meMori():
+	elif rayAtaqueIzq.is_colliding() and rayAtaqueIzq.get_collider() != null and rayAtaqueIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !rayAtaqueIzq.get_collider().meMori():
 		AnimationController.setFlip(false)
 		Ataque()
 	elif !voyAtacar:
 		AnimationController.Normal()
 		
 func Ataque():
-	if siguiente < 8:
+	if siguiente < cantidadEsqueletos:
 		voyAtacar = true
 		siguiente += 1
 		AnimationController.Ataque()
