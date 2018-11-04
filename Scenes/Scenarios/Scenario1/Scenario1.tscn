@@ -62,6 +62,4 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Minotaur" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 553.601, 257.016 )
-
 

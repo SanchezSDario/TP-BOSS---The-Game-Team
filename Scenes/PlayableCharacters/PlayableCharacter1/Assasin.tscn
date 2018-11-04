@@ -83,23 +83,28 @@ position = Vector2( 16.3514, -7.29968 )
 shape = SubResource( 1 )
 disabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="AttackCollision2" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -17.6196, -6.97617 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 shape = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( -3.05176e-05, 0 )
 frames = SubResource( 3 )
 animation = "Attack"
-frame = 9
 script = ExtResource( 27 )
 
-[node name="StateSystem" parent="." index="3" instance=ExtResource( 28 )]
+[node name="StateSystem" parent="." index="4" instance=ExtResource( 28 )]
 
-[node name="GravitySystem" parent="." index="4" instance=ExtResource( 29 )]
+[node name="GravitySystem" parent="." index="5" instance=ExtResource( 29 )]
 
-[node name="MovingSystem" type="Node" parent="." index="5"]
+[node name="MovingSystem" type="Node" parent="." index="6"]
 
 script = ExtResource( 30 )
 

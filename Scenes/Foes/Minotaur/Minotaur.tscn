@@ -1,96 +1,137 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=45 format=2]
 
-[ext_resource path="res://Scenes/Foes/Minotaur/MinotaurKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im1.png" type="Texture" id=2]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im2.png" type="Texture" id=3]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im3.png" type="Texture" id=4]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im4.png" type="Texture" id=5]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im5.png" type="Texture" id=6]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im6.png" type="Texture" id=7]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Idle/im7.png" type="Texture" id=8]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm1.png" type="Texture" id=9]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm2.png" type="Texture" id=10]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm3.png" type="Texture" id=11]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm4.png" type="Texture" id=12]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm5.png" type="Texture" id=13]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm6.png" type="Texture" id=14]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm7.png" type="Texture" id=15]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm8.png" type="Texture" id=16]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm9.png" type="Texture" id=17]
-[ext_resource path="res://Art/Sprites/RedMinotaur/Walk/wm10.png" type="Texture" id=18]
-[ext_resource path="res://Scenes/Foes/Minotaur/AnimatedSprite.gd" type="Script" id=19]
-[ext_resource path="res://Systems/GravitySystem/GravitySystem.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Foes/Minotaur/MovingSystem.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/Foes/Minotaur/Minotaur.gd" type="Script" id=1]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im1.png" type="Texture" id=2]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im2.png" type="Texture" id=3]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im3.png" type="Texture" id=4]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im4.png" type="Texture" id=5]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im5.png" type="Texture" id=6]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im6.png" type="Texture" id=7]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im7.png" type="Texture" id=8]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im8.png" type="Texture" id=9]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im9.png" type="Texture" id=10]
+[ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im10.png" type="Texture" id=11]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm1.png" type="Texture" id=12]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm2.png" type="Texture" id=13]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm3.png" type="Texture" id=14]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm4.png" type="Texture" id=15]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm5.png" type="Texture" id=16]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm6.png" type="Texture" id=17]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm7.png" type="Texture" id=18]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm8.png" type="Texture" id=19]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm9.png" type="Texture" id=20]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm10.png" type="Texture" id=21]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am1.png" type="Texture" id=22]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am2.png" type="Texture" id=23]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am3.png" type="Texture" id=24]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am4.png" type="Texture" id=25]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am5.png" type="Texture" id=26]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am6.png" type="Texture" id=27]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am7.png" type="Texture" id=28]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am8.png" type="Texture" id=29]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am9.png" type="Texture" id=30]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am10.png" type="Texture" id=31]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm1.png" type="Texture" id=32]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm2.png" type="Texture" id=33]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm3.png" type="Texture" id=34]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm4.png" type="Texture" id=35]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm5.png" type="Texture" id=36]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm6.png" type="Texture" id=37]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm7.png" type="Texture" id=38]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm8.png" type="Texture" id=39]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm9.png" type="Texture" id=40]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm10.png" type="Texture" id=41]
+[ext_resource path="res://Scenes/Foes/Minotaur/AnimatedSprite.gd" type="Script" id=42]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 7.0
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.8572, 17.1249 )
+radius = 11.9531
+height = 7.78082
 
-[node name="Minotaur" type="Node2D"]
+[node name="Minotaur" type="KinematicBody2D"]
 
-position = Vector2( 852.476, 292.178 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
-
+position = Vector2( 440.066, 310.916 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-JUMP_CONSTANT = 28
-jump_force = 0
+gravity = 20
 movement_speed = 1
+jump_force = 27
+JUMP_CONSTANT = 27
+life_points = 5
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
-animation = "Walk"
+animation = "Idle"
 frame = 1
-script = ExtResource( 19 )
+script = ExtResource( 42 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -1.25436, 2.09061 )
 shape = SubResource( 2 )
 
-[node name="GravitySystem" parent="KinematicBody2D" index="2" instance=ExtResource( 20 )]
+[node name="VissionRight" type="RayCast2D" parent="." index="2"]
 
-[node name="MovingSystem" type="Node" parent="KinematicBody2D" index="3"]
-
-script = ExtResource( 21 )
-
-[node name="RayCast2D" type="RayCast2D" parent="KinematicBody2D" index="4"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( -200, 0 )
-collision_mask = 1
-
-[node name="RayCast2D2" type="RayCast2D" parent="KinematicBody2D" index="5"]
-
-enabled = true
+position = Vector2( 2.38394, -0.340546 )
+enabled = false
 exclude_parent = true
 cast_to = Vector2( 200, 0 )
+collision_mask = 1
+
+[node name="AttackRight" type="RayCast2D" parent="." index="3"]
+
+scale = Vector2( 1, 10 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="AttackLeft" type="RayCast2D" parent="." index="4"]
+
+position = Vector2( -5.20422, 0.0332336 )
+scale = Vector2( 1, 10 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( -20, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="VissionLeft" type="RayCast2D" parent="." index="5"]
+
+position = Vector2( -4.76785, -0.340546 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( -200, 0 )
 collision_mask = 1
 
 
