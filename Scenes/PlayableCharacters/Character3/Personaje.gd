@@ -17,8 +17,8 @@ var timer
 var EnElAire
 
 func _ready():
-	ray = get_node("CharacterController/RayCast2D")
-	rayder = get_node("CharacterController/RayCast2D2")
+	ray = get_node("RayCast2D")
+	rayder = get_node("RayCast2D2")
 	CharacterController = get_node("CharacterController")
 	AnimationController = get_node("AnimationController")
 	collisionShape = get_node("CollisionShape2D")
@@ -28,6 +28,7 @@ func _ready():
 	timer.wait_time = 1.4
 	add_child(timer)
 	timer.connect("timeout",self,"Mori")
+	
 
 func _process(delta):
 	caer()
@@ -108,12 +109,23 @@ func puedoSaltar():
 		puedoSaltar = false		
 
 func rebote():
+	
 	if caida != null and caida.collider.name.begins_with("Enemy")  :
-		CharacterController.fuerzaSaltoRestante -= 3
-		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y  :
+		CharacterController.fuerzaSaltoRestante -= 1
+		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y   :
 			self.position.x += 3
 		elif self.position.y < caida.collider.position.y :
 			self.position.x -= 3
+	if caida != null and caida.collider.name.begins_with("EnemyEs"):
+		#Parche
+		print(caida.collider.position.y)
+		print(self.position.y)
+		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y +90  :
+			self.position.x += 3
+		elif self.position.y < caida.collider.position.y +90 :
+			self.position.x -= 3
+		
+		
 func Mori():
 	self.queue_free()
  	

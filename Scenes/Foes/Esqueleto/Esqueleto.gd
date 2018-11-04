@@ -12,6 +12,7 @@ var estoyAtacando = false
 var estoyMuriendo = false
 var timer
 var life
+
 export var puntaje = 0
 
 func _ready():

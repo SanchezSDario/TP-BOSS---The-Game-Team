@@ -293,57 +293,57 @@ position = Vector2( 342.676, 113.249 )
 [node name="EnemyEsqueleto4" parent="EnemigosEsqueletos" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 1157.49, 41.653 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto6" parent="EnemigosEsqueletos" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 1955.81, 48.48 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto7" parent="EnemigosEsqueletos" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 2325.02, 42.085 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto8" parent="EnemigosEsqueletos" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 2434, 39.576 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto" parent="EnemigosEsqueletos" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 974.614, 43.604 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto5" parent="EnemigosEsqueletos" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 1369.14, -44.6656 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto9" parent="EnemigosEsqueletos" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 2610.82, 35.651 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto10" parent="EnemigosEsqueletos" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 3477.82, 42.651 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto11" parent="EnemigosEsqueletos" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 5814.83, 39.6509 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto12" parent="EnemigosEsqueletos" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 5725.83, 43.651 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto13" parent="EnemigosEsqueletos" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 5277.71, 40.2072 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto2" parent="EnemigosEsqueletos" index="11" instance=ExtResource( 15 )]
 
@@ -393,11 +393,11 @@ position = Vector2( 636.635, 82.9519 )
 
 [node name="EnemySummoner" parent="Summoners" index="0" instance=ExtResource( 17 )]
 
-position = Vector2( 4184.37, 109.15 )
+position = Vector2( 4237.3, 107.475 )
 
 [node name="EnemySummoner2" parent="Summoners" index="1" instance=ExtResource( 17 )]
 
-position = Vector2( 5890.93, 106.695 )
+position = Vector2( 6790.83, 106.811 )
 
 [node name="Instanciadores" type="Node2D" parent="." index="8"]
 

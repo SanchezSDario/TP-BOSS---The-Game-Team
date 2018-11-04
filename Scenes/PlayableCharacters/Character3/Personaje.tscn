@@ -168,7 +168,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 
 [node name="CharacterController" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -176,26 +176,6 @@ position = Vector2( -3.25563, 0 )
 velocidadMovimiento = 3.0
 salto = 16.5
 gravedad = 10.0
-
-[node name="RayCast2D" type="RayCast2D" parent="CharacterController" index="0"]
-
-position = Vector2( 0, -6 )
-scale = Vector2( 1, 8 )
-enabled = false
-exclude_parent = true
-cast_to = Vector2( -17, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="RayCast2D2" type="RayCast2D" parent="CharacterController" index="1"]
-
-position = Vector2( 2, -6 )
-scale = Vector2( 1, 8 )
-enabled = false
-exclude_parent = true
-cast_to = Vector2( 18, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
 
 [node name="AnimationController" parent="." index="1" instance=ExtResource( 3 )]
 
@@ -230,8 +210,28 @@ _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -6.03894, -0.685375 )
+position = Vector2( -6.03894, -0.607484 )
 shape = SubResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="3"]
+
+position = Vector2( 0, -6 )
+scale = Vector2( 1, 8 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( -17, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="RayCast2D2" type="RayCast2D" parent="." index="4"]
+
+position = Vector2( 0, -6 )
+scale = Vector2( 1, 8 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 17, 0 )
+collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
 
