@@ -25,7 +25,10 @@ func collision():
 	if(collision != null):
 		match collision.collider.get_meta("Type"):
 			"Floor": jump = false
-			"Enemy": queue_free()
+			"Enemy": collide_enemy()
+
+func collide_enemy():
+	if(!attack): queue_free()
 
 # Executes attack logic
 func attack():
@@ -41,10 +44,16 @@ func attack_event():
 func turn_attack_on():
 	if(attack and 
 	  ($AnimatedSprite.frame > 4 and
-	   $AnimatedSprite.frame < 6)): $AttackCollision.disabled = false
+	   $AnimatedSprite.frame < 6)):
+		attack_left_or_right()
+
+func attack_left_or_right():
+	if($AnimatedSprite.flip_h): $AttackCollision2.disabled = false
+	else: $AttackCollision.disabled = false
 
 #Disable the attack collision
 func turn_attack_off():
 	if(attack and $AnimatedSprite.frame == 9):
 		$AttackCollision.disabled = true
+		$AttackCollision2.disabled = true
 		attack = false
