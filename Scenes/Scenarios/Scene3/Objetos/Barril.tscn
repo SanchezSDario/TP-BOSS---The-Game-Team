@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Scenarios/Scene3/Objetos/Barril.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Items/Pocion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Art/Nivel3/props.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Roto"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[node name="EnemyBarril" type="KinematicBody2D"]
+
+scale = Vector2( 1.67296, 1.67296 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+items = [ ExtResource( 2 ) ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 167, 28, 32, 39 )
+_sections_unfolded = [ "Region" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Roto = SubResource( 1 )
+blend_times = [  ]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="2"]
+
+position = Vector2( 1.37418, 0.88681 )
+build_mode = 0
+polygon = PoolVector2Array( -6.57687, 13.7187, -11.266, 9.45586, -12.3744, -1.88335, -9.98716, -11.4322, -2.21271, -10.954, 4.11682, -11.0613, 8.51531, -11.1686, 10.9009, -7.1693, 11.5829, -2.30964, 11.5829, 4.76671, 10.8156, 8.85906, 5.70018, 13.9745 )
+
+

@@ -15,8 +15,13 @@ var meGolpiaron = false
 var camera
 var timer
 var EnElAire
+var sprite
+var Life
+var vidas
 
 func _ready():
+	Life = get_node("Life")
+	vidas = Life.vida
 	ray = get_node("RayCast2D")
 	rayder = get_node("RayCast2D2")
 	CharacterController = get_node("CharacterController")
@@ -28,7 +33,7 @@ func _ready():
 	timer.wait_time = 1.4
 	add_child(timer)
 	timer.connect("timeout",self,"Mori")
-	
+	sprite= get_node("AnimationController/Sprite")
 
 func _process(delta):
 	caer()
@@ -44,14 +49,12 @@ func _process(delta):
 	rebote()
 
 func meMori():
-	if GameManager.vidas ==  0:
-		return true
-	else:
-		return false
+	return Life.vida ==  0
+	
 	
 
 func golpieAlguien(ray):
-	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):
+	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):
 
 		ray.enabled = false
 		CharacterController.Golpie(ray.get_collider(),"Enemy",self)
@@ -118,8 +121,6 @@ func rebote():
 			self.position.x -= 3
 	if caida != null and caida.collider.name.begins_with("EnemyEs"):
 		#Parche
-		print(caida.collider.position.y)
-		print(self.position.y)
 		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y +90  :
 			self.position.x += 3
 		elif self.position.y < caida.collider.position.y +90 :
@@ -127,16 +128,16 @@ func rebote():
 		
 		
 func Mori():
-	self.queue_free()
+	self.visible = false
  	
 func fuiGolpeado(golpeador):
-	CharacterController.fuerzaSaltoRestante = 0
 	print("AY")	
-	GameManager.vidas -= 1
+	vidas -= 1
+	Life.perdiVida()
 	meGolpiaron = true
-	AnimationController.Tirado(GameManager.vidas)
+	AnimationController.Tirado(Life.vida)
 	camera._on_Player_hit()
-	if GameManager.vidas == 0:
+	if Life.vida == 0:
 		timer.start()
 		
 		
@@ -145,6 +146,7 @@ func fuiGolpeado(golpeador):
 		
 func terminoCaida():
 	if AnimationController.terminoAnimacion("Tirado") :
+		CharacterController.gravedad = CharacterController.gravedadGuardada
 		meGolpiaron = false	
 
 		

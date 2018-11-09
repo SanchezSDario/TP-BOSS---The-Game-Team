@@ -3,11 +3,13 @@ extends Node2D
 export(float) var velocidadMovimiento = 0
 export(float)  var salto = 0
 export(float)  var gravedad = 0
+var gravedadGuardada
 var fuerzaSaltoRestante = 0
 var character
 
 var difGravity = 0
 func _ready():
+	gravedadGuardada = gravedad
 	character = get_parent()
 func _process(delta):
 	pass

@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Components/AnimationController.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/Character3/LightBandit_Spritesheet.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Camera2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -217,8 +218,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="3"]
 
-position = Vector2( 0, -6 )
-scale = Vector2( 1, 8 )
+position = Vector2( 0, -4 )
+scale = Vector2( 1, 9 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( -17, 0 )
@@ -227,8 +228,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RayCast2D2" type="RayCast2D" parent="." index="4"]
 
-position = Vector2( 0, -6 )
-scale = Vector2( 1, 8 )
+position = Vector2( 0, -4 )
+scale = Vector2( 1, 9 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( 17, 0 )
@@ -236,5 +237,9 @@ collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" parent="." index="5" instance=ExtResource( 5 )]
+
+[node name="Life" parent="." index="6" instance=ExtResource( 6 )]
+
+vida = 6
 
 

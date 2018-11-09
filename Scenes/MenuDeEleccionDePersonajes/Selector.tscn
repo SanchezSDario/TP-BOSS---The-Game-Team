@@ -7,7 +7,7 @@
 [sub_resource type="Theme" id=1]
 
 
-[node name="CanvasLayer" type="CanvasLayer" index="0"]
+[node name="CanvasLayer" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
