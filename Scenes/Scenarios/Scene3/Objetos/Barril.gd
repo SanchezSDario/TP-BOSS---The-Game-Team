@@ -24,6 +24,11 @@ func Animacion(delta):
 	
 
 func fuiGolpeado(golpeador):
+	var scene_instance = dropItem()
+	scene_instance = scene_instance.instance()
+	get_parent().add_child(scene_instance)
+	scene_instance.set_name("Item")
+	scene_instance.position = Vector2(self.position.x,self.position.y +10)
 	if !golpeador.sprite.flip_h:
 		movimiento *= -1
 	fuiGolpeado = true
@@ -32,11 +37,6 @@ func fuiGolpeado(golpeador):
 		
 func collision():
 	if collision != null and collision.collider.name.begins_with("Tile") and primerGolpe:
-		var scene_instance = dropItem()
-		scene_instance = scene_instance.instance()
-		scene_instance.set_name("Item")
-		add_child(scene_instance)
-		
 		collisionShape.disabled = true
 		set_process(false)
 			

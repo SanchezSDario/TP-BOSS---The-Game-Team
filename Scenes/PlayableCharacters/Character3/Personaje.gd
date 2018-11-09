@@ -21,7 +21,7 @@ var vidas
 
 func _ready():
 	Life = get_node("Life")
-	vidas = Life.vida
+
 	ray = get_node("RayCast2D")
 	rayder = get_node("RayCast2D2")
 	CharacterController = get_node("CharacterController")
@@ -36,6 +36,7 @@ func _ready():
 	sprite= get_node("AnimationController/Sprite")
 
 func _process(delta):
+	vidas = Life.vida
 	caer()
 	Movimientos()
 	golpieAlguien(ray)
@@ -113,7 +114,7 @@ func puedoSaltar():
 
 func rebote():
 	
-	if caida != null and caida.collider.name.begins_with("Enemy")  :
+	if caida != null and caida.collider.name.begins_with("Enemy") and !caida.collider.name.begins_with("EnemyBarril")  :
 		CharacterController.fuerzaSaltoRestante -= 1
 		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y   :
 			self.position.x += 3
@@ -132,7 +133,7 @@ func Mori():
  	
 func fuiGolpeado(golpeador):
 	print("AY")	
-	vidas -= 1
+	CharacterController.fuerzaSaltoRestante = 0
 	Life.perdiVida()
 	meGolpiaron = true
 	AnimationController.Tirado(Life.vida)
