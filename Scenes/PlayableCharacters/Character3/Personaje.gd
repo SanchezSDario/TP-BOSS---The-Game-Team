@@ -50,7 +50,7 @@ func _process(delta):
 	rebote()
 
 func meMori():
-	return Life.vida ==  0
+	return Life.vida <=  0
 	
 	
 
