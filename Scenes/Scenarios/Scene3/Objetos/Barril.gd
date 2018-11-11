@@ -7,6 +7,8 @@ var collisionShape
 var fuiGolpeado
 var primerGolpe = false
 export var items = []
+enum itemsAElegir{pocion,powerup}
+export(itemsAElegir) var itemElegido
 func _ready():
 	collisionShape = get_node("CollisionShape2D")
 	#self.collisionShape.disabled = true
@@ -49,5 +51,5 @@ func collision():
 		
 			
 func dropItem():
-	return items[0]		
+	return items[itemElegido]		
 		

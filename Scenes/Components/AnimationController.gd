@@ -15,26 +15,26 @@ func _ready():
 	
 func CaminandoDerecha():
 	sprite.flip_h = true
-	if animacion.current_animation != "Caminando" :
+	if animacion.current_animation != "Caminando" and animacion.current_animation != "Dash":
 		animacion.play("Caminando")
 	
 func CaminandoIzquierda():
 		sprite.flip_h = false
-		if animacion.current_animation != "Caminando" :
+		if animacion.current_animation != "Caminando" and animacion.current_animation != "Dash":
 			animacion.play("Caminando")
 	
 			
 func Normal():
-	if animacion.current_animation != "Normal" and animacion.current_animation != "Ataque" and animacion.current_animation != "Tirado" and animacion.current_animation != "Muerto" :
+	if animacion.current_animation != "Normal" and animacion.current_animation != "Ataque" and animacion.current_animation != "Tirado" and animacion.current_animation != "Muerto" and animacion.current_animation != "Dash":
 		animacion.play("Normal")
 		
 
 func Ataque():
-	if animacion.current_animation != "Ataque":
+	if animacion.current_animation != "Ataque"and animacion.current_animation != "Dash":
 		animacion.play("Ataque")
 	
 func Salto(estoyEnElAire):
-	if animacion.current_animation != "Salto" and animacion.current_animation != "Ataque" and estoyEnElAire and animacion.current_animation != "Tirado" and animacion.current_animation != "Muerto":
+	if animacion.current_animation != "Salto" and animacion.current_animation != "Ataque" and estoyEnElAire and animacion.current_animation != "Tirado" and animacion.current_animation != "Muerto"and animacion.current_animation != "Dash":
 		animacion.play("Salto")	
 
 func Tirado(vida):

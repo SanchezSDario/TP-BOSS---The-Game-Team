@@ -18,10 +18,13 @@ var EnElAire
 var sprite
 var Life
 var vidas
+var useDash
+var timerDash
+var stopDash = true
 
 func _ready():
+	
 	Life = get_node("Life")
-
 	ray = get_node("RayCast2D")
 	rayder = get_node("RayCast2D2")
 	CharacterController = get_node("CharacterController")
@@ -34,6 +37,12 @@ func _ready():
 	add_child(timer)
 	timer.connect("timeout",self,"Mori")
 	sprite= get_node("AnimationController/Sprite")
+	timerDash = Timer.new()
+	timerDash.wait_time = 0.3
+	timerDash.connect("timeout",self,"terminoDash")
+	add_child(timerDash)
+	#self.remove_child(camera)
+	#get_parent().add_child(camera)
 
 func _process(delta):
 	vidas = Life.vida
@@ -48,6 +57,8 @@ func _process(delta):
 	terminoCaida()
 	teclaAtaque()
 	rebote()
+	Dash()
+	
 
 func meMori():
 	return Life.vida <=  0
@@ -68,20 +79,44 @@ func colisionAtaque():
 		Ataque(ray)
 		
 func Movimientos():
-	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron and !meMori():
+	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron and !meMori() and !useDash:
 		collision = CharacterController.Movimiento(1)	
 		AnimationController.CaminandoDerecha()
 		collisionShape.position.x = -5
 		
-	elif Input.is_action_pressed("ui_left") and puedoMoverme and !meGolpiaron and !meMori():
+	elif Input.is_action_pressed("ui_left") and puedoMoverme and !meGolpiaron and !meMori() and !useDash:
 		collision = CharacterController.Movimiento(-1)	
 		AnimationController.CaminandoIzquierda()
 		collisionShape.position.x = 1
 	else:
 		AnimationController.Normal()
+
+func terminoDash():
+	useDash = false
+	stopDash = true
+	self.collisionShape.disabled = false
+	self.CharacterController.gravedad = self.CharacterController.gravedadGuardada
+	
+
+func Dash():
+	if Input.is_action_just_pressed("ui_control") and !meMori() and Life.powerUp > 0:	
+		Life.powerUp -= 1
+		AnimationController.sprite.emitir()
+		CharacterController.fuerzaSaltoRestante = 0
+		CharacterController.gravedad = 0
+		collisionShape.disabled = true
+		useDash = true
+		stopDash = false
+		timerDash.start()
+		AnimationController.animacion.play("Dash")
+	if !stopDash and AnimationController.sprite.flip_h:
+		CharacterController.Movimiento(5)
+	elif !stopDash:
+		CharacterController.Movimiento(-5)
+		
 		
 func teclaAtaque():
-	if Input.is_action_just_pressed("ui_accept")  and !meGolpiaron and !meMori() :
+	if Input.is_action_just_pressed("ui_accept")  and !meGolpiaron and !meMori() and !useDash :
 		AnimationController.Ataque()
 		colisionAtaque()
 
@@ -147,7 +182,6 @@ func fuiGolpeado(golpeador):
 		
 func terminoCaida():
 	if AnimationController.terminoAnimacion("Tirado") :
-		CharacterController.gravedad = CharacterController.gravedadGuardada
 		meGolpiaron = false	
 
 		

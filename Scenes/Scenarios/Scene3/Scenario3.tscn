@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/PonerPersonajeElegido.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Foes/Summoner/Summoner.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Foes/InstanciadoresDeEnemigos/InstanciadorDeEsqueletos.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Items/PocionDash.tscn" type="PackedScene" id=18]
 
 [node name="Scenario3" type="Node" index="0"]
 
@@ -173,10 +174,11 @@ position = Vector2( -342.676, -113.249 )
 [node name="EnemyBarril" parent="Elementos/Barriles" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( 3347.57, 168.434 )
+itemElegido = 1
 
 [node name="EnemyBarril2" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]
 
-position = Vector2( 3446.57, 167.787 )
+position = Vector2( 3435.48, 168.789 )
 
 [node name="CajasTriple" type="Node2D" parent="Elementos" index="5"]
 
@@ -196,6 +198,8 @@ position = Vector2( 2067.82, 183.677 )
 position = Vector2( 2084.71, 152.487 )
 
 [node name="Casas" type="Node2D" parent="Elementos" index="6"]
+
+editor/display_folded = true
 
 [node name="Casa7" parent="Elementos/Casas" index="0" instance=ExtResource( 10 )]
 
@@ -254,6 +258,7 @@ position = Vector2( 7.16238, -12.7234 )
 
 [node name="EnemigosEsqueletos" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 342.676, 113.249 )
 
 [node name="EnemyEsqueleto4" parent="EnemigosEsqueletos" index="0" instance=ExtResource( 14 )]
@@ -321,6 +326,8 @@ position = Vector2( 487.682, 43.983 )
 
 [node name="Maguitos" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
+
 [node name="EnemyMaguito9" parent="Maguitos" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 4397.56, 82.5503 )
@@ -355,6 +362,8 @@ position = Vector2( 636.635, 82.9519 )
 
 [node name="Summoners" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
+
 [node name="EnemySummoner" parent="Summoners" index="0" instance=ExtResource( 16 )]
 
 position = Vector2( 4237.3, 107.475 )
@@ -368,5 +377,17 @@ position = Vector2( 6705.51, 112.351 )
 [node name="InstanciadorDeEsqueletos2" parent="Instanciadores" index="0" instance=ExtResource( 17 )]
 
 position = Vector2( 5402.61, -52.8617 )
+
+[node name="Pocion" parent="." index="8" instance=ExtResource( 18 )]
+
+position = Vector2( -425.687, 181.103 )
+
+[node name="Pocion2" parent="." index="9" instance=ExtResource( 18 )]
+
+position = Vector2( -350.721, 182.43 )
+
+[node name="Pocion3" parent="." index="10" instance=ExtResource( 18 )]
+
+position = Vector2( -385.882, 181.103 )
 
 

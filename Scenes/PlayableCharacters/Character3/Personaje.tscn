@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Components/AnimationController.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/Character3/LightBandit_Spritesheet.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/PlayableCharacters/Character3/Camera2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlayableCharacters/Character3/Sprite.gd" type="Script" id=5]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/Character3/probando2.png" type="Texture" id=6]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/Character3/probando.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/PlayableCharacters/Character3/Camera2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -47,7 +50,25 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 
-resource_name = "Dañado"
+resource_name = "Dash"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10 ]
+}
+
+[sub_resource type="Animation" id=4]
+
 length = 0.1
 loop = false
 step = 0.1
@@ -64,7 +85,7 @@ tracks/0/keys = {
 "values": [ 32 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
 length = 1.0
 loop = true
@@ -82,9 +103,8 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource_name = "Muerto"
 length = 1.5
 loop = false
 step = 0.1
@@ -101,7 +121,7 @@ tracks/0/keys = {
 "values": [ 38, 39, 38, 39, 38, 39, 38, 39 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 0.7
 loop = true
@@ -119,9 +139,8 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource_name = "Salto"
 length = 0.1
 loop = false
 step = 0.1
@@ -138,7 +157,7 @@ tracks/0/keys = {
 "values": [ 37 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 0.6
 loop = false
@@ -156,13 +175,113 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27, 28, 29, 30, 31 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="Gradient" id=10]
+
+offsets = PoolRealArray( 0, 0.467456, 0.905325 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.591176, 1, 1, 1, 0.11051 )
+
+[sub_resource type="GradientTexture" id=11]
+
+flags = 4
+gradient = SubResource( 10 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=12]
+
+render_priority = 0
+trail_divisor = 15
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( -60, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color_ramp = SubResource( 11 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 100.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
+
+[sub_resource type="Gradient" id=14]
+
+offsets = PoolRealArray( 0.0236686, 0.408284, 0.739645, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.707176, 1, 1, 1, 0.430941, 1, 1, 1, 0.127059 )
+
+[sub_resource type="GradientTexture" id=15]
+
+flags = 4
+gradient = SubResource( 14 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=16]
+
+render_priority = 0
+trail_divisor = 10
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 60, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color_ramp = SubResource( 15 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Flags", "Spread", "Trail" ]
+
+[sub_resource type="CapsuleShape2D" id=13]
 
 custom_solver_bias = 0.0
 radius = 3.371
 height = 21.1384
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 scale = Vector2( 2.24452, 2.24452 )
 input_pickable = false
@@ -193,33 +312,83 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Ataque = SubResource( 1 )
 anims/Caminando = SubResource( 2 )
-"anims/Dañado" = SubResource( 3 )
-anims/Idle = SubResource( 4 )
-anims/Muerto = SubResource( 5 )
-anims/Normal = SubResource( 6 )
-anims/Salto = SubResource( 7 )
-anims/Tirado = SubResource( 8 )
+anims/Dash = SubResource( 3 )
+"anims/Dañado" = SubResource( 4 )
+anims/Idle = SubResource( 5 )
+anims/Muerto = SubResource( 6 )
+anims/Normal = SubResource( 7 )
+anims/Salto = SubResource( 8 )
+anims/Tirado = SubResource( 9 )
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 [node name="Sprite" type="Sprite" parent="AnimationController" index="1"]
 
+self_modulate = Color( 1, 0.9375, 0.9375, 1 )
 scale = Vector2( 0.802067, 0.802067 )
 texture = ExtResource( 4 )
-flip_h = true
 vframes = 7
 hframes = 8
-_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+frame = 10
+script = ExtResource( 5 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="ParticlesDer" type="Particles2D" parent="AnimationController/Sprite" index="0"]
+
+position = Vector2( -2.516, 3.05515 )
+emitting = false
+amount = 4
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 1
+process_material = SubResource( 12 )
+texture = ExtResource( 6 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="ParticlesIzq" type="Particles2D" parent="AnimationController/Sprite" index="1"]
+
+position = Vector2( 3.23488, 2.33629 )
+emitting = false
+amount = 4
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 1
+process_material = SubResource( 16 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -6.03894, -0.607484 )
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="3"]
 
-position = Vector2( 0, -4 )
-scale = Vector2( 1, 9 )
+position = Vector2( 0, -3 )
+scale = Vector2( 1, 10 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( -17, 0 )
@@ -228,18 +397,19 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RayCast2D2" type="RayCast2D" parent="." index="4"]
 
-position = Vector2( 0, -4 )
-scale = Vector2( 1, 9 )
+position = Vector2( 0, -3 )
+scale = Vector2( 1, 10 )
 enabled = false
 exclude_parent = true
 cast_to = Vector2( 17, 0 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Camera2D" parent="." index="5" instance=ExtResource( 5 )]
+[node name="Camera2D" parent="." index="5" instance=ExtResource( 8 )]
 
-[node name="Life" parent="." index="6" instance=ExtResource( 6 )]
+[node name="Life" parent="." index="6" instance=ExtResource( 9 )]
 
 vida = 6
+powerUp = 0
 
 
