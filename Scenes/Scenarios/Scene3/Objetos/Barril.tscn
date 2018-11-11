@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/Objetos/Barril.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Items/Pocion.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Items/PocionDash.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Art/Nivel3/props.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/Nivel3/props.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -33,12 +34,12 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-items = [ ExtResource( 2 ), ExtResource( 3 ) ]
-itemElegido = 0
+items = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+itemElegido = 2
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 167, 28, 32, 39 )
 _sections_unfolded = [ "Region" ]

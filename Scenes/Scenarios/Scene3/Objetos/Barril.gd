@@ -7,10 +7,12 @@ var collisionShape
 var fuiGolpeado
 var primerGolpe = false
 export var items = []
-enum itemsAElegir{pocion,powerup}
+enum itemsAElegir{pocion,powerup,esqueleto}
 export(itemsAElegir) var itemElegido
+var sprite
 func _ready():
 	collisionShape = get_node("CollisionShape2D")
+	sprite = get_node("Sprite")
 	#self.collisionShape.disabled = true
 	
 
@@ -30,8 +32,8 @@ func fuiGolpeado(golpeador):
 		var scene_instance = dropItem()
 		scene_instance = scene_instance.instance()
 		get_parent().add_child(scene_instance)
-		scene_instance.set_name("Item")
-		scene_instance.position = Vector2(self.position.x,self.position.y +10)
+		scene_instance.set_name("EnemyItem")
+		scene_instance.position = posicion()
 	if !golpeador.sprite.flip_h:
 		movimiento *= -1
 	fuiGolpeado = true
@@ -52,4 +54,10 @@ func collision():
 			
 func dropItem():
 	return items[itemElegido]		
+	
+func posicion():
+	if itemElegido == itemsAElegir.esqueleto:
+		return Vector2(self.position.x,self.position.y -10)
+	else:
+		return Vector2(self.position.x,self.position.y +10)
 		
