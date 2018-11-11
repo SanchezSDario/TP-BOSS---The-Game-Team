@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/PonerPersonajeElegido.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Scenes/Foes/InstanciadoresDeEnemigos/InstanciadorDeEsqueletos.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Items/PocionDash.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Scenarios/Scene3/AreaBoss.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Foes/BOSS/BOSS3.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -415,5 +416,9 @@ script = ExtResource( 19 )
 
 position = Vector2( 8505.49, -225.582 )
 shape = SubResource( 1 )
+
+[node name="KinematicBody2D" parent="." index="10" instance=ExtResource( 20 )]
+
+position = Vector2( -498.451, -235.985 )
 
 
