@@ -12,19 +12,19 @@ var jump
 var attack
 var caida
 var block
+var muerto
 var soporte
 var resistencia = -2
 var apreteSaltar
 var puedoMoverme = true
 var meGolpiaron = false
 var puedoSaltar = false
+var timer
 
 func _ready():
 	name = "PersonajeCaballero"
 	vidas = $Life.vida
 	Life = $Life
-#	$AttackCollision2.disabled = true
-#	$AttackCollision.disabled = true
 	attack = false
 	jump = false
 	set_meta("Type", "Player")
@@ -109,14 +109,25 @@ func jump():
 func fuiGolpeado(golpeador):
 	if(!block):
 		$CharacterController.fuerzaSaltoRestante = 0
-		print("AY")
-		GameManager.vidas -= 1
+		Life.perdiVida()
+		print(Life.vida)
 		$Camera2D._on_Player_hit()
 		meGolpiaron = true
 		yield(get_tree().create_timer(0.5),"timeout")
 		meGolpiaron = false
+		if Life.vida == 0: morir()
 	else:
 		soporte = true
+
+func morir():
+	muerto = true
+	$CharacterController.gravedad = 0
+	$CollisionShape2D.disabled = true
+	$AttackCollisionIzq.enabled = false
+	$AttackCollisionDer.enabled = false
+	name = "Muerto"
+	yield(get_tree().create_timer(5),"timeout")
+	queue_free()
 
 func soportar_golpe(delta):
 	if(soporte):

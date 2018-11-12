@@ -6,8 +6,10 @@ func _ready():
 	caster = get_parent()
 
 func update_state():
-	if(!caster.block):
-		attack_state_handler()
+	if(!caster.muerto):
+		if(!caster.block):
+			attack_state_handler()
+	else: caster.state_identifier = "Death"
 
 func attack_state_handler():
 	if(!caster.attack):
