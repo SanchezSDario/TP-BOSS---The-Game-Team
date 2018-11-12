@@ -95,7 +95,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 13.0565, 32.7901 )
 
-[node name="Assasin" type="KinematicBody2D" index="0"]
+[node name="Assasin" type="KinematicBody2D"]
 
 position = Vector2( 363.269, 416.026 )
 input_pickable = false

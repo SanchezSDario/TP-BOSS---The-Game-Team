@@ -8,6 +8,7 @@ export (int) var movement_speed
 var vidas
 var Life
 var collision
+var atacando
 var jump
 var attack
 var caida

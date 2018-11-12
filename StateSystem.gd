@@ -21,7 +21,7 @@ func movement_state_handler():
 		idle_state()
 		jump_state()
 		walk_state()
-	else: hit_state()
+	elif(!caster.attack): hit_state()
 
 func idle_state(): 
 	if(InputSystem.not_walking()): caster.state_identifier = "Idle"
