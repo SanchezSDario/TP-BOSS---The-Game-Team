@@ -29,7 +29,15 @@ func Normal():
 
 func setFlip(flip):
 	animacion.flip_h = flip
-		
+	
+func Ataque1():
+	if animacion.animation != "Ataque1" and !estoyMuriendo:
+		animacion.play("Ataque1")
+
+func Ataque2():
+	if animacion.animation != "Ataque2" and !estoyMuriendo:
+		animacion.play("Ataque2")
+						
 func Ataque():
 	if animacion.animation != "Ataque" and !estoyMuriendo:
 		animacion.play("Ataque")

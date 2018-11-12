@@ -5,6 +5,7 @@ var collision
 var sprite
 var timer
 var irALaIzquierda = true
+export var soyBalaBoss = false
 func _ready():
 	sprite = get_node("Sprite")
 	timer = Timer.new()
@@ -29,9 +30,14 @@ func Movimiento():
 	if irALaIzquierda:
 		collision = move_and_collide(Vector2(-velocidadDeMovimiento,0.1))
 		sprite.flip_h = true
+		if soyBalaBoss:
+			sprite.flip_h = false
+	
 	else:
 		collision = move_and_collide(Vector2(velocidadDeMovimiento,0.1))
 		sprite.flip_h = false
+		if soyBalaBoss:
+			sprite.flip_h = true
 		
 		
 

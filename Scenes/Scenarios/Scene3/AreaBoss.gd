@@ -10,5 +10,4 @@ func fijarCamara(target):
 	target.camera.current = false
 	cameraBoss.current = true
 	boss.set_process(true)
-	boss.start()
 	self.queue_free()

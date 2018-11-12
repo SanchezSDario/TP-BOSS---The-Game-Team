@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Foes/Maguito/Bala.gd" type="Script" id=1]
+[ext_resource path="res://Art/Foes/BOSS3/Fuego/tile000.png" type="Texture" id=2]
+[ext_resource path="res://Art/Foes/BOSS3/Fuego/tile001.png" type="Texture" id=3]
+[ext_resource path="res://Art/Foes/BOSS3/Fuego/tile002.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 4.12701
+height = 8.37102
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Normal",
+"speed": 8.0
+} ]
+
+[node name="Bala" type="KinematicBody2D"]
+
+scale = Vector2( 1.4202, 1.4202 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+velocidadDeMovimiento = 7
+soyBalaBoss = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+rotation = 1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 2 )
+animation = "Normal"
+frame = 2
+playing = true
+_sections_unfolded = [ "Animation", "Offset" ]
+
+
