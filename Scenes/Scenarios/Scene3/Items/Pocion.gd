@@ -16,8 +16,11 @@ func sumarVida(target):
 		else:
 			self.queue_free()
 	elif target.name.begins_with("Player") and potas == pociones.dash:
-		target.Life.powerUp += 1	
-		self.queue_free()			
+		if target.Life.powerUp < 3:
+			target.Life.powerUp += 1	
+			self.queue_free()		
+		else: 
+			queue_free()	
 	
 	
 

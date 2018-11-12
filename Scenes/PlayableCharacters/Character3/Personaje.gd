@@ -58,6 +58,7 @@ func _process(delta):
 	teclaAtaque()
 	rebote()
 	Dash()
+	testBoss()
 	
 
 func meMori():
@@ -123,6 +124,10 @@ func teclaAtaque():
 func caer():
 	caida = CharacterController.Gravedad()
 
+func testBoss():
+	if Input.is_action_just_pressed("0"):
+		print("fuim")
+		self.position.x = 8500
 		
 func Ataque(ray):
 	puedoMoverme = false

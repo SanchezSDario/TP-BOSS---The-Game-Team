@@ -111,7 +111,7 @@ position = Vector2( 1515.26, 47.2619 )
 
 [node name="Pozo2" parent="Elementos" index="2" instance=ExtResource( 7 )]
 
-position = Vector2( 5399.22, 48.9051 )
+position = Vector2( 5823.81, 48.2417 )
 
 [node name="Blouqe" type="Node2D" parent="Elementos" index="3"]
 
@@ -215,8 +215,6 @@ position = Vector2( 2084.71, 152.487 )
 
 [node name="Casas" type="Node2D" parent="Elementos" index="6"]
 
-editor/display_folded = true
-
 [node name="Casa7" parent="Elementos/Casas" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 2254.09, -7.85242 )
@@ -238,35 +236,43 @@ _sections_unfolded = [ "Region", "Transform" ]
 
 position = Vector2( 4916.15, -41.317 )
 
-[node name="Casa13" parent="Elementos/Casas" index="5" instance=ExtResource( 11 )]
+[node name="Casa14" parent="Elementos/Casas" index="5" instance=ExtResource( 11 )]
 
-position = Vector2( 6124.16, -41.317 )
+position = Vector2( 5508.22, -45.0993 )
 
-[node name="Casa6" parent="Elementos/Casas" index="6" instance=ExtResource( 11 )]
+[node name="Casa13" parent="Elementos/Casas" index="6" instance=ExtResource( 11 )]
+
+position = Vector2( 6119.52, -43.9707 )
+
+[node name="Casa6" parent="Elementos/Casas" index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 1983.92, -43.8875 )
 
-[node name="Casa2" parent="Elementos/Casas" index="7" instance=ExtResource( 11 )]
+[node name="Casa2" parent="Elementos/Casas" index="8" instance=ExtResource( 11 )]
 
 position = Vector2( 271.237, -44.1703 )
 
-[node name="Casa9" parent="Elementos/Casas" index="8" instance=ExtResource( 12 )]
+[node name="Casa9" parent="Elementos/Casas" index="9" instance=ExtResource( 12 )]
 
 position = Vector2( 3665.67, -11.2205 )
 
-[node name="Casa8" parent="Elementos/Casas" index="9" instance=ExtResource( 12 )]
+[node name="Casa15" parent="Elementos/Casas" index="10" instance=ExtResource( 12 )]
+
+position = Vector2( 5204.04, -13.676 )
+
+[node name="Casa8" parent="Elementos/Casas" index="11" instance=ExtResource( 12 )]
 
 position = Vector2( 2550.77, -10.6342 )
 
-[node name="Casa5" parent="Elementos/Casas" index="10" instance=ExtResource( 12 )]
+[node name="Casa5" parent="Elementos/Casas" index="12" instance=ExtResource( 12 )]
 
 position = Vector2( 1335.57, -12.499 )
 
-[node name="Casa4" parent="Elementos/Casas" index="11" instance=ExtResource( 12 )]
+[node name="Casa4" parent="Elementos/Casas" index="13" instance=ExtResource( 12 )]
 
 position = Vector2( 590.248, -13.1362 )
 
-[node name="Casa1" parent="Elementos/Casas" index="12" instance=ExtResource( 12 )]
+[node name="Casa1" parent="Elementos/Casas" index="14" instance=ExtResource( 12 )]
 
 position = Vector2( 7.16238, -12.7234 )
 
@@ -328,7 +334,7 @@ _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto13" parent="EnemigosEsqueletos" index="10" instance=ExtResource( 14 )]
 
-position = Vector2( 5427.67, 37.9351 )
+position = Vector2( 5399.81, 37.9351 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
 [node name="EnemyEsqueleto2" parent="EnemigosEsqueletos" index="11" instance=ExtResource( 14 )]
@@ -399,9 +405,17 @@ position = Vector2( 7003.66, -51.0567 )
 
 [node name="Pocion2" parent="." index="8" instance=ExtResource( 18 )]
 
-position = Vector2( -350.721, 182.43 )
+position = Vector2( -352.926, 178.019 )
 
-[node name="AreaBoss" type="Area2D" parent="." index="9"]
+[node name="Pocion3" parent="." index="9" instance=ExtResource( 18 )]
+
+position = Vector2( -405.721, 180.43 )
+
+[node name="Pocion4" parent="." index="10" instance=ExtResource( 18 )]
+
+position = Vector2( -295.457, 178.96 )
+
+[node name="AreaBoss" type="Area2D" parent="." index="11"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -417,8 +431,35 @@ script = ExtResource( 19 )
 position = Vector2( 8505.49, -225.582 )
 shape = SubResource( 1 )
 
-[node name="KinematicBody2D" parent="." index="10" instance=ExtResource( 20 )]
+[node name="EnemyBoss" parent="." index="12" instance=ExtResource( 20 )]
 
-position = Vector2( -498.451, -235.985 )
+position = Vector2( 8752.75, 132.547 )
+
+[node name="CameraBoss" type="Camera2D" parent="." index="13"]
+
+position = Vector2( 8565.86, 68.2107 )
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 0.6, 0.6 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Transform" ]
 
 
