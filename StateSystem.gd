@@ -7,9 +7,11 @@ func _ready():
 
 func update_state():
 	if(!caster.attack):
-		idle_state()
-		jump_state()
-		walk_state()
+		if(!caster.meGolpiaron):
+			idle_state()
+			jump_state()
+			walk_state()
+		else: hit_state()
 	else: attack_state()
 
 func idle_state(): 
@@ -27,3 +29,6 @@ func jump_state():
 
 func attack_state():
 	if(InputSystem.action_just_pressed("ui_attack")): caster.state_identifier = "Attack"
+
+func hit_state():
+	caster.state_identifier = "Hit"
