@@ -54,12 +54,6 @@
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=52]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=53]
 
-[sub_resource type="CapsuleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
-
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
@@ -102,15 +96,17 @@ func _ready():
 	frames.set_animation_speed(\"Walk\", 12)
 	frames.set_animation_speed(\"Attack\", 12)
 	frames.set_animation_speed(\"Hit\", 12)
-	frames.set_animation_speed(\"Death\", 8)
+	frames.set_animation_speed(\"Death\", 6)
 	frames.set_animation_loop(\"Attack\", false)
 	frames.set_animation_loop(\"Death\", false)
 	frames.set_animation_loop(\"Hit\", false)
 	play(\"Idle\")
 
 func _process(delta):
-	select_animation()
-	play(sprite_animation)
+	if(!minotaur.estoyMuriendo):
+		select_animation()
+		play(sprite_animation)
+	else: play(\"Death\")
 
 func select_animation():
 	match minotaur.state_identifier:
@@ -121,8 +117,15 @@ func select_animation():
 			flip_h = true
 			sprite_animation = \"Walk\"
 		\"Jump\": sprite_animation = \"Jump\"
-		\"Attack\": sprite_animation = \"Attack\"
+		\"Attack\": sprite_animation =\"Attack\"
+		\"Hit\": sprite_animation = \"Hit\"
 		_: sprite_animation = \"Idle\""
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 12.1937
+height = 40.2268
 
 [node name="EnemyMinotauro" type="KinematicBody2D"]
 
@@ -134,45 +137,27 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 puntaje = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-shape = SubResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
-
+position = Vector2( 1.92694, -1.13092 )
+scale = Vector2( 1.9203, 2.12564 )
 frames = SubResource( 2 )
 animation = "Idle"
 script = SubResource( 3 )
 
-[node name="VissionRight" type="RayCast2D" parent="." index="2"]
+[node name="Life" parent="." index="1" instance=ExtResource( 52 )]
 
-position = Vector2( 11.8718, -2.09503 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 200, 0 )
-collision_mask = 1
+vida = 2
+powerUp = 0
 
-[node name="VissionLeft" type="RayCast2D" parent="." index="3"]
+[node name="CharacterController" parent="." index="2" instance=ExtResource( 53 )]
 
-position = Vector2( -13.9668, -2.09503 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( -200, 0 )
-collision_mask = 1
+velocidadMovimiento = 2.0
+gravedad = 2.0
 
-[node name="AttackRight" type="RayCast2D" parent="." index="4"]
+[node name="AttackLeft" type="RayCast2D" parent="." index="3"]
 
-position = Vector2( 11.8718, -1.39668 )
-scale = Vector2( 1, 20 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 12, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="AttackLeft" type="RayCast2D" parent="." index="5"]
-
-position = Vector2( -12.5701, 1.3967 )
+position = Vector2( -16.857, 0.539337 )
 scale = Vector2( 1, 20 )
 enabled = true
 exclude_parent = true
@@ -180,13 +165,35 @@ cast_to = Vector2( -12, 0 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Life" parent="." index="6" instance=ExtResource( 52 )]
+[node name="AttackRight" type="RayCast2D" parent="." index="4"]
 
-powerUp = 0
+position = Vector2( 17.0161, -0.539307 )
+scale = Vector2( 1, 20 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 12, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
 
-[node name="CharacterController" parent="." index="7" instance=ExtResource( 53 )]
+[node name="VissionLeft" type="RayCast2D" parent="." index="5"]
 
-velocidadMovimiento = 2.0
-gravedad = 2.0
+position = Vector2( -19.1111, -0.38028 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -200, 0 )
+collision_mask = 1
+
+[node name="VissionRight" type="RayCast2D" parent="." index="6"]
+
+position = Vector2( 18.7308, -1.23764 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 200, 0 )
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="7"]
+
+position = Vector2( -1.99509, 3.72647 )
+shape = SubResource( 1 )
 
 

@@ -20,8 +20,8 @@ func _ready():
 	name = "PersonajeCaballero"
 	vidas = $Life.vida
 	Life = $Life
-	$AttackCollision2.disabled = true
-	$AttackCollision.disabled = true
+#	$AttackCollision2.disabled = true
+#	$AttackCollision.disabled = true
 	attack = false
 	jump = false
 	set_meta("Type", "Player")
@@ -29,12 +29,41 @@ func _ready():
 func _process(delta):
 	fall()
 	collision()
-	attack()
+	golpieAlguien($AttackCollisionIzq)
+	golpieAlguien($AttackCollisionDer)
+#	attack()
 	move()
 	puedoSaltar()
 	jump()
+	teclaAtaque()
 	$CharacterController.Caer(delta)
 	$StateSystem.update_state() #Update the state
+
+func golpieAlguien(ray):
+	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):
+
+		ray.enabled = false
+		$CharacterController.Golpie(ray.get_collider(),"Enemy",self)
+
+func colisionAtaque():
+	if $AnimatedSprite.flip_h:
+		Ataque($AttackCollisionIzq)
+	else:
+		Ataque($AttackCollisionDer)
+
+func teclaAtaque():
+	if Input.is_action_just_pressed("ui_attack")  and !meGolpiaron and !meMori() :
+		attack = true
+		colisionAtaque()
+
+func Ataque(ray):
+	puedoMoverme = false
+	yield(get_tree().create_timer(0.5),"timeout")
+	ray.enabled = true
+	yield(get_tree().create_timer(0.5),"timeout")
+	ray.enabled = false
+	attack = false
+	puedoMoverme = true
 
 func fall():
 	caida = $CharacterController.Gravedad()
@@ -46,7 +75,6 @@ func collision():
 	if(collision != null):
 		match collision.collider.get_meta("Type"):
 			"Floor": jump = false
-			"Enemy": collide_enemy()
 
 func move():
 	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron and !meMori():
@@ -94,8 +122,12 @@ func turn_attack_on():
 		attack_left_or_right()
 
 func attack_left_or_right():
-	if($AnimatedSprite.flip_h): $AttackCollision2.disabled = false
-	else: $AttackCollision.disabled = false
+	if($AnimatedSprite.flip_h):
+#		$CharacterController.Golpie(ray.get_collider(),"Enemy",self)
+		$AttackCollision2.disabled = false
+	else:
+#		$CharacterController.Golpie(ray.get_collider(),"Enemy",self)
+		$AttackCollision.disabled = false
 
 #Disable the attack collision
 func turn_attack_off():

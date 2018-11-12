@@ -1,28 +1,28 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki1.png" type="Texture" id=2]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki2.png" type="Texture" id=3]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki3.png" type="Texture" id=4]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki4.png" type="Texture" id=5]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka1.png" type="Texture" id=6]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka2.png" type="Texture" id=7]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka3.png" type="Texture" id=8]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka4.png" type="Texture" id=9]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka5.png" type="Texture" id=10]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka6.png" type="Texture" id=11]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka7.png" type="Texture" id=12]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka8.png" type="Texture" id=13]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka9.png" type="Texture" id=14]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka10.png" type="Texture" id=15]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw1.png" type="Texture" id=16]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw2.png" type="Texture" id=17]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw3.png" type="Texture" id=18]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw4.png" type="Texture" id=19]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw5.png" type="Texture" id=20]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw6.png" type="Texture" id=21]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw7.png" type="Texture" id=22]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw8.png" type="Texture" id=23]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw1.png" type="Texture" id=6]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw2.png" type="Texture" id=7]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw3.png" type="Texture" id=8]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw4.png" type="Texture" id=9]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw5.png" type="Texture" id=10]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw6.png" type="Texture" id=11]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw7.png" type="Texture" id=12]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw8.png" type="Texture" id=13]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka1.png" type="Texture" id=14]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka2.png" type="Texture" id=15]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka3.png" type="Texture" id=16]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka4.png" type="Texture" id=17]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka5.png" type="Texture" id=18]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka6.png" type="Texture" id=19]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka7.png" type="Texture" id=20]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka8.png" type="Texture" id=21]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka9.png" type="Texture" id=22]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka10.png" type="Texture" id=23]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj1.png" type="Texture" id=24]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj2.png" type="Texture" id=25]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj3.png" type="Texture" id=26]
@@ -46,14 +46,14 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Attack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "Attack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
@@ -67,15 +67,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.2626, 33.702 )
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 20.8526, 14.7551 )
+extents = Vector2( 13.0565, 32.7901 )
 
 [node name="Assasin" type="KinematicBody2D"]
 
@@ -142,22 +137,30 @@ script = ExtResource( 36 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
 
 position = Vector2( 4.85297, -17.1473 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
-[node name="AttackCollision" type="CollisionShape2D" parent="." index="7"]
-
-position = Vector2( 32.2046, -34.8001 )
-shape = SubResource( 3 )
-disabled = true
-
-[node name="AttackCollision2" type="CollisionShape2D" parent="." index="8"]
-
-position = Vector2( -12.443, -32.5352 )
-shape = SubResource( 3 )
-disabled = true
-
-[node name="Life" parent="." index="9" instance=ExtResource( 37 )]
+[node name="Life" parent="." index="7" instance=ExtResource( 37 )]
 
 powerUp = 0
+
+[node name="AttackCollisionIzq" type="RayCast2D" parent="." index="8"]
+
+position = Vector2( -8.88419, -32.8588 )
+scale = Vector2( 1, 10 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( -23, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="AttackCollisionDer" type="RayCast2D" parent="." index="9"]
+
+position = Vector2( 18.6163, -31.5648 )
+scale = Vector2( 1, 10 )
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 30, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 
