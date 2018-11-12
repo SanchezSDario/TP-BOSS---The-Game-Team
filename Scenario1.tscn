@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap/Tilling.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Foes/Minotaur/EnemyMinotauro.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Foes/Minotaur/Minotaur.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Systems/MovingSystem/MovingSystem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.tscn" type="PackedScene" id=6]
 
 [node name="Scenario1" type="Node" index="0"]
 
@@ -29,12 +31,14 @@ tile_data = PoolIntArray( 1376256, 0, 0, 1376257, 1, 0, 1376258, 1, 0, 1376259, 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Minotaur" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 87.2571, 278.28 )
+[node name="CanvasLayer" parent="." index="2" instance=ExtResource( 4 )]
 
-[node name="EnemyMinotauro" parent="." index="2" instance=ExtResource( 4 )]
+[node name="MovingSystem" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 488.108, 284.08 )
+[node name="Assasin" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 85.3733, 296.026 )
 
 

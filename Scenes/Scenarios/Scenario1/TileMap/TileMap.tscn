@@ -39,11 +39,10 @@ shape = SubResource( 1 )
 
 [node name="CentreGrass" type="Sprite" parent="Grass" index="1"]
 
-editor/display_folded = true
 position = Vector2( 148.781, 88.4003 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 16, 0, 16, 16 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
 "_edit_group_": true
@@ -66,10 +65,10 @@ shape = SubResource( 1 )
 [node name="RightGrass" type="Sprite" parent="Grass" index="2"]
 
 editor/display_folded = true
-position = Vector2( 200.113, 88.4355 )
+position = Vector2( 200.113, 88.0949 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 32, 0, 16, 16 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
 "_edit_group_": true
@@ -121,7 +120,7 @@ editor/display_folded = true
 position = Vector2( 148.797, 149.159 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 16, 48, 16, 16 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
 "_edit_group_": true
@@ -147,7 +146,7 @@ editor/display_folded = true
 position = Vector2( 198.961, 148.545 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 32, 48, 16, 16 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
 "_edit_group_": true

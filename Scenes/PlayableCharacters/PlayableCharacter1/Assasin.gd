@@ -5,21 +5,42 @@ var state_identifier
 export (int) var JUMP_CONSTANT
 export (int) var jump_force
 export (int) var movement_speed
+var vidas
+var Life
 var collision
 var jump
 var attack
+var caida
+var apreteSaltar
+var puedoMoverme = true
+var meGolpiaron = false
+var puedoSaltar = false
 
 func _ready():
+	name = "PersonajeCaballero"
+	vidas = $Life.vida
+	Life = $Life
+	$AttackCollision2.disabled = true
+	$AttackCollision.disabled = true
 	attack = false
 	jump = false
 	set_meta("Type", "Player")
 
 func _process(delta):
-	$GravitySystem.apply(delta) #Applies gravitation
+	fall()
 	collision()
 	attack()
-	$MovingSystem.execute()
+	move()
+	puedoSaltar()
+	jump()
+	$CharacterController.Caer(delta)
 	$StateSystem.update_state() #Update the state
+
+func fall():
+	caida = $CharacterController.Gravedad()
+
+func meMori():
+	return GameManager.vidas ==  0
 
 func collision():
 	if(collision != null):
@@ -27,8 +48,33 @@ func collision():
 			"Floor": jump = false
 			"Enemy": collide_enemy()
 
-func collide_enemy():
-	if(!attack): queue_free()
+func move():
+	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron and !meMori():
+		collision = $CharacterController.Movimiento(1)
+	elif Input.is_action_pressed("ui_left") and puedoMoverme and !meGolpiaron and !meMori():
+		collision = $CharacterController.Movimiento(-1)
+
+func puedoSaltar():
+	if caida != null:
+		puedoSaltar = true
+		apreteSaltar = false
+	elif caida == null or caida != null and !caida.collider.name.begins_with("Enemy"):
+		puedoSaltar = false
+
+func jump():
+	if Input.is_action_just_pressed("ui_up") and !meGolpiaron and !meMori():
+		$CharacterController.Salto(puedoSaltar)
+
+func fuiGolpeado(golpeador):
+	$CharacterController.fuerzaSaltoRestante = 0
+	print("AY")
+	GameManager.vidas -= 1
+	$Camera2D._on_Player_hit()
+	meGolpiaron = true
+	yield(get_tree().create_timer(0.5),"timeout")
+	meGolpiaron = false
+#	if GameManager.vidas == 0:
+#		timer.start()
 
 # Executes attack logic
 func attack():
