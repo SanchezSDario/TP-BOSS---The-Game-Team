@@ -59,7 +59,6 @@ func _process(delta):
 	rebote()
 	Dash()
 	testBoss()
-	
 
 func meMori():
 	return Life.vida <=  0
@@ -128,7 +127,7 @@ func caer():
 func testBoss():
 	if Input.is_action_just_pressed("0"):
 		print("fuim")
-		self.position.x = 8500
+		self.position.x = 5000
 		
 func Ataque(ray):
 	puedoMoverme = false
@@ -141,6 +140,7 @@ func Ataque(ray):
 func Cayendo():
 	if 	!puedoSaltar:
 		AnimationController.Salto(!puedoSaltar)
+
 		
 func Salto():
 	if Input.is_action_just_pressed("ui_up") and !meGolpiaron and !meMori():
@@ -158,15 +158,19 @@ func rebote():
 	if caida != null and caida.collider.name.begins_with("Enemy") and !caida.collider.name.begins_with("EnemyBarril")  :
 		CharacterController.fuerzaSaltoRestante -= 1
 		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y   :
+			self.position.y -= 6
 			self.position.x += 3
 		elif self.position.y < caida.collider.position.y :
 			self.position.x -= 3
+			self.position.y -= 6
 	if caida != null and caida.collider.name.begins_with("EnemyEs"):
 		#Parche
 		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y +90  :
+			self.position.y -= 6
 			self.position.x += 3
 		elif self.position.y < caida.collider.position.y +90 :
 			self.position.x -= 3
+			self.position.y -= 6
 		
 		
 func Mori():

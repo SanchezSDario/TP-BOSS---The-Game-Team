@@ -1,66 +1,60 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Foes/BOSS/BOSS3.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Foes/BOSS/BalaBoss.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=6]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile001.png" type="Texture" id=7]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=8]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=9]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile004.png" type="Texture" id=10]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile005.png" type="Texture" id=11]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile000.png" type="Texture" id=12]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile001.png" type="Texture" id=13]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile002.png" type="Texture" id=14]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile003.png" type="Texture" id=15]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile004.png" type="Texture" id=16]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile005.png" type="Texture" id=17]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile000.png" type="Texture" id=18]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile001.png" type="Texture" id=19]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile002.png" type="Texture" id=20]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile003.png" type="Texture" id=21]
-[ext_resource path="res://Scenes/Foes/BOSS/AreaAtaque1.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Objetos/Barril.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=7]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile001.png" type="Texture" id=8]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=9]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=10]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile004.png" type="Texture" id=11]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile005.png" type="Texture" id=12]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile000.png" type="Texture" id=13]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile001.png" type="Texture" id=14]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile002.png" type="Texture" id=15]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile003.png" type="Texture" id=16]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile004.png" type="Texture" id=17]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile005.png" type="Texture" id=18]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile000.png" type="Texture" id=19]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile001.png" type="Texture" id=20]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile002.png" type="Texture" id=21]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile003.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Foes/BOSS/AreaAtaque1.gd" type="Script" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Normal",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ) ],
-"loop": false,
-"name": "Ataque",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
 "loop": false,
 "name": "Salto",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "Ataque",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": false,
 "name": "Ataque2",
 "speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 23.5162, 91.4081 )
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="Animation" id=3]
 
-custom_solver_bias = 0.0
-radius = 7.863
-height = 23.5504
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "Golpeado"
 length = 0.8
 loop = false
 step = 0.1
@@ -77,6 +71,13 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.105469, 0.105469, 0.105469, 1 ), Color( 0.234375, 0.234375, 0.234375, 1 ), Color( 0.367188, 0.367188, 0.367188, 1 ), Color( 0.535156, 0.535156, 0.535156, 1 ), Color( 0.753906, 0.753906, 0.753906, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 3.47027
+height = 13.0582
+_sections_unfolded = [ "Resource" ]
+
 [node name="EnemyBoss3" type="KinematicBody2D"]
 
 scale = Vector2( 1.73382, 1.73382 )
@@ -84,29 +85,30 @@ z_index = 1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-collision/safe_margin = 0.08
+collision/safe_margin = 0.1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
 bala = ExtResource( 2 )
+barriles = ExtResource( 3 )
 
-[node name="Life" parent="." index="0" instance=ExtResource( 3 )]
+[node name="Life" parent="." index="0" instance=ExtResource( 4 )]
 
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 vida = 30
 powerUp = 0
 
-[node name="CharacterController" parent="." index="1" instance=ExtResource( 4 )]
+[node name="CharacterController" parent="." index="1" instance=ExtResource( 5 )]
 
 velocidadMovimiento = 6.0
-salto = 35.0
+salto = 33.0
 gravedad = 20.0
 
-[node name="AnimatedSpriteController" parent="." index="2" instance=ExtResource( 5 )]
+[node name="AnimatedSpriteController" parent="." index="2" instance=ExtResource( 6 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController" index="0"]
 
 frames = SubResource( 1 )
 animation = "Normal"
-frame = 1
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -119,28 +121,29 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 22 )
+script = ExtResource( 23 )
 _sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="collisionAtaque" type="CollisionShape2D" parent="Area2D" index="0"]
 
 position = Vector2( 1.73953, -58.0682 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
-
-position = Vector2( -0.295086, 14.355 )
-shape = SubResource( 3 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Golpeado = SubResource( 2 )
+anims/Golpeado = SubResource( 3 )
 blend_times = [  ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
+
+position = Vector2( -1.11962, 12.6891 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 

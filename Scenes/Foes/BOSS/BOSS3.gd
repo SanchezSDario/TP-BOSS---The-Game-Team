@@ -13,6 +13,8 @@ var puedoDisparar = true
 export(PackedScene) var bala 
 var caida
 var areaAtaque 
+export (PackedScene) var barriles
+var ultimo = 0
 func _ready():
 	areaAtaque =  get_node("Area2D")
 	animationPlayer = get_node("AnimationPlayer")
@@ -45,12 +47,38 @@ func collisionConPersonaje():
 func secuenciaDeAtaques():
 	if contador >= 0 and contador <= 1 :
 		salto()
-	if contador >= 1 and contador <= 2:
+	if contador >= 1 and contador <= 3:
 		Disparar()
-	if contador >= 2 and contador <=3:
+	if contador >= 3 and contador <=4:
 		salto()
-	if contador >= 2 and contador <=5:
-		Ataque()
+	if contador >= 4 and contador <=7:
+		Ataque()	
+	if contador >= 7 and contador <= 8:
+		salto()	
+	if contador >= 8 and contador <=10	:
+		caenBarriles()
+	if contador > 10:
+		contador = 0
+
+
+
+func caenBarriles():
+	if puedoDisparar:
+		AnimatedSpriteController.Ataque2()
+		ultimo += 1
+		puedoDisparar = false
+		yield(get_tree().create_timer(0.5),"timeout")
+		var scene_instance = barriles
+		scene_instance = scene_instance.instance()
+		scene_instance.set_name("EnemyBarriles" + String(ultimo))
+		get_parent().add_child(scene_instance)
+		scene_instance.position.x = player.position.x - 100
+		scene_instance.position.y -= 500
+		print(scene_instance.position)
+		idle()
+		puedoSaltar = true
+		yield(get_tree().create_timer(5),"timeout")
+		scene_instance.queue_free()
 
 func idle():
 	AnimatedSpriteController.Normal()
@@ -65,10 +93,10 @@ func Disparar():
 		scene_instance.set_name("Bala")
 		add_child(scene_instance)
 		if self.sprite.flip_h:
-			scene_instance.position.x += 20
+			scene_instance.position.x += 40
 			scene_instance.irALaIzquierda = false
 		else:
-			scene_instance.position.x -= 20
+			scene_instance.position.x -= 40
 		idle()
 		puedoSaltar = true
 			
@@ -76,11 +104,10 @@ func Disparar():
 func Ataque():
 	if puedoDisparar:
 		puedoDisparar = false
-		yield(get_tree().create_timer(1),"timeout")
 		AnimatedSpriteController.Ataque()
 		yield(get_tree().create_timer(0.5),"timeout")
 		areaAtaque.position.y = areaAtaque.posYInicial	
-		yield(get_tree().create_timer(1.5),"timeout")
+		yield(get_tree().create_timer(1),"timeout")
 		AnimatedSpriteController.animacion.play("Normal")
 		areaAtaque.position.y -= 1000
 		puedoSaltar = true
@@ -95,7 +122,7 @@ func salto():
 	AnimatedSpriteController.Salto()
 	puedoDisparar = true
 	CharacterController.Movimiento(((player.position - self.position  ).normalized()).x)
-	CharacterController.Salto(puedoSaltar)
+	CharacterController.SaltoEnemigo(puedoSaltar)
 	puedoSaltar = false
 		
 	
@@ -104,9 +131,11 @@ func salto():
 
 
 func fuiGolpeado(golpeador):
+	
 	if Life.vida <= 0:
 		self.queue_free()
 	else:
 		Life.vida -= 1
 		animationPlayer.play("Golpeado")
+		yield(get_tree().create_timer(0.2),"timeout")
 		

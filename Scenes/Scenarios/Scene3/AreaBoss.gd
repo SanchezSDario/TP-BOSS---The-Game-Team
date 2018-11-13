@@ -7,7 +7,8 @@ func _ready():
 	boss  = get_parent().get_node("EnemyBoss")
 	cameraBoss = get_parent().get_node("CameraBoss")
 func fijarCamara(target):
-	target.camera.current = false
-	cameraBoss.current = true
-	boss.set_process(true)
-	self.queue_free()
+	if target.name.begins_with("Player"):
+		target.camera.current = false
+		cameraBoss.current = true
+		boss.set_process(true)
+		self.queue_free()

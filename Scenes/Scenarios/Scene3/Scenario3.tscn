@@ -187,15 +187,16 @@ itemElegido = 0
 [node name="EnemyBarril2" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 3435.48, 168.789 )
+itemElegido = 2
 
-[node name="EnemyBarril5" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
+[node name="EnemyBarril3" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
-position = Vector2( 7477.75, 166.097 )
+position = Vector2( 7482.62, 166.068 )
+itemElegido = 2
 
 [node name="EnemyBarril4" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
 
 position = Vector2( 7280.86, 167.282 )
-itemElegido = 1
 
 [node name="CajasTriple" type="Node2D" parent="Elementos" index="5"]
 

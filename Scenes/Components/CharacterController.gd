@@ -28,7 +28,11 @@ func Movimiento(dir):
 func Salto(puedoSaltar):
 	if puedoSaltar:
 		fuerzaSaltoRestante = salto
-
+		
+func SaltoEnemigo(puedoSaltar):
+	if puedoSaltar and fuerzaSaltoRestante <= 0:
+		fuerzaSaltoRestante = salto
+	
 func Caer(delta):
 	if fuerzaSaltoRestante > 0:
 		fuerzaSaltoRestante -= (gravedad + salto)/2  * delta

@@ -22,7 +22,7 @@ animations = [ {
 
 [node name="Bala" type="KinematicBody2D"]
 
-scale = Vector2( 1.4202, 1.4202 )
+scale = Vector2( 2.26425, 2.26425 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -42,7 +42,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Normal"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Animation", "Offset" ]
 

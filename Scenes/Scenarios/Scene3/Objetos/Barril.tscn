@@ -35,7 +35,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 items = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
-itemElegido = 2
+itemElegido = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
