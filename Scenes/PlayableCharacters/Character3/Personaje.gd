@@ -64,7 +64,8 @@ func _process(delta):
 func meMori():
 	return Life.vida <=  0
 	
-	
+
+
 
 func golpieAlguien(ray):
 	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):

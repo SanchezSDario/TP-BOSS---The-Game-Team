@@ -49,7 +49,10 @@ func muerte():
 func Golpeado():
 	if animacion.animation != "Golpeado":
 		animacion.play("Golpeado")
-		
+	
+func Salto():
+	if animacion.animation != "Salto":
+		animacion.play("Salto")		
 func flipContrario():
 	if animacion.flip_h == true:
 		animacion.flip_h = false

@@ -9,11 +9,12 @@ var animationPlayer
 var player
 var puedoSaltar = true
 var contador = 0
-var timer
 var puedoDisparar = true
 export(PackedScene) var bala 
 var caida
+var areaAtaque 
 func _ready():
+	areaAtaque =  get_node("Area2D")
 	animationPlayer = get_node("AnimationPlayer")
 	CharacterController = get_node("CharacterController")
 	AnimatedSpriteController = get_node("AnimatedSpriteController")
@@ -23,14 +24,8 @@ func _ready():
 	set_process(false)
 	yield(get_tree().create_timer(0.2),"timeout")
 	player = get_parent().get_node("Player")
-	timer = Timer.new()
-	timer.wait_time = 0.5
-	add_child(timer)
-	timer.connect("timeout",self,"puedoDisparar")
 	
 
-func puedoDisparar():
-	puedoDisparar = true
 	
 func _process(delta):
 	contador += 1*delta
@@ -54,6 +49,8 @@ func secuenciaDeAtaques():
 		Disparar()
 	if contador >= 2 and contador <=3:
 		salto()
+	if contador >= 2 and contador <=5:
+		Ataque()
 
 func idle():
 	AnimatedSpriteController.Normal()
@@ -76,7 +73,17 @@ func Disparar():
 		puedoSaltar = true
 			
 			
-	
+func Ataque():
+	if puedoDisparar:
+		puedoDisparar = false
+		yield(get_tree().create_timer(1),"timeout")
+		AnimatedSpriteController.Ataque()
+		yield(get_tree().create_timer(0.5),"timeout")
+		areaAtaque.position.y = areaAtaque.posYInicial	
+		yield(get_tree().create_timer(1.5),"timeout")
+		AnimatedSpriteController.animacion.play("Normal")
+		areaAtaque.position.y -= 1000
+		puedoSaltar = true
 	
 func miFLip():
 	if player.position.x > self.position.x:
@@ -85,7 +92,8 @@ func miFLip():
 		self.sprite.flip_h = false		
 		
 func salto():
-	
+	AnimatedSpriteController.Salto()
+	puedoDisparar = true
 	CharacterController.Movimiento(((player.position - self.position  ).normalized()).x)
 	CharacterController.Salto(puedoSaltar)
 	puedoSaltar = false

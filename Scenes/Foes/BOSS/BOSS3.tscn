@@ -32,8 +32,13 @@ animations = [ {
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ) ],
-"loop": true,
+"loop": false,
 "name": "Ataque",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Salto",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
@@ -41,6 +46,17 @@ animations = [ {
 "name": "Ataque2",
 "speed": 8.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 23.5162, 91.4081 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 7.863
+height = 23.5504
 
 [sub_resource type="Animation" id=2]
 
@@ -61,26 +77,16 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.105469, 0.105469, 0.105469, 1 ), Color( 0.234375, 0.234375, 0.234375, 1 ), Color( 0.367188, 0.367188, 0.367188, 1 ), Color( 0.535156, 0.535156, 0.535156, 1 ), Color( 0.753906, 0.753906, 0.753906, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=3]
-
-custom_solver_bias = 0.0
-radius = 7.863
-height = 23.5504
-
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 18.9365, 91.0483 )
-
 [node name="EnemyBoss3" type="KinematicBody2D"]
 
 scale = Vector2( 1.73382, 1.73382 )
+z_index = 1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 bala = ExtResource( 2 )
 
 [node name="Life" parent="." index="0" instance=ExtResource( 3 )]
@@ -91,7 +97,7 @@ powerUp = 0
 [node name="CharacterController" parent="." index="1" instance=ExtResource( 4 )]
 
 velocidadMovimiento = 6.0
-salto = 33.0
+salto = 35.0
 gravedad = 20.0
 
 [node name="AnimatedSpriteController" parent="." index="2" instance=ExtResource( 5 )]
@@ -100,29 +106,12 @@ gravedad = 20.0
 
 frames = SubResource( 1 )
 animation = "Normal"
-frame = 4
+frame = 1
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+[node name="Area2D" type="Area2D" parent="." index="3"]
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Golpeado = SubResource( 2 )
-blend_times = [  ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
-
-position = Vector2( -0.295086, 14.355 )
-shape = SubResource( 3 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
-
-[node name="Area2D" type="Area2D" parent="." index="5"]
-
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -131,12 +120,27 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 22 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="collisionAtaque" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 1.73953, -56.9203 )
+position = Vector2( 1.73953, -58.0682 )
 shape = SubResource( 4 )
-disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( -0.295086, 14.355 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Golpeado = SubResource( 2 )
+blend_times = [  ]
 
 
