@@ -1,6 +1,6 @@
 extends Camera2D
 
-var shake_amount = 5
+var shake_amount = 3.5
 var timer
 var moverCamara = false
 var offsetX 

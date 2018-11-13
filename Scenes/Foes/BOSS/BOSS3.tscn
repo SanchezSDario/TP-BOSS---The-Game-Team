@@ -100,7 +100,7 @@ gravedad = 20.0
 
 frames = SubResource( 1 )
 animation = "Normal"
-frame = 3
+frame = 4
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
