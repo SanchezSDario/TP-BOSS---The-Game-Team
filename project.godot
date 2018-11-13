@@ -22,20 +22,13 @@ GravitySystem="*res://Systems/GravitySystem.gd"
 CollisionSystem="*res://Systems/CollisionSystem.gd"
 GameManager="*res://Scenes/Components/GameManager.gd"
 
-<<<<<<< HEAD
-=======
-[display]
-
-window/size/width=800
-
->>>>>>> da54edd7e0937dad3f5d27bb37a01b2026f4c3ab
 [input]
 
 ui_attack=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 ui_control=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
  ]
-ui_block=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+0=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":48,"unicode":0,"echo":false,"script":null)
  ]
 
 [rendering]

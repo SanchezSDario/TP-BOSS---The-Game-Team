@@ -148,6 +148,7 @@ script = SubResource( 3 )
 [node name="Life" parent="." index="1" instance=ExtResource( 52 )]
 
 vida = 2
+powerUp = 0
 
 [node name="CharacterController" parent="." index="2" instance=ExtResource( 53 )]
 

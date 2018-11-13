@@ -8,24 +8,20 @@ export (int) var movement_speed
 var vidas
 var Life
 var collision
-var atacando
 var jump
 var attack
 var caida
-var block
-var muerto
-var soporte
-var resistencia = -2
 var apreteSaltar
 var puedoMoverme = true
 var meGolpiaron = false
 var puedoSaltar = false
-var timer
 
 func _ready():
 	name = "PersonajeCaballero"
 	vidas = $Life.vida
 	Life = $Life
+#	$AttackCollision2.disabled = true
+#	$AttackCollision.disabled = true
 	attack = false
 	jump = false
 	set_meta("Type", "Player")
@@ -35,30 +31,28 @@ func _process(delta):
 	collision()
 	golpieAlguien($AttackCollisionIzq)
 	golpieAlguien($AttackCollisionDer)
+#	attack()
 	move()
 	puedoSaltar()
 	jump()
-	block()
-	soportar_golpe(delta)
 	teclaAtaque()
 	$CharacterController.Caer(delta)
 	$StateSystem.update_state() #Update the state
 
 func golpieAlguien(ray):
-	if (ray.is_colliding() and
-	    ray.get_collider() != null and
-	    ray.get_collider().name.begins_with("Enemy")):
+	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):
+
 		ray.enabled = false
 		$CharacterController.Golpie(ray.get_collider(),"Enemy",self)
 
 func colisionAtaque():
-	if $AnimatedSprite.flip_h: Ataque($AttackCollisionIzq)
-	else: Ataque($AttackCollisionDer)
+	if $AnimatedSprite.flip_h:
+		Ataque($AttackCollisionIzq)
+	else:
+		Ataque($AttackCollisionDer)
 
 func teclaAtaque():
-	if (Input.is_action_just_pressed("ui_attack") and 
-	    !meGolpiaron and
-	    !meMori()) :
+	if Input.is_action_just_pressed("ui_attack")  and !meGolpiaron and !meMori() :
 		attack = true
 		colisionAtaque()
 
@@ -78,76 +72,66 @@ func meMori():
 	return GameManager.vidas ==  0
 
 func collision():
-	if(collision != null): jump = false
+	if(collision != null):
+		match collision.collider.get_meta("Type"):
+			"Floor": jump = false
 
 func move():
-	if (Input.is_action_pressed("ui_right") and
-	    puedoMoverme and
-		!meGolpiaron and
-		!meMori()):
+	if Input.is_action_pressed("ui_right") and puedoMoverme and !meGolpiaron and !meMori():
 		collision = $CharacterController.Movimiento(1)
-	elif (Input.is_action_pressed("ui_left") and
-	      puedoMoverme and
-		  !meGolpiaron and
-		  !meMori()):
+	elif Input.is_action_pressed("ui_left") and puedoMoverme and !meGolpiaron and !meMori():
 		collision = $CharacterController.Movimiento(-1)
 
 func puedoSaltar():
 	if caida != null:
 		puedoSaltar = true
 		apreteSaltar = false
-	elif (caida == null or
-	      caida != null and
-		  !caida.collider.name.begins_with("Enemy")):
+	elif caida == null or caida != null and !caida.collider.name.begins_with("Enemy"):
 		puedoSaltar = false
 
 func jump():
-	if (Input.is_action_just_pressed("ui_up") and
-	    !meGolpiaron and
-		!meMori()):
+	if Input.is_action_just_pressed("ui_up") and !meGolpiaron and !meMori():
 		$CharacterController.Salto(puedoSaltar)
 
 func fuiGolpeado(golpeador):
-	if(!block):
-		$CharacterController.fuerzaSaltoRestante = 0
-		Life.perdiVida()
-		print(Life.vida)
-		$Camera2D._on_Player_hit()
-		meGolpiaron = true
-		yield(get_tree().create_timer(0.5),"timeout")
-		meGolpiaron = false
-		if Life.vida == 0: morir()
+	$CharacterController.fuerzaSaltoRestante = 0
+	print("AY")
+	GameManager.vidas -= 1
+	$Camera2D._on_Player_hit()
+	meGolpiaron = true
+	yield(get_tree().create_timer(0.5),"timeout")
+	meGolpiaron = false
+#	if GameManager.vidas == 0:
+#		timer.start()
+
+# Executes attack logic
+func attack():
+	attack_event()
+	turn_attack_on()
+	turn_attack_off()
+
+#Detects if input attack was pressed
+func attack_event():
+	if(InputSystem.action_just_pressed("ui_attack")): attack = true
+
+#Activates the attack collision
+func turn_attack_on():
+	if(attack and 
+	  ($AnimatedSprite.frame > 4 and
+	   $AnimatedSprite.frame < 6)):
+		attack_left_or_right()
+
+func attack_left_or_right():
+	if($AnimatedSprite.flip_h):
+#		$CharacterController.Golpie(ray.get_collider(),"Enemy",self)
+		$AttackCollision2.disabled = false
 	else:
-		soporte = true
+#		$CharacterController.Golpie(ray.get_collider(),"Enemy",self)
+		$AttackCollision.disabled = false
 
-func morir():
-	muerto = true
-	$CharacterController.gravedad = 0
-	$CollisionShape2D.disabled = true
-	$AttackCollisionIzq.enabled = false
-	$AttackCollisionDer.enabled = false
-	name = "Muerto"
-	yield(get_tree().create_timer(5),"timeout")
-	queue_free()
-
-func soportar_golpe(delta):
-	if(soporte):
-		if($AnimatedSprite.flip_h):
-			resistencia -= 2 * delta
-			move_and_collide (-4 *Vector2(sin(resistencia),0))
-		else:
-			resistencia -= 2 * delta
-			move_and_collide (4 *Vector2(sin(resistencia),0))
-		yield(get_tree().create_timer(0.5),"timeout")
-		soporte = false
-		resistencia = -2
-
-func block():
-	if(Input.is_action_just_pressed("ui_block")):
-		print("Block!")
-		$CharacterController.gravedad = 0
-		block = true
-		state_identifier = "Block"
-		yield(get_tree().create_timer(1),"timeout")
-		$CharacterController.gravedad = 20
-		block = false
+#Disable the attack collision
+func turn_attack_off():
+	if(attack and $AnimatedSprite.frame == 9):
+		$AttackCollision.disabled = true
+		$AttackCollision2.disabled = true
+		attack = false
