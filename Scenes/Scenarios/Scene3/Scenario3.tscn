@@ -188,9 +188,9 @@ itemElegido = 0
 
 position = Vector2( 3435.48, 168.789 )
 
-[node name="EnemyBarril3" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
+[node name="EnemyBarril5" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
-position = Vector2( 7478.86, 166.054 )
+position = Vector2( 7477.75, 166.097 )
 
 [node name="EnemyBarril4" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
 
