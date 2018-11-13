@@ -181,6 +181,7 @@ position = Vector2( -342.676, -113.249 )
 [node name="EnemyBarril" parent="Elementos/Barriles" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( 3347.57, 168.434 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 itemElegido = 0
 
 [node name="EnemyBarril2" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]

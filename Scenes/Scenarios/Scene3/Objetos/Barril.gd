@@ -15,10 +15,12 @@ func _ready():
 	sprite = get_node("Sprite")
 	#self.collisionShape.disabled = true
 	
+	
 
 func _process(delta):
 	Animacion(delta)
 	collision()
+
 	
 func Animacion(delta):	
 	if fuiGolpeado:
@@ -32,7 +34,7 @@ func fuiGolpeado(golpeador):
 		var scene_instance = dropItem()
 		scene_instance = scene_instance.instance()
 		get_parent().add_child(scene_instance)
-		scene_instance.set_name("EnemyItem")
+		scene_instance.set_name("Enemy")
 		scene_instance.position = posicion()
 	if !golpeador.sprite.flip_h:
 		movimiento *= -1
@@ -44,7 +46,6 @@ func collision():
 	if collision != null and collision.collider.name.begins_with("Tile") and primerGolpe:
 		collisionShape.disabled = true
 		set_process(false)
-			
 	if collision != null and collision.collider.name.begins_with("Player") and !yaLepegue:
 		yaLepegue = true
 		collision.collider.fuiGolpeado(self)
