@@ -15,6 +15,7 @@ var caida
 var areaAtaque 
 export (PackedScene) var barriles
 var ultimo = 0
+var puedoPegarle = true
 func _ready():
 	areaAtaque =  get_node("Area2D")
 	animationPlayer = get_node("AnimationPlayer")
@@ -39,8 +40,10 @@ func _process(delta):
 
 
 func collisionConPersonaje():
-	if caida != null and caida.collider.name.begins_with("Player"):
+	if caida != null and caida.collider.name.begins_with("Player") and puedoPegarle:
+		caida.collider.fuiGolpeado(self)
 		collisionShape.disabled = true
+		puedoPegarle = false
 	else:
 		collisionShape.disabled = false
 
@@ -73,7 +76,10 @@ func caenBarriles():
 		scene_instance.set_name("EnemyBarriles" + String(ultimo))
 		get_parent().add_child(scene_instance)
 		scene_instance.position.x = player.position.x - 100
-		scene_instance.position.y -= 500
+		if self.sprite.flip_h:
+			scene_instance.position.x += 50
+		else: 
+			scene_instance.position.x -= 50
 		print(scene_instance.position)
 		idle()
 		puedoSaltar = true
@@ -103,6 +109,7 @@ func Disparar():
 			
 func Ataque():
 	if puedoDisparar:
+		puedoPegarle = true
 		puedoDisparar = false
 		AnimatedSpriteController.Ataque()
 		yield(get_tree().create_timer(0.5),"timeout")

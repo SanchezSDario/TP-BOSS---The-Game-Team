@@ -35,6 +35,10 @@ func caida():
 	caida = move_and_collide(Vector2(0,gravedad))
 	if caida != null and caida.collider.name.begins_with("Tile"):
 		gravedad = 0
+	if caida != null and caida.collider.name.begins_with("Personaje") and gravedad > 0 and yaLepegue:
+		caida.collider.name.fuiGolpeado(self)
+		yaLepegue = true
+		
 
 func fuiGolpeado(golpeador):
 	if !fuiGolpeado:

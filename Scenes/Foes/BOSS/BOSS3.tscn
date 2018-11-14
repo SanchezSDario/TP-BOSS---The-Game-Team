@@ -32,14 +32,14 @@ animations = [ {
 "name": "Normal",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "Salto",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "Ataque",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "Salto",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
@@ -51,7 +51,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 23.5162, 91.4081 )
+extents = Vector2( 26.847, 91.4081 )
 
 [sub_resource type="Animation" id=3]
 
@@ -99,9 +99,9 @@ powerUp = 0
 
 [node name="CharacterController" parent="." index="1" instance=ExtResource( 5 )]
 
-velocidadMovimiento = 6.0
-salto = 33.0
-gravedad = 20.0
+velocidadMovimiento = 10.0
+salto = 38.0
+gravedad = 25.0
 
 [node name="AnimatedSpriteController" parent="." index="2" instance=ExtResource( 6 )]
 
@@ -109,6 +109,7 @@ gravedad = 20.0
 
 frames = SubResource( 1 )
 animation = "Normal"
+frame = 3
 playing = true
 _sections_unfolded = [ "Visibility" ]
 

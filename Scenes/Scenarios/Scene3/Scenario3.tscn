@@ -180,19 +180,19 @@ position = Vector2( -342.676, -113.249 )
 
 [node name="EnemyBarril" parent="Elementos/Barriles" index="0" instance=ExtResource( 9 )]
 
-position = Vector2( 3347.57, 168.434 )
+position = Vector2( 3343.27, 167.717 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 itemElegido = 0
 
 [node name="EnemyBarril2" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]
 
-position = Vector2( 3435.48, 168.789 )
+position = Vector2( 3433.69, 168.431 )
 itemElegido = 2
 
 [node name="EnemyBarril3" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 7482.62, 166.068 )
-itemElegido = 2
+itemElegido = 0
 
 [node name="EnemyBarril4" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
 
