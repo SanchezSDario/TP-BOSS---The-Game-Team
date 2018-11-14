@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Foes/BOSS/BOSS3.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Foes/BOSS/BalaBoss.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Objetos/Barril.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Foes/BOSS/BalaBoss2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=6]
@@ -78,7 +78,7 @@ radius = 3.47027
 height = 13.0582
 _sections_unfolded = [ "Resource" ]
 
-[node name="EnemyBoss3" type="KinematicBody2D"]
+[node name="EnemyBoss3" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 1.73382, 1.73382 )
 z_index = 1
@@ -99,7 +99,7 @@ powerUp = 0
 
 [node name="CharacterController" parent="." index="1" instance=ExtResource( 5 )]
 
-velocidadMovimiento = 10.0
+velocidadMovimiento = 8.0
 salto = 38.0
 gravedad = 25.0
 
@@ -109,7 +109,7 @@ gravedad = 25.0
 
 frames = SubResource( 1 )
 animation = "Normal"
-frame = 3
+frame = 2
 playing = true
 _sections_unfolded = [ "Visibility" ]
 

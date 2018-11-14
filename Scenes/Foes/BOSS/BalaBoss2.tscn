@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Foes/BOSS/Golpe.gd" type="Script" id=1]
+[ext_resource path="res://Art/Foes/BOSS3/Fuego/tile000.png" type="Texture" id=2]
+[ext_resource path="res://Art/Foes/BOSS3/Fuego/tile001.png" type="Texture" id=3]
+[ext_resource path="res://Art/Foes/BOSS3/Fuego/tile002.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 5.95623
+height = 5.11739
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Animacion",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 0.960182
+height = 9.54179
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+rotation = 4.71239
+scale = Vector2( 3.5754, 3.67961 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+velocidad = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+rotation = 1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 2 )
+animation = "Animacion"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 3 )
+disabled = true
+
+

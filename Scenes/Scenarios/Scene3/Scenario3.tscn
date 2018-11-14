@@ -191,8 +191,8 @@ itemElegido = 2
 
 [node name="EnemyBarril3" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
-position = Vector2( 7482.62, 166.068 )
-itemElegido = 0
+position = Vector2( 7481.29, 165.405 )
+itemElegido = 2
 
 [node name="EnemyBarril4" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
 

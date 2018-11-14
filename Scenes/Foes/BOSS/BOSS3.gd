@@ -71,20 +71,16 @@ func caenBarriles():
 		ultimo += 1
 		puedoDisparar = false
 		yield(get_tree().create_timer(0.5),"timeout")
-		var scene_instance = barriles
-		scene_instance = scene_instance.instance()
-		scene_instance.set_name("EnemyBarriles" + String(ultimo))
-		get_parent().add_child(scene_instance)
-		scene_instance.position.x = player.position.x - 100
-		if self.sprite.flip_h:
-			scene_instance.position.x += 50
-		else: 
-			scene_instance.position.x -= 50
-		print(scene_instance.position)
+		for i in range(0,5):
+			var scene_instance = barriles
+			scene_instance = scene_instance.instance()
+			scene_instance.set_name("EnemyBarriles" + String(ultimo))
+			get_parent().add_child(scene_instance)
+			scene_instance.position.y = player.position.y - 300
+			scene_instance.position.x = player.position.x + (i * 10)
 		idle()
 		puedoSaltar = true
-		yield(get_tree().create_timer(5),"timeout")
-		scene_instance.queue_free()
+		
 
 func idle():
 	AnimatedSpriteController.Normal()
