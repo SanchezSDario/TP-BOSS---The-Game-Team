@@ -62,8 +62,7 @@ func collision():
 	if collision != null and collision.collider.name.begins_with("Player") and !yaLepegue:
 		yaLepegue = true
 		collision.collider.fuiGolpeado(self)
-	if collision != null and collision.collider.name.begins_with("Enemy") and !yaLepegue :
-		yaLepegue = true
+	if collision != null and collision.collider.name.begins_with("Enemy")   :
 		collision.collider.fuiGolpeado(self)
 		
 			

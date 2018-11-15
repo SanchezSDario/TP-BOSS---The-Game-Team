@@ -26,7 +26,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 35.9678, 407.654 )
 
-[node name="Scenario3" type="Node" index="0"]
+[node name="Scenario3" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -105,15 +105,19 @@ position = Vector2( 342.676, 113.249 )
 
 position = Vector2( 826.929, 44.9066 )
 
-[node name="Pozo" parent="Elementos" index="1" instance=ExtResource( 7 )]
+[node name="Carreta2" parent="Elementos" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 4654.58, 48.2252 )
+
+[node name="Pozo" parent="Elementos" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 1515.26, 47.2619 )
 
-[node name="Pozo2" parent="Elementos" index="2" instance=ExtResource( 7 )]
+[node name="Pozo2" parent="Elementos" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 5823.81, 48.2417 )
 
-[node name="Blouqe" type="Node2D" parent="Elementos" index="3"]
+[node name="Blouqe" type="Node2D" parent="Elementos" index="4"]
 
 editor/display_folded = true
 position = Vector2( -335.325, -123.54 )
@@ -174,7 +178,7 @@ position = Vector2( 3087, 184.822 )
 position = Vector2( 3058.01, 184.559 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Barriles" type="Node2D" parent="Elementos" index="4"]
+[node name="Barriles" type="Node2D" parent="Elementos" index="5"]
 
 position = Vector2( -342.676, -113.249 )
 
@@ -198,7 +202,7 @@ itemElegido = 2
 
 position = Vector2( 7280.86, 167.282 )
 
-[node name="CajasTriple" type="Node2D" parent="Elementos" index="5"]
+[node name="CajasTriple" type="Node2D" parent="Elementos" index="6"]
 
 editor/display_folded = true
 position = Vector2( -335.325, -123.54 )
@@ -215,7 +219,23 @@ position = Vector2( 2067.82, 183.677 )
 
 position = Vector2( 2084.71, 152.487 )
 
-[node name="Casas" type="Node2D" parent="Elementos" index="6"]
+[node name="CajasTriple2" type="Node2D" parent="Elementos" index="7"]
+
+position = Vector2( 5306.58, -123.971 )
+
+[node name="Caja" parent="Elementos/CajasTriple2" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 2099.84, 184.74 )
+
+[node name="Caja2" parent="Elementos/CajasTriple2" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 2067.82, 183.677 )
+
+[node name="Caja3" parent="Elementos/CajasTriple2" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 2084.71, 152.487 )
+
+[node name="Casas" type="Node2D" parent="Elementos" index="8"]
 
 [node name="Casa7" parent="Elementos/Casas" index="0" instance=ExtResource( 10 )]
 
