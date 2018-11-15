@@ -127,7 +127,7 @@ func caer():
 func testBoss():
 	if Input.is_action_just_pressed("0"):
 		print("fuim")
-		self.position.x = 5000
+		self.position.x = 8000
 		
 func Ataque(ray):
 	puedoMoverme = false

@@ -58,7 +58,9 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Animacion"
+frame = 2
 playing = true
+_sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
