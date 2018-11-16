@@ -13,6 +13,7 @@ func _ready():
 	frames.set_animation_loop("Attack", false)
 	frames.set_animation_loop("Death", false)
 	frames.set_animation_loop("Hit", false)
+	frames.set_animation_loop("Stab", false)
 	play("Idle")
 
 func _process(delta):
@@ -33,4 +34,10 @@ func select_animation():
 		"Jump": sprite_animation = "Jump"
 		"Attack": sprite_animation ="Attack"
 		"Hit": sprite_animation = "Hit"
+		"StabRight":
+			flip_h = false
+			sprite_animation = "Stab"
+		"StabLeft":
+			flip_h = true
+			sprite_animation = "Stab"
 		_: sprite_animation = "Idle"
