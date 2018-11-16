@@ -11,50 +11,50 @@
 [ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im8.png" type="Texture" id=9]
 [ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im9.png" type="Texture" id=10]
 [ext_resource path="res://Art/Sprites/RedMinotaur/IdleMinotaur/im10.png" type="Texture" id=11]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm1.png" type="Texture" id=12]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm2.png" type="Texture" id=13]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm3.png" type="Texture" id=14]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm4.png" type="Texture" id=15]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm5.png" type="Texture" id=16]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm6.png" type="Texture" id=17]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm7.png" type="Texture" id=18]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm8.png" type="Texture" id=19]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm9.png" type="Texture" id=20]
-[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm10.png" type="Texture" id=21]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm1.png" type="Texture" id=22]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm2.png" type="Texture" id=23]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm3.png" type="Texture" id=24]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm4.png" type="Texture" id=25]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm5.png" type="Texture" id=26]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm6.png" type="Texture" id=27]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm7.png" type="Texture" id=28]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm8.png" type="Texture" id=29]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm9.png" type="Texture" id=30]
-[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm10.png" type="Texture" id=31]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am1.png" type="Texture" id=32]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am2.png" type="Texture" id=33]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am3.png" type="Texture" id=34]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am4.png" type="Texture" id=35]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am5.png" type="Texture" id=36]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am6.png" type="Texture" id=37]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am7.png" type="Texture" id=38]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am8.png" type="Texture" id=39]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am9.png" type="Texture" id=40]
-[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am10.png" type="Texture" id=41]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm1.png" type="Texture" id=42]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm2.png" type="Texture" id=43]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm3.png" type="Texture" id=44]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm4.png" type="Texture" id=45]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm5.png" type="Texture" id=46]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm6.png" type="Texture" id=47]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm7.png" type="Texture" id=48]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm8.png" type="Texture" id=49]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm9.png" type="Texture" id=50]
-[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm10.png" type="Texture" id=51]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm1.png" type="Texture" id=12]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm2.png" type="Texture" id=13]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm3.png" type="Texture" id=14]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm4.png" type="Texture" id=15]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm5.png" type="Texture" id=16]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm6.png" type="Texture" id=17]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm7.png" type="Texture" id=18]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm8.png" type="Texture" id=19]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm9.png" type="Texture" id=20]
+[ext_resource path="res://Art/Sprites/RedMinotaur/DeathMinotaur/dm10.png" type="Texture" id=21]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am1.png" type="Texture" id=22]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am2.png" type="Texture" id=23]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am3.png" type="Texture" id=24]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am4.png" type="Texture" id=25]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am5.png" type="Texture" id=26]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am6.png" type="Texture" id=27]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am7.png" type="Texture" id=28]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am8.png" type="Texture" id=29]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am9.png" type="Texture" id=30]
+[ext_resource path="res://Art/Sprites/RedMinotaur/AttackMinotaur/am10.png" type="Texture" id=31]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm1.png" type="Texture" id=32]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm2.png" type="Texture" id=33]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm3.png" type="Texture" id=34]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm4.png" type="Texture" id=35]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm5.png" type="Texture" id=36]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm6.png" type="Texture" id=37]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm7.png" type="Texture" id=38]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm8.png" type="Texture" id=39]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm9.png" type="Texture" id=40]
+[ext_resource path="res://Art/Sprites/RedMinotaur/HitMinotaur/hm10.png" type="Texture" id=41]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm1.png" type="Texture" id=42]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm2.png" type="Texture" id=43]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm3.png" type="Texture" id=44]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm4.png" type="Texture" id=45]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm5.png" type="Texture" id=46]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm6.png" type="Texture" id=47]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm7.png" type="Texture" id=48]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm8.png" type="Texture" id=49]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm9.png" type="Texture" id=50]
+[ext_resource path="res://Art/Sprites/RedMinotaur/WalkMinotaur/wm10.png" type="Texture" id=51]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=52]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=53]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
@@ -64,26 +64,26 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "Walk",
+"name": "Death",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
-"name": "Death",
+"name": "Attack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
 "loop": true,
-"name": "Attack",
+"name": "Hit",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ) ],
 "loop": true,
-"name": "Hit",
+"name": "Walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends AnimatedSprite
 
@@ -121,7 +121,7 @@ func select_animation():
 		\"Hit\": sprite_animation = \"Hit\"
 		_: sprite_animation = \"Idle\""
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 12.1937
@@ -141,13 +141,14 @@ puntaje = 0
 
 position = Vector2( 1.92694, -1.13092 )
 scale = Vector2( 1.9203, 2.12564 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Idle"
-script = SubResource( 3 )
+script = SubResource( 2 )
 
 [node name="Life" parent="." index="1" instance=ExtResource( 52 )]
 
 vida = 2
+powerUp = 0
 
 [node name="CharacterController" parent="." index="2" instance=ExtResource( 53 )]
 
@@ -193,6 +194,6 @@ collision_mask = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="7"]
 
 position = Vector2( -1.99509, 3.72647 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 
