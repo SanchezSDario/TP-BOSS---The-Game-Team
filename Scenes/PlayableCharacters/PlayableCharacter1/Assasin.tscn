@@ -5,44 +5,44 @@
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki2.png" type="Texture" id=3]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki3.png" type="Texture" id=4]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki4.png" type="Texture" id=5]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw1.png" type="Texture" id=6]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw2.png" type="Texture" id=7]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw3.png" type="Texture" id=8]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw4.png" type="Texture" id=9]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw5.png" type="Texture" id=10]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw6.png" type="Texture" id=11]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw7.png" type="Texture" id=12]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw8.png" type="Texture" id=13]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile000.png" type="Texture" id=14]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile001.png" type="Texture" id=15]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile002.png" type="Texture" id=16]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile003.png" type="Texture" id=17]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile004.png" type="Texture" id=18]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile005.png" type="Texture" id=19]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile006.png" type="Texture" id=20]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile007.png" type="Texture" id=21]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile008.png" type="Texture" id=22]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka1.png" type="Texture" id=23]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka2.png" type="Texture" id=24]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka3.png" type="Texture" id=25]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka4.png" type="Texture" id=26]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka5.png" type="Texture" id=27]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka6.png" type="Texture" id=28]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka7.png" type="Texture" id=29]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka8.png" type="Texture" id=30]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka9.png" type="Texture" id=31]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka10.png" type="Texture" id=32]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj1.png" type="Texture" id=33]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj2.png" type="Texture" id=34]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj3.png" type="Texture" id=35]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh1.png" type="Texture" id=36]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh2.png" type="Texture" id=37]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh3.png" type="Texture" id=38]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh4.png" type="Texture" id=39]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka1.png" type="Texture" id=40]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka2.png" type="Texture" id=41]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka3.png" type="Texture" id=42]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka4.png" type="Texture" id=43]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile000.png" type="Texture" id=6]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile001.png" type="Texture" id=7]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile002.png" type="Texture" id=8]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile003.png" type="Texture" id=9]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile004.png" type="Texture" id=10]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile005.png" type="Texture" id=11]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile006.png" type="Texture" id=12]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile007.png" type="Texture" id=13]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Death/tile008.png" type="Texture" id=14]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka1.png" type="Texture" id=15]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka2.png" type="Texture" id=16]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka3.png" type="Texture" id=17]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka4.png" type="Texture" id=18]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka5.png" type="Texture" id=19]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka6.png" type="Texture" id=20]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka7.png" type="Texture" id=21]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka8.png" type="Texture" id=22]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka9.png" type="Texture" id=23]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka10.png" type="Texture" id=24]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj1.png" type="Texture" id=25]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj2.png" type="Texture" id=26]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj3.png" type="Texture" id=27]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh1.png" type="Texture" id=28]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh2.png" type="Texture" id=29]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh3.png" type="Texture" id=30]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh4.png" type="Texture" id=31]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka1.png" type="Texture" id=32]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka2.png" type="Texture" id=33]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka3.png" type="Texture" id=34]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Block/ka4.png" type="Texture" id=35]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw1.png" type="Texture" id=36]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw2.png" type="Texture" id=37]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw3.png" type="Texture" id=38]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw4.png" type="Texture" id=39]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw5.png" type="Texture" id=40]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw6.png" type="Texture" id=41]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw7.png" type="Texture" id=42]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw8.png" type="Texture" id=43]
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/AnimatedSprite.gd" type="Script" id=44]
 [ext_resource path="res://Systems/StateSystem/StateSystem.tscn" type="PackedScene" id=45]
 [ext_resource path="res://Systems/GravitySystem/GravitySystem.tscn" type="PackedScene" id=46]
@@ -59,38 +59,38 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "Attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "Hit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 40 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "Block",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 13.0565, 32.7901 )
@@ -161,11 +161,12 @@ script = ExtResource( 49 )
 
 visible = false
 position = Vector2( 4.85297, -17.1473 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="Life" parent="." index="7" instance=ExtResource( 50 )]
 
 vida = 3
+powerUp = 0
 
 [node name="AttackCollisionIzq" type="RayCast2D" parent="." index="8"]
 

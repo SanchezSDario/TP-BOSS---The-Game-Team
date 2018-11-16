@@ -16,7 +16,11 @@ var areaAtaque
 export (PackedScene) var barriles
 var ultimo = 0
 var puedoPegarle = true
+var audioAtaque
+var audioAtaque2
 func _ready():
+	audioAtaque = get_node("audioAtaqueFuego")
+	audioAtaque2 = get_node("audioAtaqueFuego2")
 	areaAtaque =  get_node("Area2D")
 	animationPlayer = get_node("AnimationPlayer")
 	CharacterController = get_node("CharacterController")
@@ -54,19 +58,20 @@ func secuenciaDeAtaques():
 		Disparar()
 	if contador >= 3 and contador <=4:
 		salto()
-	if contador >= 4 and contador <=7:
+	if contador >= 4 and contador <=6:
 		Ataque()	
-	if contador >= 7 and contador <= 8:
+	if contador >= 6 and contador <= 7:
 		salto()	
-	if contador >= 8 and contador <=10	:
+	if contador >= 7 and contador <=9	:
 		caenBarriles()
-	if contador > 10:
+	if contador > 8:
 		contador = 0
 
 
 
 func caenBarriles():
 	if puedoDisparar:
+		audioAtaque.play(0)
 		AnimatedSpriteController.Ataque2()
 		ultimo += 1
 		puedoDisparar = false
@@ -87,6 +92,7 @@ func idle():
 
 func Disparar():
 	if puedoDisparar:
+		audioAtaque.play(0)
 		AnimatedSpriteController.Ataque2()
 		puedoDisparar = false
 		yield(get_tree().create_timer(0.5),"timeout")
@@ -105,6 +111,7 @@ func Disparar():
 			
 func Ataque():
 	if puedoDisparar:
+		audioAtaque2.play(0)
 		puedoPegarle = true
 		puedoDisparar = false
 		AnimatedSpriteController.Ataque()

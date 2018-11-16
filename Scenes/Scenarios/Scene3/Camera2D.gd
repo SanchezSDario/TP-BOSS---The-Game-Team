@@ -28,7 +28,7 @@ func _on_Player_hit():
 
 
 func moverseHaciaLaOtraCamara(otraCamara):
-	self.position.x += (otraCamara.position - self.position) .normalized().x
+	self.position += (otraCamara.position - self.position) .normalized()
 	
 
 func dejarDeMover():

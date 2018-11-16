@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Boss Theme (1).ogg-12a5e14144f86949cddb0727d78f78f4.oggstr"
+
+[deps]
+
+source_file="res://FX&Sounds/Boss Theme (1).ogg"
+dest_files=[ "res://.import/Boss Theme (1).ogg-12a5e14144f86949cddb0727d78f78f4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -21,9 +21,12 @@ var vidas
 var useDash
 var timerDash
 var stopDash = true
-
+var audioEspadazo
+var invulnerable
+var audioDaniado
 func _ready():
-	
+	audioEspadazo = get_node("Espadazo")
+	audioDaniado = get_node("Herido")
 	Life = get_node("Life")
 	ray = get_node("RayCast2D")
 	rayder = get_node("RayCast2D2")
@@ -131,8 +134,10 @@ func testBoss():
 		
 func Ataque(ray):
 	puedoMoverme = false
+	
 	yield(get_tree().create_timer(0.2),"timeout")
 	ray.enabled = true
+	audioEspadazo.play(0)
 	yield(get_tree().create_timer(0.2),"timeout")
 	ray.enabled = false
 	puedoMoverme = true
@@ -178,13 +183,20 @@ func Mori():
  	
 func fuiGolpeado(golpeador):
 	print("AY")	
-	CharacterController.fuerzaSaltoRestante = 0
-	Life.perdiVida()
-	meGolpiaron = true
-	AnimationController.Tirado(Life.vida)
-	camera._on_Player_hit()
-	if Life.vida == 0:
-		timer.start()
+	if !invulnerable:
+		audioDaniado.play(0)
+		invulnerable = true
+		CharacterController.fuerzaSaltoRestante = 0
+		Life.perdiVida()
+		meGolpiaron = true
+		AnimationController.Tirado(Life.vida)
+		camera._on_Player_hit()
+		if Life.vida == 0:
+			timer.start()
+			set_process(false)
+			self.vidas -= 1
+			collisionShape.disabled = true
+			
 		
 		
 			
@@ -193,6 +205,7 @@ func fuiGolpeado(golpeador):
 func terminoCaida():
 	if AnimationController.terminoAnimacion("Tirado") :
 		meGolpiaron = false	
+		invulnerable = false
 
 		
 	

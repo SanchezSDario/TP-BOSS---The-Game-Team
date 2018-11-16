@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/UI/PantallaPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Art/Nivel3/PantallaPrincipal.png" type="Texture" id=2]
@@ -12,12 +12,35 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Settings" ]
 
+[sub_resource type="Animation" id=2]
+
+resource_name = "Animacion"
+length = 1.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.0976563, 0, 0, 1 ), Color( 0.292969, 0, 0, 1 ), Color( 0.46875, 0, 0, 1 ), Color( 0.46875, 0, 0, 1 ), Color( 0.671875, 0, 0, 1 ), Color( 0.875, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0.734375, 0, 0, 1 ), Color( 0.476563, 0, 0, 1 ), Color( 0.234375, 0, 0, 1 ), Color( 0.208333, 0, 0, 1 ), Color( 0.0117188, 0, 0, 1 ) ]
+}
+
 [node name="MarginContainer" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -8.0
+margin_right = 17.0
+margin_bottom = 11.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -34,8 +57,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 1088.0
-margin_bottom = 720.0
+margin_right = 1109.0
+margin_bottom = 739.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -49,6 +72,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "R
 
 [node name="Label" type="Label" parent="TextureRect" index="0"]
 
+modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -64,12 +88,23 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.226246, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Press Start"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect/Label" index="0"]
+
+root_node = NodePath("..")
+autoplay = "Animacion"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.5
+anims/Animacion = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 

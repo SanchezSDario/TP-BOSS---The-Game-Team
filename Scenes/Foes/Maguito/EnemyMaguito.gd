@@ -15,7 +15,9 @@ var collisionShape
 var life 
 export var puntaje = 0
 var timerMuerte
+var audioAtaque
 func _ready():
+	audioAtaque = get_node("AudioStreamPlayer")
 	life = get_node("Life")
 	collisionShape = get_node("CollisionShape2D")
 	AnimationController = get_node("AnimatedSpriteController")
@@ -101,6 +103,7 @@ func disparar(pos,izquierda):
 		AnimationController.Ataque()
 		yield(get_tree().create_timer(0.6),"timeout")
 		if puedoDisparar:
+			audioAtaque.play(0)
 			puedoDisparar = false
 			var scene_instance = bala
 			scene_instance = scene_instance.instance()

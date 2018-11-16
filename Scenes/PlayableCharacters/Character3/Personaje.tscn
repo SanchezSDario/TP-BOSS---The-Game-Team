@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Art/Sprites/PlayableCharacters/Character3/probando.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=9]
+[ext_resource path="res://FX&Sounds/Espadazo.wav" type="AudioStream" id=10]
+[ext_resource path="res://FX&Sounds/PJDañado.wav" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 
@@ -407,9 +409,35 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" parent="." index="5" instance=ExtResource( 8 )]
 
+position = Vector2( 0, -100 )
+offset = Vector2( -50, -100 )
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Transform", "Visibility", "Z Index" ]
+
 [node name="Life" parent="." index="6" instance=ExtResource( 9 )]
 
 vida = 6
 powerUp = 0
+
+[node name="Espadazo" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Herido" type="AudioStreamPlayer2D" parent="." index="8"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 1000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

@@ -12,7 +12,7 @@ var estoyAtacando = false
 var estoyMuriendo = false
 var timer
 var life
-
+var audioDanio
 export var puntaje = 0
 
 func _ready():

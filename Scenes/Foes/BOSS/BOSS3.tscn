@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Foes/BOSS/BOSS3.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Foes/BOSS/BalaBoss.tscn" type="PackedScene" id=2]
@@ -6,41 +6,43 @@
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=7]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=8]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=9]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile001.png" type="Texture" id=10]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile004.png" type="Texture" id=11]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile005.png" type="Texture" id=12]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile000.png" type="Texture" id=13]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile001.png" type="Texture" id=14]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile002.png" type="Texture" id=15]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile003.png" type="Texture" id=16]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile004.png" type="Texture" id=17]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile005.png" type="Texture" id=18]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile000.png" type="Texture" id=7]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile001.png" type="Texture" id=8]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile002.png" type="Texture" id=9]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile003.png" type="Texture" id=10]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile004.png" type="Texture" id=11]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile005.png" type="Texture" id=12]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=13]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=14]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=15]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile001.png" type="Texture" id=16]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile004.png" type="Texture" id=17]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile005.png" type="Texture" id=18]
 [ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile000.png" type="Texture" id=19]
 [ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile001.png" type="Texture" id=20]
 [ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile002.png" type="Texture" id=21]
 [ext_resource path="res://Art/Foes/BOSS3/Ataque2/tile003.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Foes/BOSS/AreaAtaque1.gd" type="Script" id=23]
+[ext_resource path="res://FX&Sounds/BossAtaque.wav" type="AudioStream" id=24]
+[ext_resource path="res://FX&Sounds/BossAtaque2.wav" type="AudioStream" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Ataque",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "Salto",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "Normal",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 18 ) ],
-"loop": false,
-"name": "Ataque",
-"speed": 8.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": false,
@@ -74,8 +76,8 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 3.47027
-height = 13.0582
+radius = 5.24299
+height = 11.5654
 _sections_unfolded = [ "Resource" ]
 
 [node name="EnemyBoss3" type="KinematicBody2D"]
@@ -94,7 +96,7 @@ barriles = ExtResource( 3 )
 [node name="Life" parent="." index="0" instance=ExtResource( 4 )]
 
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-vida = 30
+vida = 40
 powerUp = 0
 
 [node name="CharacterController" parent="." index="1" instance=ExtResource( 5 )]
@@ -109,7 +111,7 @@ gravedad = 25.0
 
 frames = SubResource( 1 )
 animation = "Normal"
-frame = 5
+frame = 2
 playing = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -142,9 +144,31 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 
-position = Vector2( -1.11962, 12.6891 )
+position = Vector2( -1.11961, 11.9427 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="audioAtaqueFuego" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 24 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="audioAtaqueFuego2" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 1000.0
+attenuation = 0.933033
+bus = "Master"
+area_mask = 1
 
 
