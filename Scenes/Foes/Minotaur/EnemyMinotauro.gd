@@ -41,30 +41,30 @@ func borrar():
 	self.queue_free()
 
 func seguidores():
-	if seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and  seguidorDer.get_collider().name.begins_with("Personaje")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
+	if seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and  seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
 		collision = CharacterController.Movimiento(1)
 		state_identifier = "WalkRight"
-	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and seguidorIzq.get_collider().name.begins_with("Personaje") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
+	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
 		collision = CharacterController.Movimiento(-1)
 		state_identifier = "WalkLeft"
 	elif !estoyAtacando:
 		state_identifier = "Idle"
 
 func collision():
-	if self.collision != null and self.collision.collider.name.begins_with("Personaje"):
+	if self.collision != null and self.collision.collider.name.begins_with("Player"):
 		collisionShape.disabled = true
 	else:
 		collisionShape.disabled = false
 
 func Atacar(ray):
-	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Personaje") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
+	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
 		voyAtacar = true
 		ray.enabled = false
 		Ataque(ray)
 
 func golpie(ray):
-	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Personaje") and !estoyMuriendo:
-		CharacterController.Golpie(ray.get_collider(),"Personaje",self)
+	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
+		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):
 	life.vida -= 1

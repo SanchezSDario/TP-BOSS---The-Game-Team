@@ -8,7 +8,7 @@ func _ready():
 	frames.set_animation_speed("Jump", 10)
 	frames.set_animation_speed("Walk", 10)
 	frames.set_animation_loop("Attack", false)
-	frames.set_animation_speed("Attack", 10)
+	frames.set_animation_speed("Attack", 15)
 	frames.set_animation_loop("Hit", false)
 	frames.set_animation_speed("Hit", 10)
 	frames.set_animation_loop("Block", false)

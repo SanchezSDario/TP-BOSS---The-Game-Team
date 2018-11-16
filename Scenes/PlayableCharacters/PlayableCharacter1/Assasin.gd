@@ -23,7 +23,7 @@ var puedoSaltar = false
 var timer
 
 func _ready():
-	name = "PersonajeCaballero"
+	name = "PlayerCaballero"
 	vidas = $Life.vida
 	Life = $Life
 	attack = false
@@ -64,9 +64,9 @@ func teclaAtaque():
 
 func Ataque(ray):
 	puedoMoverme = false
-	yield(get_tree().create_timer(0.5),"timeout")
+	yield(get_tree().create_timer(0.3),"timeout")
 	ray.enabled = true
-	yield(get_tree().create_timer(0.5),"timeout")
+	yield(get_tree().create_timer(0.3),"timeout")
 	ray.enabled = false
 	attack = false
 	puedoMoverme = true
