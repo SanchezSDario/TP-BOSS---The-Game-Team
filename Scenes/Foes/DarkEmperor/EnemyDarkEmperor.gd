@@ -70,7 +70,6 @@ func fuiGolpeado(golpeador):
 	life.vida -= 1
 	print("UGH")
 	if life.vida > 0:
-		$AnimatedSprite.position.y += 3
 		var gravedadAnterior = CharacterController.gravedad
 		collisionShape.disabled = true
 		collisionShape.position.x += 1000
@@ -88,6 +87,8 @@ func fuiGolpeado(golpeador):
 		self.collisionShape.disabled = true
 		collisionShape.position.x += 1000
 		estoyMuriendo = true
+		$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
+		position.y += 13
 		state_identifier = "Death"
 		timer.start()
 		GameManager.puntaje += puntaje
@@ -95,11 +96,9 @@ func fuiGolpeado(golpeador):
 func Ataque(ray):
 	state_identifier = "Attack"
 	estoyAtacando = true
-	$AnimatedSprite.position.y -= 3.5
 	ray.enabled = true
-	yield(get_tree().create_timer(0.8),"timeout")
+	yield(get_tree().create_timer(0.6),"timeout")
 	golpie(ray)
-	$AnimatedSprite.position.y += 3.5
 	state_identifier = "Idle"
 	yield(get_tree().create_timer(0.5),"timeout")
 	estoyAtacando = false

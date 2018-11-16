@@ -5,11 +5,11 @@ var sprite_animation
 
 func _ready():
 	emperor = get_parent()
-	frames.set_animation_speed("Idle", 12)
+	frames.set_animation_speed("Idle", 8)
 	frames.set_animation_speed("Run", 12)
 	frames.set_animation_speed("Attack", 12)
 	frames.set_animation_speed("Hit", 12)
-	frames.set_animation_speed("Death", 6)
+	frames.set_animation_speed("Death", 2)
 	frames.set_animation_loop("Attack", false)
 	frames.set_animation_loop("Death", false)
 	frames.set_animation_loop("Hit", false)
@@ -19,7 +19,8 @@ func _process(delta):
 	if(!emperor.estoyMuriendo):
 		select_animation()
 		play(sprite_animation)
-	else: play("Death")
+	else:
+		play("Death")
 
 func select_animation():
 	match emperor.state_identifier:

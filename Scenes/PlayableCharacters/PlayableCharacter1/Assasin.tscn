@@ -165,7 +165,7 @@ shape = SubResource( 2 )
 
 [node name="Life" parent="." index="7" instance=ExtResource( 50 )]
 
-vida = 3
+vida = 10
 powerUp = 0
 
 [node name="AttackCollisionDer" type="RayCast2D" parent="." index="8"]
