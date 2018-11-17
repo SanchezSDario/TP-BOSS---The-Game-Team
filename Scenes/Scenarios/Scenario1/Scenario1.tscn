@@ -86,6 +86,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -100,6 +101,7 @@ scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
+editor/display_folded = true
 motion_scale = Vector2( 0.8, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1080, 0 )
@@ -107,12 +109,13 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 547.024, 363.517 )
+position = Vector2( 541.724, 246.915 )
 scale = Vector2( 1.12868, 2.38035 )
 texture = ExtResource( 5 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
 
+editor/display_folded = true
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1075, 0 )
@@ -120,7 +123,21 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2" index="0"]
 
-position = Vector2( 551.649, -347.914 )
+position = Vector2( 544.439, -401.99 )
+scale = Vector2( 1.06679, 1 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+
+editor/display_folded = true
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1075, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3" index="0"]
+
+position = Vector2( 543.699, 696.204 )
 scale = Vector2( 1.06679, 1 )
 texture = ExtResource( 6 )
 
