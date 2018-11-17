@@ -6,15 +6,15 @@
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile000.png" type="Texture" id=7]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile001.png" type="Texture" id=8]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile002.png" type="Texture" id=9]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile003.png" type="Texture" id=10]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile004.png" type="Texture" id=11]
-[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile005.png" type="Texture" id=12]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=13]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=14]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=15]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=7]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=8]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=9]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile000.png" type="Texture" id=10]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile001.png" type="Texture" id=11]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile002.png" type="Texture" id=12]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile003.png" type="Texture" id=13]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile004.png" type="Texture" id=14]
+[ext_resource path="res://Art/Foes/BOSS3/Ataque1/tile005.png" type="Texture" id=15]
 [ext_resource path="res://Art/Foes/BOSS3/Idle/tile001.png" type="Texture" id=16]
 [ext_resource path="res://Art/Foes/BOSS3/Idle/tile004.png" type="Texture" id=17]
 [ext_resource path="res://Art/Foes/BOSS3/Idle/tile005.png" type="Texture" id=18]
@@ -29,17 +29,17 @@
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": false,
-"name": "Ataque",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": false,
 "name": "Salto",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "Ataque",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "Normal",
 "speed": 10.0
@@ -76,9 +76,8 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 5.24299
-height = 11.5654
-_sections_unfolded = [ "Resource" ]
+radius = 10.0
+height = 28.5774
 
 [node name="EnemyBoss3" type="KinematicBody2D"]
 
@@ -142,14 +141,7 @@ playback_speed = 1.0
 anims/Golpeado = SubResource( 3 )
 blend_times = [  ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
-
-position = Vector2( -1.11961, 11.9427 )
-scale = Vector2( 2, 2 )
-shape = SubResource( 4 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
-
-[node name="audioAtaqueFuego" type="AudioStreamPlayer2D" parent="." index="6"]
+[node name="audioAtaqueFuego" type="AudioStreamPlayer2D" parent="." index="5"]
 
 stream = ExtResource( 24 )
 volume_db = 0.0
@@ -160,7 +152,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="audioAtaqueFuego2" type="AudioStreamPlayer2D" parent="." index="7"]
+[node name="audioAtaqueFuego2" type="AudioStreamPlayer2D" parent="." index="6"]
 
 stream = ExtResource( 25 )
 volume_db = 0.0
@@ -170,5 +162,10 @@ max_distance = 1000.0
 attenuation = 0.933033
 bus = "Master"
 area_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="7"]
+
+position = Vector2( 0, 10.0313 )
+shape = SubResource( 4 )
 
 

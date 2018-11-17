@@ -185,25 +185,24 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -342.676, -113.249 )
 
-[node name="EnemyBarril" parent="Elementos/Barriles" index="0" instance=ExtResource( 9 )]
+[node name="EnemyBarril3" parent="Elementos/Barriles" index="0" instance=ExtResource( 9 )]
 
-position = Vector2( 3343.27, 167.717 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+position = Vector2( 3345.72, 166.802 )
 itemElegido = 0
 
-[node name="EnemyBarril2" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]
+[node name="EnemyBarril6" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]
 
-position = Vector2( 3433.69, 168.431 )
+position = Vector2( 3438.6, 166.139 )
 itemElegido = 2
 
-[node name="EnemyBarril4" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
+[node name="EnemyBarril7" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 7502.75, 166.139 )
+itemElegido = 0
+
+[node name="EnemyBarril4" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
 
 position = Vector2( 7280.86, 167.282 )
-
-[node name="EnemyBarril5" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
-
-position = Vector2( 7498.28, 166.402 )
-itemElegido = 0
 
 [node name="CajasTriple" type="Node2D" parent="Elementos" index="6"]
 
@@ -497,8 +496,8 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="Pocion" parent="." index="11" instance=ExtResource( 20 )]
+[node name="Pocion2" parent="." index="11" instance=ExtResource( 20 )]
 
-position = Vector2( -608.087, 278.793 )
+position = Vector2( -658.382, 279.99 )
 
 
