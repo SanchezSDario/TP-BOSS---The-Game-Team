@@ -101,10 +101,10 @@ func Disparar():
 		scene_instance.set_name("Bala")
 		add_child(scene_instance)
 		if self.sprite.flip_h:
-			scene_instance.position.x += 40
+			scene_instance.position.x += 80
 			scene_instance.irALaIzquierda = false
 		else:
-			scene_instance.position.x -= 40
+			scene_instance.position.x -= 80
 		idle()
 		puedoSaltar = true
 			

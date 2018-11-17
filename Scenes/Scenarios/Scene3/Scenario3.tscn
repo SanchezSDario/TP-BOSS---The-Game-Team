@@ -26,7 +26,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 35.9678, 407.654 )
 
-[node name="Scenario3" type="Node" index="0"]
+[node name="Scenario3" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -467,7 +467,7 @@ shape = SubResource( 1 )
 
 [node name="EnemyBoss" parent="." index="9" instance=ExtResource( 19 )]
 
-position = Vector2( 8752.75, 232 )
+position = Vector2( 8756.16, 225.173 )
 
 [node name="CameraBoss" type="Camera2D" parent="." index="10"]
 

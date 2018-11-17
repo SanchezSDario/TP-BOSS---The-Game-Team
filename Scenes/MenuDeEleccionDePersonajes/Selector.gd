@@ -1,4 +1,4 @@
-extends Panel
+extends CanvasLayer
 
 export(PackedScene) var personaje1
 export(PackedScene) var personaje2

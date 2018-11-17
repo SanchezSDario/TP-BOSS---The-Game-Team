@@ -53,7 +53,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.847, 91.4081 )
+extents = Vector2( 26.847, 121.365 )
 
 [sub_resource type="Animation" id=3]
 
@@ -76,12 +76,11 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 10.0
-height = 28.5774
+radius = 17.5393
+height = 59.5258
 
 [node name="EnemyBoss3" type="KinematicBody2D"]
 
-scale = Vector2( 1.73382, 1.73382 )
 z_index = 1
 input_pickable = false
 collision_layer = 1
@@ -108,11 +107,12 @@ gravedad = 25.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSpriteController" index="0"]
 
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "Normal"
-frame = 2
+frame = 3
 playing = true
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
 
@@ -128,7 +128,7 @@ _sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="collisionAtaque" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 1.73953, -58.0682 )
+position = Vector2( 1.29944, -52.3465 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
@@ -154,6 +154,7 @@ area_mask = 1
 
 [node name="audioAtaqueFuego2" type="AudioStreamPlayer2D" parent="." index="6"]
 
+position = Vector2( 0.440125, 0 )
 stream = ExtResource( 25 )
 volume_db = 0.0
 pitch_scale = 1.0
@@ -165,7 +166,7 @@ area_mask = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="7"]
 
-position = Vector2( 0, 10.0313 )
+position = Vector2( 0, 19.2741 )
 shape = SubResource( 4 )
 
 

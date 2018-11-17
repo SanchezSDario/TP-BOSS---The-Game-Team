@@ -8,8 +8,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 4.12701
-height = 8.37102
+radius = 9.77313
+height = 5.06815
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -40,10 +40,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 
+scale = Vector2( 2.0179, 2.0179 )
 frames = SubResource( 2 )
 animation = "Normal"
 frame = 1
 playing = true
-_sections_unfolded = [ "Animation", "Offset" ]
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 
