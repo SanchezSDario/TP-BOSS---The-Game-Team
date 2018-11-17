@@ -36,7 +36,6 @@ func _process(delta):
 		stab()
 #		searchAndDestroy()
 
-
 func searchAndDestroy():
 		seguidores()
 		Atacar(rayAtaqueDer)
@@ -129,7 +128,6 @@ func golpie(ray):
 
 func fuiGolpeado(golpeador):
 	life.vida -= 1
-	print("UGH")
 	if life.vida > 0:
 		var gravedadAnterior = CharacterController.gravedad
 		collisionShape.disabled = true

@@ -57,8 +57,7 @@ func colisionAtaque():
 
 func teclaAtaque():
 	if (Input.is_action_just_pressed("ui_attack") and 
-	    !meGolpiaron and
-	    !meMori()) :
+	    !meGolpiaron and !meMori()) :
 		attack = true
 		colisionAtaque()
 
@@ -72,7 +71,7 @@ func Ataque(ray):
 	puedoMoverme = true
 
 func fall():
-	caida = $CharacterController.Gravedad()
+	if(!block): caida = $CharacterController.Gravedad()
 
 func meMori():
 	return GameManager.vidas ==  0
@@ -82,14 +81,10 @@ func collision():
 
 func move():
 	if (Input.is_action_pressed("ui_right") and
-	    puedoMoverme and
-		!meGolpiaron and
-		!meMori()):
+	    puedoMoverme and !meGolpiaron and !meMori()):
 		collision = $CharacterController.Movimiento(1)
 	elif (Input.is_action_pressed("ui_left") and
-	      puedoMoverme and
-		  !meGolpiaron and
-		  !meMori()):
+	      puedoMoverme and !meGolpiaron and !meMori()):
 		collision = $CharacterController.Movimiento(-1)
 
 func puedoSaltar():
@@ -102,9 +97,8 @@ func puedoSaltar():
 		puedoSaltar = false
 
 func jump():
-	if (Input.is_action_just_pressed("ui_up") and
-	    !meGolpiaron and
-		!meMori()):
+	if (!block and Input.is_action_just_pressed("ui_up") and
+	    !meGolpiaron and !meMori()):
 		$CharacterController.Salto(puedoSaltar)
 
 func fuiGolpeado(golpeador):
@@ -117,8 +111,7 @@ func fuiGolpeado(golpeador):
 		yield(get_tree().create_timer(0.5),"timeout")
 		meGolpiaron = false
 		if Life.vida == 0: morir()
-	else:
-		soporte = true
+	else: soporte = true
 
 func morir():
 	muerto = true
@@ -143,8 +136,7 @@ func soportar_golpe(delta):
 		resistencia = -2
 
 func block():
-	if(Input.is_action_just_pressed("ui_block")):
-		print("Block!")
+	if(Input.is_action_just_pressed("ui_block") and puedoSaltar):
 		$CharacterController.gravedad = 0
 		block = true
 		state_identifier = "Block"
