@@ -104,9 +104,10 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_left = 100.0
-margin_top = -250.0
-margin_right = 217.0
+margin_left = 73.0
+margin_top = -262.0
+margin_right = 190.0
+margin_bottom = -12.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -127,14 +128,14 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Sprite" type="Sprite" parent="Personaje1" index="0"]
 
-position = Vector2( 56.8227, 83.3826 )
-scale = Vector2( 5.36942, 5.36942 )
+position = Vector2( 93.7229, 105.878 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 flip_h = true
 vframes = 7
 hframes = 8
 frame = 7
-_sections_unfolded = [ "Animation", "Offset" ]
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Personaje1" index="1"]
 
@@ -152,10 +153,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -356.0
-margin_top = -290.0
-margin_right = -136.0
-margin_bottom = -43.0
+margin_left = -315.0
+margin_top = -281.0
+margin_right = -95.0
+margin_bottom = -34.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -175,12 +176,13 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Personaje2" index="0"]
 
 position = Vector2( 144.122, 128.539 )
-scale = Vector2( 5.09338, 5.70294 )
+scale = Vector2( 4.3, 4.3 )
 frames = SubResource( 2 )
 animation = "Idle"
 frame = 3
 playing = true
 flip_h = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="Personaje3" type="Button" parent="." index="3"]
 
@@ -188,10 +190,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -136.0
-margin_top = 21.0
-margin_right = 14.0
-margin_bottom = 203.0
+margin_left = -128.0
+margin_top = 43.0
+margin_right = 22.0
+margin_bottom = 225.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -211,7 +213,7 @@ _sections_unfolded = [ "Margin" ]
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Personaje3" index="0"]
 
 position = Vector2( 72.0223, 70.9143 )
-scale = Vector2( 4.5966, 4.5966 )
+scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 3 )
 animation = "default"
 playing = true
