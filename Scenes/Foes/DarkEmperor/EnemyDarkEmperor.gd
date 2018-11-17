@@ -14,6 +14,7 @@ var estoyAtacando = false
 var estoyMuriendo = false
 var timer
 var life
+var patternCounter = 0
 export var puntaje = 0
 
 func _ready():
@@ -33,8 +34,25 @@ func _ready():
 func _process(delta):
 	collision = CharacterController.Gravedad()
 	if self.visible:
+		patternCounter += 1*delta
+		stabPattern()
+		searchAndDestroyPattern()
+		reset()
+
+func stabPattern():
+	if((patternCounter >= 0 and patternCounter <= 1) or
+	   (patternCounter >= 3 and patternCounter <= 4) or
+	   (patternCounter >= 6 and patternCounter <= 7)):
 		stab()
-#		searchAndDestroy()
+
+func searchAndDestroyPattern():
+	if((patternCounter >= 1 and patternCounter <= 3) or
+	   (patternCounter >= 4 and patternCounter <= 6) or
+	   (patternCounter >= 7 and patternCounter <= 9)):
+		searchAndDestroy()
+
+func reset():
+	if(patternCounter > 9): patternCounter = 0
 
 func searchAndDestroy():
 		seguidores()
@@ -133,7 +151,6 @@ func fuiGolpeado(golpeador):
 		collisionShape.disabled = true
 		collisionShape.position.x += 1000
 		CharacterController.gravedad = 0
-#		estoyMuriendo = true
 		state_identifier = "Hit"
 		yield(get_tree().create_timer(0.6),"timeout")
 		estoyMuriendo = false

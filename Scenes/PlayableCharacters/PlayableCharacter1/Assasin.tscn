@@ -127,7 +127,7 @@ script = ExtResource( 47 )
 [node name="CharacterController" parent="." index="4" instance=ExtResource( 48 )]
 
 velocidadMovimiento = 2.0
-salto = 27.0
+salto = 30.0
 gravedad = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
