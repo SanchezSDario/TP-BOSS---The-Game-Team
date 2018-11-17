@@ -18,7 +18,6 @@ var patternCounter = 0
 export var puntaje = 0
 
 func _ready():
-	randomize()
 	timer = Timer.new()
 	timer.wait_time = 15
 	add_child(timer)
