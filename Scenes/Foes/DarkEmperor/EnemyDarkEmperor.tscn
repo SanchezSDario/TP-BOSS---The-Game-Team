@@ -154,4 +154,13 @@ visible = false
 position = Vector2( 10, -10 )
 shape = SubResource( 2 )
 
+[node name="AttackTimer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
+
 
