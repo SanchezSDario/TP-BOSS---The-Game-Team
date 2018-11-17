@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/PonerPersonajeElegido.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=2]
@@ -12,15 +12,14 @@
 [ext_resource path="res://Scenes/Scenarios/Scene3/Objetos/Casa3.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Objetos/Casa2.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Objetos/Casa1.tscn" type="PackedScene" id=12]
-[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Foes/Summoner/Summoner.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Foes/InstanciadoresDeEnemigos/InstanciadorDeEsqueletos.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Scenarios/Scene3/Items/PocionDash.tscn" type="PackedScene" id=18]
-[ext_resource path="res://FX&Sounds/Boss Theme (1).ogg" type="AudioStream" id=19]
-[ext_resource path="res://Scenes/Scenarios/Scene3/AreaBoss.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/Foes/BOSS/BOSS3.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Foes/Maguito/EnemyMaguito.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Foes/Summoner/Summoner.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Foes/InstanciadoresDeEnemigos/InstanciadorDeEsqueletos.tscn" type="PackedScene" id=16]
+[ext_resource path="res://FX&Sounds/Boss Theme (1).ogg" type="AudioStream" id=17]
+[ext_resource path="res://Scenes/Scenarios/Scene3/AreaBoss.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Foes/BOSS/BOSS3.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Scenarios/Scene3/Items/PocionDash.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -102,7 +101,6 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="Elementos" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 342.676, 213 )
 _sections_unfolded = [ "Transform" ]
 
@@ -185,7 +183,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Barriles" type="Node2D" parent="Elementos" index="5"]
 
-editor/display_folded = true
 position = Vector2( -342.676, -113.249 )
 
 [node name="EnemyBarril" parent="Elementos/Barriles" index="0" instance=ExtResource( 9 )]
@@ -199,18 +196,17 @@ itemElegido = 0
 position = Vector2( 3433.69, 168.431 )
 itemElegido = 2
 
-[node name="EnemyBarril3" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
-
-position = Vector2( 7481.29, 165.405 )
-itemElegido = 2
-
-[node name="EnemyBarril4" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
+[node name="EnemyBarril4" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 7280.86, 167.282 )
 
+[node name="EnemyBarril5" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 7498.28, 166.402 )
+itemElegido = 0
+
 [node name="CajasTriple" type="Node2D" parent="Elementos" index="6"]
 
-editor/display_folded = true
 position = Vector2( -335.325, -123.54 )
 
 [node name="Caja" parent="Elementos/CajasTriple" index="0" instance=ExtResource( 8 )]
@@ -307,156 +303,152 @@ position = Vector2( 590.248, -13.1362 )
 
 position = Vector2( 7.16238, -12.7234 )
 
-[node name="CanvasLayer" parent="." index="3" instance=ExtResource( 13 )]
+[node name="EnemigosEsqueletos" type="Node2D" parent="." index="3"]
 
-[node name="EnemigosEsqueletos" type="Node2D" parent="." index="4"]
-
+editor/display_folded = true
 position = Vector2( 342.676, 213 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="EnemyEsqueleto4" parent="EnemigosEsqueletos" index="0" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto4" parent="EnemigosEsqueletos" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 1157.49, 41.653 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto6" parent="EnemigosEsqueletos" index="1" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto6" parent="EnemigosEsqueletos" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 1955.81, 48.48 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto7" parent="EnemigosEsqueletos" index="2" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto7" parent="EnemigosEsqueletos" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 2325.02, 42.085 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto8" parent="EnemigosEsqueletos" index="3" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto8" parent="EnemigosEsqueletos" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 2434, 39.576 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto" parent="EnemigosEsqueletos" index="4" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto" parent="EnemigosEsqueletos" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 974.614, 43.604 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto5" parent="EnemigosEsqueletos" index="5" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto5" parent="EnemigosEsqueletos" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 1369.14, -44.6656 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto9" parent="EnemigosEsqueletos" index="6" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto9" parent="EnemigosEsqueletos" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 2610.82, 35.651 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto10" parent="EnemigosEsqueletos" index="7" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto10" parent="EnemigosEsqueletos" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 3477.82, 42.651 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto11" parent="EnemigosEsqueletos" index="8" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto11" parent="EnemigosEsqueletos" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 5814.83, 39.6509 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto12" parent="EnemigosEsqueletos" index="9" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto12" parent="EnemigosEsqueletos" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 5725.83, 43.651 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto13" parent="EnemigosEsqueletos" index="10" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto13" parent="EnemigosEsqueletos" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 5399.81, 37.9351 )
 _sections_unfolded = [ "Transform", "Visibility", "collision" ]
 
-[node name="EnemyEsqueleto2" parent="EnemigosEsqueletos" index="11" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto2" parent="EnemigosEsqueletos" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 207.269, 42.033 )
 
-[node name="EnemyEsqueleto3" parent="EnemigosEsqueletos" index="12" instance=ExtResource( 14 )]
+[node name="EnemyEsqueleto3" parent="EnemigosEsqueletos" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 487.682, 43.983 )
 
-[node name="Maguitos" type="Node2D" parent="." index="5"]
+[node name="Maguitos" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
+position = Vector2( 0, 95 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="EnemyMaguito9" parent="Maguitos" index="0" instance=ExtResource( 15 )]
+[node name="EnemyMaguito9" parent="Maguitos" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 4397.56, 82.5503 )
 
-[node name="EnemyMaguito8" parent="Maguitos" index="1" instance=ExtResource( 15 )]
+[node name="EnemyMaguito8" parent="Maguitos" index="1" instance=ExtResource( 14 )]
 
 position = Vector2( 4067.5, 89.1661 )
 
-[node name="EnemyMaguito7" parent="Maguitos" index="2" instance=ExtResource( 15 )]
+[node name="EnemyMaguito7" parent="Maguitos" index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 3117.93, 71.7353 )
 
-[node name="EnemyMaguito6" parent="Maguitos" index="3" instance=ExtResource( 15 )]
+[node name="EnemyMaguito6" parent="Maguitos" index="3" instance=ExtResource( 14 )]
 
 position = Vector2( 2923.83, 85.8779 )
 
-[node name="EnemyMaguito5" parent="Maguitos" index="4" instance=ExtResource( 15 )]
+[node name="EnemyMaguito5" parent="Maguitos" index="4" instance=ExtResource( 14 )]
 
 position = Vector2( 2385.93, 77.0997 )
 
-[node name="EnemyMaguito4" parent="Maguitos" index="5" instance=ExtResource( 15 )]
+[node name="EnemyMaguito4" parent="Maguitos" index="5" instance=ExtResource( 14 )]
 
 position = Vector2( 1782.67, 169.758 )
 
-[node name="EnemyMaguito3" parent="Maguitos" index="6" instance=ExtResource( 15 )]
+[node name="EnemyMaguito3" parent="Maguitos" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 983.86, 85.3902 )
 
-[node name="EnemyMaguito2" parent="Maguitos" index="7" instance=ExtResource( 15 )]
+[node name="EnemyMaguito2" parent="Maguitos" index="7" instance=ExtResource( 14 )]
 
 position = Vector2( 636.635, 82.9519 )
 
-[node name="Summoners" type="Node2D" parent="." index="6"]
+[node name="Summoners" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( 0, 100 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="EnemySummoner" parent="Summoners" index="0" instance=ExtResource( 16 )]
+[node name="EnemySummoner" parent="Summoners" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 4237.3, 107.475 )
 
-[node name="EnemySummoner2" parent="Summoners" index="1" instance=ExtResource( 16 )]
+[node name="EnemySummoner2" parent="Summoners" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 6705.51, 112.351 )
 
-[node name="Instanciadores" type="Node2D" parent="." index="7"]
+[node name="Instanciadores" type="Node2D" parent="." index="6"]
 
 position = Vector2( 0, 100 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="InstanciadorDeEsqueletos2" parent="Instanciadores" index="0" instance=ExtResource( 17 )]
+[node name="InstanciadorDeEsqueletos2" parent="Instanciadores" index="0" instance=ExtResource( 16 )]
 
-position = Vector2( 5402.61, 52 )
+position = Vector2( 5405.93, -52.8213 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="InstanciadorDeEsqueletos3" parent="Instanciadores" index="1" instance=ExtResource( 17 )]
+[node name="InstanciadorDeEsqueletos3" parent="Instanciadores" index="1" instance=ExtResource( 16 )]
 
-position = Vector2( 7003.66, 52 )
+position = Vector2( 6990.39, -53.4847 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Pocion3" parent="." index="8" instance=ExtResource( 18 )]
+[node name="MusicaBoss" type="AudioStreamPlayer" parent="." index="7"]
 
-position = Vector2( -729.111, 280 )
-
-[node name="MusicaBoss" type="AudioStreamPlayer" parent="." index="9"]
-
-stream = ExtResource( 19 )
+stream = ExtResource( 17 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AreaBoss" type="Area2D" parent="." index="10"]
+[node name="AreaBoss" type="Area2D" parent="." index="8"]
 
 position = Vector2( 0, 100 )
 input_pickable = true
@@ -466,7 +458,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 20 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBoss" index="0"]
@@ -474,11 +466,11 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 8505.49, -225.582 )
 shape = SubResource( 1 )
 
-[node name="EnemyBoss" parent="." index="11" instance=ExtResource( 21 )]
+[node name="EnemyBoss" parent="." index="9" instance=ExtResource( 19 )]
 
 position = Vector2( 8752.75, 232 )
 
-[node name="CameraBoss" type="Camera2D" parent="." index="12"]
+[node name="CameraBoss" type="Camera2D" parent="." index="10"]
 
 position = Vector2( 8565.86, 120 )
 anchor_mode = 1
@@ -504,5 +496,9 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Pocion" parent="." index="11" instance=ExtResource( 20 )]
+
+position = Vector2( -608.087, 278.793 )
 
 

@@ -24,9 +24,12 @@ var stopDash = true
 var audioEspadazo
 var invulnerable
 var audioDaniado
+var audioGolpieEnemigo
+var audioDash
 func _ready():
 	audioEspadazo = get_node("Espadazo")
 	audioDaniado = get_node("Herido")
+	audioDash = get_node("Dash")
 	Life = get_node("Life")
 	ray = get_node("RayCast2D")
 	rayder = get_node("RayCast2D2")
@@ -44,6 +47,7 @@ func _ready():
 	timerDash.wait_time = 0.3
 	timerDash.connect("timeout",self,"terminoDash")
 	add_child(timerDash)
+	audioGolpieEnemigo = get_node("GolpieEnemigo")
 	#self.remove_child(camera)
 	#get_parent().add_child(camera)
 
@@ -71,9 +75,10 @@ func meMori():
 
 func golpieAlguien(ray):
 	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):
-
 		ray.enabled = false
 		CharacterController.Golpie(ray.get_collider(),"Enemy",self)
+		if ray.get_collider() != null and ray.get_collider().name.begins_with("Enemy"):
+			audioGolpieEnemigo.play(0)
 		
 		
 func colisionAtaque():
@@ -104,6 +109,7 @@ func terminoDash():
 
 func Dash():
 	if Input.is_action_just_pressed("ui_control") and !meMori() and Life.powerUp > 0:	
+		audioDash.play(0)
 		Life.powerUp -= 1
 		AnimationController.sprite.emitir()
 		CharacterController.fuerzaSaltoRestante = 0
@@ -134,7 +140,6 @@ func testBoss():
 		
 func Ataque(ray):
 	puedoMoverme = false
-	
 	yield(get_tree().create_timer(0.2),"timeout")
 	ray.enabled = true
 	audioEspadazo.play(0)
@@ -162,18 +167,18 @@ func rebote():
 	
 	if caida != null and caida.collider.name.begins_with("Enemy") and !caida.collider.name.begins_with("EnemyBarril")  :
 		CharacterController.fuerzaSaltoRestante -= 1
-		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y   :
+		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.global_position.y  :
 			self.position.y -= 6
 			self.position.x += 3
-		elif self.position.y < caida.collider.position.y :
+		elif self.position.y < caida.collider.global_position.y :
 			self.position.x -= 3
 			self.position.y -= 6
 	if caida != null and caida.collider.name.begins_with("EnemyEs"):
 		#Parche
-		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.position.y +90  :
+		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.global_position.y :
 			self.position.y -= 6
 			self.position.x += 3
-		elif self.position.y < caida.collider.position.y +90 :
+		elif self.position.y < caida.collider.global_position.y :
 			self.position.x -= 3
 			self.position.y -= 6
 		

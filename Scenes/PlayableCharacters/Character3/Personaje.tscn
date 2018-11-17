@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=9]
 [ext_resource path="res://FX&Sounds/Espadazo.wav" type="AudioStream" id=10]
 [ext_resource path="res://FX&Sounds/PJDañado.wav" type="AudioStream" id=11]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=12]
+[ext_resource path="res://FX&Sounds/GolpieEnemigo.wav" type="AudioStream" id=13]
+[ext_resource path="res://FX&Sounds/dash.wav" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=1]
 
@@ -436,6 +439,30 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 1000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="CanvasLayer" parent="." index="9" instance=ExtResource( 12 )]
+
+[node name="GolpieEnemigo" type="AudioStreamPlayer2D" parent="." index="10"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="." index="11"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1

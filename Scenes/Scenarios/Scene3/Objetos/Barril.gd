@@ -13,7 +13,9 @@ var sprite
 var caida
 var gravedad = 10
 var proximo = 0
+var audio 
 func _ready():
+	audio = get_node("AudioStreamPlayer2D")
 	collisionShape = get_node("CollisionShape2D")
 	sprite = get_node("Sprite")
 	#self.collisionShape.disabled = true
@@ -42,6 +44,7 @@ func caida():
 
 func fuiGolpeado(golpeador):
 	if !fuiGolpeado:
+		audio.play(0)
 		proximo += 1
 		var scene_instance = dropItem()
 		scene_instance = scene_instance.instance()

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GolpieEnemigo.wav-707230d277f14c4bbfab28df05525580.sample"
+
+[deps]
+
+source_file="res://FX&Sounds/GolpieEnemigo.wav"
+dest_files=[ "res://.import/GolpieEnemigo.wav-707230d277f14c4bbfab28df05525580.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
