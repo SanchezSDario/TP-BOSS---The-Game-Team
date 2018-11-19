@@ -46,7 +46,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-velocidad = 5
+velocidad = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
@@ -58,7 +58,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "Animacion"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Material", "Visibility" ]
 

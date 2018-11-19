@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Transition Zone (YM2612 chipsound).ogg-de7f4fdd3f13fe3101c8178378950586.oggstr"
+
+[deps]
+
+source_file="res://FX&Sounds/Transition Zone (YM2612 chipsound).ogg"
+dest_files=[ "res://.import/Transition Zone (YM2612 chipsound).ogg-de7f4fdd3f13fe3101c8178378950586.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

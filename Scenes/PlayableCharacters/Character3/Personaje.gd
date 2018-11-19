@@ -26,6 +26,7 @@ var invulnerable
 var audioDaniado
 var audioGolpieEnemigo
 var audioDash
+
 func _ready():
 	audioEspadazo = get_node("Espadazo")
 	audioDaniado = get_node("Herido")
@@ -66,6 +67,7 @@ func _process(delta):
 	rebote()
 	Dash()
 	testBoss()
+	
 
 func meMori():
 	return Life.vida <=  0
@@ -191,7 +193,7 @@ func fuiGolpeado(golpeador):
 	if !invulnerable:
 		audioDaniado.play(0)
 		invulnerable = true
-		CharacterController.fuerzaSaltoRestante = 0
+		CharacterController.fuerzaSaltoRestante -= 3
 		Life.perdiVida()
 		meGolpiaron = true
 		AnimationController.Tirado(Life.vida)

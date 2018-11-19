@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Scenarios/Scene3/PonerPersonajeElegido.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scenarios/Scene3/TileSet/TileSetNivel3.tres" type="TileSet" id=2]
@@ -20,13 +20,14 @@
 [ext_resource path="res://Scenes/Scenarios/Scene3/AreaBoss.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Foes/BOSS/BOSS3.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Items/PocionDash.tscn" type="PackedScene" id=20]
+[ext_resource path="res://FX&Sounds/Transition Zone (YM2612 chipsound).ogg" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 35.9678, 407.654 )
 
-[node name="Scenario3" type="Node"]
+[node name="Scenario3" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -193,7 +194,7 @@ itemElegido = 0
 [node name="EnemyBarril6" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 3438.6, 166.139 )
-itemElegido = 2
+itemElegido = 0
 
 [node name="EnemyBarril7" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
@@ -499,5 +500,14 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Pocion2" parent="." index="11" instance=ExtResource( 20 )]
 
 position = Vector2( -658.382, 279.99 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." index="12"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 

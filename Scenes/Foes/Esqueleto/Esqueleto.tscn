@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scenes/Foes/Esqueleto/Esqueleto.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Components/SpriteAnimatedController.tscn" type="PackedScene" id=2]
@@ -54,6 +54,7 @@
 [ext_resource path="res://Art/Foes/Skeleton/Muerte/Muerte12.png" type="Texture" id=52]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=53]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=54]
+[ext_resource path="res://FX&Sounds/Espadazo.wav" type="AudioStream" id=55]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -117,7 +118,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 frames = SubResource( 2 )
 animation = "Normal"
-frame = 5
+frame = 9
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -169,5 +170,16 @@ gravedad = 8.0
 _sections_unfolded = [ "Transform" ]
 vida = 3
 powerUp = 0
+
+[node name="Espadazo" type="AudioStreamPlayer2D" parent="." index="8"]
+
+stream = ExtResource( 55 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

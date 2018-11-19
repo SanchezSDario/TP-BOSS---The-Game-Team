@@ -14,8 +14,9 @@ var timer
 var life
 var audioDanio
 export var puntaje = 0
-
+var audio
 func _ready():
+	audio = get_node("Espadazo")
 	timer = Timer.new()
 	timer.wait_time = 15
 	add_child(timer)
@@ -107,6 +108,7 @@ func Ataque(ray):
 	yield(get_tree().create_timer(0.5),"timeout")
 	if !estoyMuriendo:
 		golpie(ray)
+		audio.play(0)
 	yield(get_tree().create_timer(0.5),"timeout")
 	estoyAtacando = false
 	voyAtacar = false		

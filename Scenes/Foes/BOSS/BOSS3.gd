@@ -18,7 +18,10 @@ var ultimo = 0
 var puedoPegarle = true
 var audioAtaque
 var audioAtaque2
+var animacionMuerte
+var gane
 func _ready():
+
 	audioAtaque = get_node("audioAtaqueFuego")
 	audioAtaque2 = get_node("audioAtaqueFuego2")
 	areaAtaque =  get_node("Area2D")
@@ -36,12 +39,13 @@ func _ready():
 	
 func _process(delta):
 	contador += 1*delta
-	secuenciaDeAtaques()
+	if !gane:
+		secuenciaDeAtaques()
 	caida = CharacterController.Gravedad()
 	CharacterController.Caer(delta)
 	miFLip()
 	collisionConPersonaje()
-
+	victoria()
 
 func collisionConPersonaje():
 	if caida != null and caida.collider.name.begins_with("Player") and puedoPegarle:
@@ -101,10 +105,12 @@ func Disparar():
 		scene_instance.set_name("Bala")
 		add_child(scene_instance)
 		if self.sprite.flip_h:
-			scene_instance.position.x += 80
+			scene_instance.position.x += 60
+			scene_instance.position.y += 10
 			scene_instance.irALaIzquierda = false
 		else:
-			scene_instance.position.x -= 80
+			scene_instance.position.x -= 60
+			scene_instance.position.y += 10
 		idle()
 		puedoSaltar = true
 			
@@ -143,9 +149,23 @@ func salto():
 func fuiGolpeado(golpeador):
 	
 	if Life.vida <= 0:
-		self.queue_free()
+		animationPlayer.play("Muerte")
+		AnimatedSpriteController.animacion.visible = false
+		self.collisionShape.disabled = true
+		self.CharacterController.gravedad = 0
+		self.collisionShape.position.y -= 1000
+		yield(get_tree().create_timer(1),"timeout")
+		self.visible = false
+		player.set_process(false)
+		gane = true
+		yield(get_tree().create_timer(5),"timeout")
+		get_tree().change_scene("res://Scenes/MenuDeEleccionDePersonajes/Selector.tscn")
 	else:
 		Life.vida -= 1
 		animationPlayer.play("Golpeado")
 		yield(get_tree().create_timer(0.2),"timeout")
 		
+func victoria():
+	if gane:
+		player.move_and_collide(Vector2(3,0))	
+		player.AnimationController.CaminandoDerecha()	

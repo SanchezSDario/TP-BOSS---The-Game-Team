@@ -5,7 +5,9 @@ var cameraBoss
 var moverse = false
 var player 
 var audio
+var audioAnterior
 func _ready():
+	audioAnterior =get_parent().get_node("AudioStreamPlayer2D")
 	audio = get_parent().get_node("MusicaBoss")
 	self.connect("body_entered",self,"fijarCamara")
 	boss  = get_parent().get_node("EnemyBoss")
@@ -15,6 +17,7 @@ func fijarCamara(target):
 		#target.camera.current = false
 		player = target
 		moverse = true
+		audioAnterior.stop()
 		audio.play(0)
 		#cameraBoss.current = true
 		#boss.set_process(true)
