@@ -63,7 +63,7 @@ func Atacar(ray):
 		Ataque(ray)
 
 func golpie(ray):
-	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
+	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo and state_identifier != "Hit":
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):

@@ -1,30 +1,74 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Foes/Minotaur/EnemyMinotauro.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Foes/DarkEmperor/EnemyDarkEmperor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap/tiling.tres" type="TileSet" id=4]
-[ext_resource path="res://Art/Enviroment/Castle/old-dark-castle-interior-background.png" type="Texture" id=5]
-[ext_resource path="res://Art/Enviroment/Castle/Background.png" type="Texture" id=6]
+[ext_resource path="res://Art/Enviroment/Castle/old-dark-castle-interior-background.png" type="Texture" id=1]
+[ext_resource path="res://Art/Enviroment/Castle/Background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Scenarios/Scenario1/TileMap/tiling.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Foes/Minotaur/EnemyMinotauro.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Foes/DarkEmperor/EnemyDarkEmperor.tscn" type="PackedScene" id=6]
 
-[node name="Scenario1" type="Node" index="0"]
+[node name="Scenario1" type="Node"]
 
-[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
-position = Vector2( 47.6011, 302.773 )
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
 
-[node name="EnemyMinotauro" parent="." index="1" instance=ExtResource( 2 )]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
-position = Vector2( 370.306, 299.243 )
+motion_scale = Vector2( 0.8, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1080, 0 )
+_sections_unfolded = [ "Motion" ]
 
-[node name="EnemyDarkEmperor" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 1011.84, 218.489 )
+position = Vector2( 541.724, 246.915 )
+scale = Vector2( 1.12868, 2.38035 )
+texture = ExtResource( 1 )
 
-[node name="PisoColumnasTileMap" type="TileMap" parent="." index="3"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+
+editor/display_folded = true
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1075, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+
+position = Vector2( 544.439, -401.99 )
+scale = Vector2( 1.06679, 1 )
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+
+editor/display_folded = true
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1075, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3" index="0"]
+
+position = Vector2( 543.699, 696.204 )
+scale = Vector2( 1.06679, 1 )
+texture = ExtResource( 2 )
+
+[node name="PisoColumnasTileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 24 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -39,13 +83,13 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 720912, 9, 0, 720913, 9, 0, 720914, 9, 0, 720915, 12, 0, 720916, 12, 0, 720917, 12, 0, 720918, 12, 0, 720919, 9, 0, 720920, 9, 0, 720921, 9, 0, 720922, 9, 0, 720923, 12, 0, 720924, 9, 0, 720925, 9, 0, 720926, 9, 0, 720927, 12, 0, 720928, 9, 0, 786447, 9, 0, 786448, 10, 0, 786449, 10, 0, 786450, 10, 0, 786451, 10, 0, 786452, 10, 0, 786453, 10, 0, 786454, 10, 0, 786455, 10, 0, 786456, 10, 0, 786457, 10, 0, 786458, 10, 0, 786459, 10, 0, 786460, 10, 0, 786461, 10, 0, 786462, 10, 0, 786463, 10, 0, 786464, 10, 0, 851982, 12, 0, 851983, 10, 0, 851984, 10, 0, 851985, 10, 0, 917504, 12, 0, 917505, 12, 0, 917506, 12, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 9, 0, 917511, 9, 0, 917512, 9, 0, 917513, 12, 0, 917514, 12, 0, 917515, 9, 0, 917516, 9, 0, 917517, 9, 0, 917518, 10, 0, 917519, 10, 0, 917520, 10, 0, 917521, 10, 0, 917522, 10, 0, 917523, 10, 0, 917524, 10, 0, 917525, 10, 0, 917526, 10, 0, 917527, 10, 0, 917528, 10, 0, 917529, 10, 0, 917530, 10, 0, 917531, 10, 0, 917532, 10, 0, 917533, 10, 0, 917534, 10, 0, 917535, 10, 0, 917536, 10, 0, 983040, 10, 0, 983041, 10, 0, 983042, 10, 0, 983043, 10, 0, 983044, 10, 0, 983045, 10, 0, 983046, 10, 0, 983047, 10, 0, 983048, 10, 0, 983049, 10, 0, 983050, 10, 0, 983051, 10, 0, 983052, 10, 0, 983053, 10, 0, 983054, 10, 0, 983055, 10, 0, 983056, 10, 0, 983057, 10, 0, 983058, 10, 0, 983059, 10, 0, 983060, 10, 0, 983061, 10, 0, 983062, 10, 0, 983063, 10, 0, 983064, 10, 0, 983065, 10, 0, 983066, 10, 0, 983067, 10, 0, 983068, 10, 0, 983069, 10, 0, 983070, 10, 0, 983071, 10, 0, 983072, 10, 0 )
+tile_data = PoolIntArray( 720912, 9, 0, 720913, 9, 0, 720914, 9, 0, 720915, 12, 0, 720916, 12, 0, 720917, 12, 0, 720918, 12, 0, 720919, 9, 0, 720920, 9, 0, 720921, 9, 0, 720922, 9, 0, 720923, 12, 0, 720924, 9, 0, 720925, 9, 0, 720926, 9, 0, 720927, 12, 0, 720928, 9, 0, 720929, 9, 0, 720930, 9, 0, 720931, 12, 0, 720932, 12, 0, 720933, 12, 0, 720934, 12, 0, 720935, 12, 0, 720936, 9, 0, 720937, 9, 0, 720938, 9, 0, 720939, 9, 0, 720940, 9, 0, 720941, 9, 0, 786447, 9, 0, 786448, 10, 0, 786449, 10, 0, 786450, 10, 0, 786451, 10, 0, 786452, 10, 0, 786453, 10, 0, 786454, 10, 0, 786455, 10, 0, 786456, 10, 0, 786457, 10, 0, 786458, 10, 0, 786459, 10, 0, 786460, 10, 0, 786461, 10, 0, 786462, 10, 0, 786463, 10, 0, 786464, 10, 0, 786465, 10, 0, 786466, 10, 0, 786467, 10, 0, 786468, 10, 0, 786469, 10, 0, 786470, 10, 0, 786471, 10, 0, 786472, 10, 0, 786473, 10, 0, 786474, 10, 0, 786475, 10, 0, 786476, 10, 0, 786477, 10, 0, 786478, 9, 0, 786479, 9, 0, 786480, 9, 0, 786481, 9, 0, 786482, 9, 0, 786483, 9, 0, 786484, 9, 0, 786485, 9, 0, 786486, 9, 0, 786487, 9, 0, 786488, 9, 0, 786489, 9, 0, 786490, 9, 0, 786491, 9, 0, 786492, 9, 0, 786493, 9, 0, 786494, 9, 0, 786495, 9, 0, 786496, 9, 0, 786497, 9, 0, 786498, 9, 0, 851982, 12, 0, 851983, 10, 0, 851984, 10, 0, 851985, 10, 0, 852014, 10, 0, 852015, 10, 0, 852016, 10, 0, 852017, 10, 0, 852018, 10, 0, 852019, 10, 0, 852020, 10, 0, 852021, 10, 0, 852022, 10, 0, 852023, 10, 0, 852024, 10, 0, 852025, 10, 0, 852026, 10, 0, 852027, 10, 0, 852028, 10, 0, 852029, 10, 0, 852030, 10, 0, 852031, 10, 0, 852032, 10, 0, 852033, 10, 0, 852034, 10, 0, 917504, 12, 0, 917505, 12, 0, 917506, 12, 0, 917507, 9, 0, 917508, 9, 0, 917509, 9, 0, 917510, 9, 0, 917511, 9, 0, 917512, 9, 0, 917513, 12, 0, 917514, 12, 0, 917515, 9, 0, 917516, 9, 0, 917517, 9, 0, 917518, 10, 0, 917519, 10, 0, 917520, 10, 0, 917521, 10, 0, 917522, 10, 0, 917523, 10, 0, 917524, 10, 0, 917525, 10, 0, 917526, 10, 0, 917527, 10, 0, 917528, 10, 0, 917529, 10, 0, 917530, 10, 0, 917531, 10, 0, 917532, 10, 0, 917533, 10, 0, 917534, 10, 0, 917535, 10, 0, 917536, 10, 0, 917537, 10, 0, 917538, 10, 0, 917539, 10, 0, 917540, 10, 0, 917541, 10, 0, 917542, 10, 0, 917543, 10, 0, 917544, 10, 0, 917545, 10, 0, 917546, 10, 0, 917547, 10, 0, 917548, 10, 0, 917549, 10, 0, 983040, 10, 0, 983041, 10, 0, 983042, 10, 0, 983043, 10, 0, 983044, 10, 0, 983045, 10, 0, 983046, 10, 0, 983047, 10, 0, 983048, 10, 0, 983049, 10, 0, 983050, 10, 0, 983051, 10, 0, 983052, 10, 0, 983053, 10, 0, 983054, 10, 0, 983055, 10, 0, 983056, 10, 0, 983057, 10, 0, 983058, 10, 0, 983059, 10, 0, 983060, 10, 0, 983061, 10, 0, 983062, 10, 0, 983063, 10, 0, 983064, 10, 0, 983065, 10, 0, 983066, 10, 0, 983067, 10, 0, 983068, 10, 0, 983069, 10, 0, 983070, 10, 0, 983071, 10, 0, 983072, 10, 0, 983073, 10, 0, 983074, 10, 0, 983075, 10, 0, 983076, 10, 0, 983077, 10, 0, 983078, 10, 0, 983079, 10, 0, 983080, 10, 0, 983081, 10, 0, 983082, 10, 0, 983083, 10, 0, 983084, 10, 0, 983085, 10, 0, 983086, 10, 0, 983087, 10, 0, 983088, 10, 0, 983089, 10, 0, 983090, 10, 0, 983091, 10, 0, 983092, 10, 0, 983093, 10, 0, 983094, 10, 0, 983095, 10, 0, 983096, 10, 0, 983097, 10, 0, 983098, 10, 0, 983099, 10, 0, 983100, 10, 0, 983101, 10, 0, 983102, 10, 0, 983103, 10, 0, 983104, 10, 0, 983105, 10, 0, 983106, 10, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="PlatformTileMap" type="TileMap" parent="." index="4"]
+[node name="PlatformTileMap" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 48, 24 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -63,10 +107,10 @@ format = 1
 tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell" ]
 
-[node name="BrokenFloorTileMap" type="TileMap" parent="." index="5"]
+[node name="BrokenFloorTileMap" type="TileMap" parent="." index="3"]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 10 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -84,61 +128,24 @@ format = 1
 tile_data = PoolIntArray( 2162688, 11, 0, 2162691, 11, 0, 2162692, 11, 0, 2162693, 11, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
+[node name="Player" parent="." index="4" instance=ExtResource( 4 )]
 
-editor/display_folded = true
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-scroll_offset = Vector2( 0, 0 )
-scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = true
+position = Vector2( 47.6011, 302.773 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+[node name="EnemyMinotauro" parent="." index="5" instance=ExtResource( 5 )]
 
-editor/display_folded = true
-motion_scale = Vector2( 0.8, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1080, 0 )
-_sections_unfolded = [ "Motion" ]
+position = Vector2( 370.306, 299.243 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+[node name="EnemyMinotauro2" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 541.724, 246.915 )
-scale = Vector2( 1.12868, 2.38035 )
-texture = ExtResource( 5 )
+position = Vector2( 1201.29, 187.662 )
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+[node name="EnemyMinotauro3" parent="." index="7" instance=ExtResource( 5 )]
 
-editor/display_folded = true
-motion_scale = Vector2( 1, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1075, 0 )
-_sections_unfolded = [ "Motion" ]
+position = Vector2( 713.858, 187.662 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+[node name="EnemyDarkEmperor" parent="." index="8" instance=ExtResource( 6 )]
 
-position = Vector2( 544.439, -401.99 )
-scale = Vector2( 1.06679, 1 )
-texture = ExtResource( 6 )
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
-
-editor/display_folded = true
-motion_scale = Vector2( 1, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1075, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3" index="0"]
-
-position = Vector2( 543.699, 696.204 )
-scale = Vector2( 1.06679, 1 )
-texture = ExtResource( 6 )
+position = Vector2( 2091.63, 207.47 )
 
 

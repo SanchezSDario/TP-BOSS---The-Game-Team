@@ -44,6 +44,9 @@ func _process(delta):
 	$CharacterController.Caer(delta)
 	$StateSystem.update_state() #Update the state
 
+func sprite():
+	return self.get_node("AnimatedSprite")
+
 func golpieAlguien(ray):
 	if (ray.is_colliding() and
 	    ray.get_collider() != null and
@@ -57,7 +60,7 @@ func colisionAtaque():
 
 func teclaAtaque():
 	if (Input.is_action_just_pressed("ui_attack") and 
-	    !meGolpiaron and !meMori()) :
+	    !meGolpiaron and !meMori() and !block) :
 		attack = true
 		colisionAtaque()
 
@@ -81,10 +84,10 @@ func collision():
 
 func move():
 	if (Input.is_action_pressed("ui_right") and
-	    puedoMoverme and !meGolpiaron and !meMori()):
+	    puedoMoverme and !meGolpiaron and !meMori() and !block):
 		collision = $CharacterController.Movimiento(1)
 	elif (Input.is_action_pressed("ui_left") and
-	      puedoMoverme and !meGolpiaron and !meMori()):
+	      puedoMoverme and !meGolpiaron and !meMori() and !block):
 		collision = $CharacterController.Movimiento(-1)
 
 func puedoSaltar():
