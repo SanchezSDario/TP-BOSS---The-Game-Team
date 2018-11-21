@@ -57,13 +57,13 @@ func collision():
 		collisionShape.disabled = false
 
 func Atacar(ray):
-	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori():
+	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori() and !collisionShape.disabled:
 		voyAtacar = true
 		ray.enabled = false
 		Ataque(ray)
 
 func golpie(ray):
-	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo and state_identifier != "Hit":
+	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo and !collisionShape.disabled:
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):

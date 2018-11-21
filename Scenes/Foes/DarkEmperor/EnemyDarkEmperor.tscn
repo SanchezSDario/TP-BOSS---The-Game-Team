@@ -17,15 +17,15 @@
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorRun/der10.png" type="Texture" id=15]
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorRun/der11.png" type="Texture" id=16]
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorRun/der12.png" type="Texture" id=17]
-[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorDeath/ded1.png" type="Texture" id=18]
-[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorDeath/ded2.png" type="Texture" id=19]
-[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorDeath/ded3.png" type="Texture" id=20]
-[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea1.png" type="Texture" id=21]
-[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea2.png" type="Texture" id=22]
-[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea3.png" type="Texture" id=23]
-[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea4.png" type="Texture" id=24]
-[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea5.png" type="Texture" id=25]
-[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea6.png" type="Texture" id=26]
+[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea1.png" type="Texture" id=18]
+[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea2.png" type="Texture" id=19]
+[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea3.png" type="Texture" id=20]
+[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea4.png" type="Texture" id=21]
+[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea5.png" type="Texture" id=22]
+[ext_resource path="res://Art/Foes/DarkEmperor/DearkEmperorAttack/dea6.png" type="Texture" id=23]
+[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorDeath/ded1.png" type="Texture" id=24]
+[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorDeath/ded2.png" type="Texture" id=25]
+[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorDeath/ded3.png" type="Texture" id=26]
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorVanish/dev1.png" type="Texture" id=27]
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorVanish/dev2.png" type="Texture" id=28]
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorVanish/dev3.png" type="Texture" id=29]
@@ -51,15 +51,15 @@ animations = [ {
 "name": "Run",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "Death",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "Attack",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
@@ -99,7 +99,7 @@ script = ExtResource( 35 )
 
 [node name="CharacterController" parent="." index="1" instance=ExtResource( 36 )]
 
-velocidadMovimiento = 1.0
+velocidadMovimiento = 2.0
 salto = 2.0
 gravedad = 2.0
 

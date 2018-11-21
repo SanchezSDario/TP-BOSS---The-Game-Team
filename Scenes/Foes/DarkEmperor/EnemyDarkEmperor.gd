@@ -40,19 +40,19 @@ func _process(delta):
 		reset()
 
 func stabPattern():
-	if((patternCounter >= 0 and patternCounter <= 1) or
-	   (patternCounter >= 3 and patternCounter <= 4) or
-	   (patternCounter >= 6 and patternCounter <= 7)):
+	if((patternCounter >= 0 and patternCounter <= 2) or
+	   (patternCounter >= 4 and patternCounter <= 6) or
+	   (patternCounter >= 8 and patternCounter <= 10)):
 		stab()
 
 func searchAndDestroyPattern():
-	if((patternCounter >= 1 and patternCounter <= 3) or
-	   (patternCounter >= 4 and patternCounter <= 6) or
-	   (patternCounter >= 7 and patternCounter <= 9)):
+	if((patternCounter >= 2 and patternCounter <= 4) or
+	   (patternCounter >= 6 and patternCounter <= 8) or
+	   (patternCounter >= 10 and patternCounter <= 11)):
 		searchAndDestroy()
 
 func reset():
-	if(patternCounter > 9): patternCounter = 0
+	if(patternCounter > 11): patternCounter = 0
 
 func searchAndDestroy():
 		seguidores()
