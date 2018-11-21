@@ -1,0 +1,98 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Scenes/PlayableCharacters/Character 2/Scripts/Personaje.gd" type="Script" id=1]
+[ext_resource path="res://Art/Level 2/Heroe/Idle/Idle1.png" type="Texture" id=2]
+[ext_resource path="res://Art/Level 2/Heroe/Idle/Idle2.png" type="Texture" id=3]
+[ext_resource path="res://Art/Level 2/Heroe/Idle/Idle3.png" type="Texture" id=4]
+[ext_resource path="res://Art/Level 2/Heroe/Idle/Idle4.png" type="Texture" id=5]
+[ext_resource path="res://Art/Level 2/Heroe/Idle/Idle5.png" type="Texture" id=6]
+[ext_resource path="res://Art/Level 2/Heroe/Idle/Idle6.png" type="Texture" id=7]
+[ext_resource path="res://Art/Level 2/Heroe/Caminando/Caminando1.png" type="Texture" id=8]
+[ext_resource path="res://Art/Level 2/Heroe/Caminando/Caminando2.png" type="Texture" id=9]
+[ext_resource path="res://Art/Level 2/Heroe/Caminando/Caminando3.png" type="Texture" id=10]
+[ext_resource path="res://Art/Level 2/Heroe/Caminando/Caminando4.png" type="Texture" id=11]
+[ext_resource path="res://Art/Level 2/Heroe/Ataque/De Lejos/ADL1.png" type="Texture" id=12]
+[ext_resource path="res://Art/Level 2/Heroe/Ataque/De Lejos/ADL2.png" type="Texture" id=13]
+[ext_resource path="res://Art/Level 2/Heroe/Saltando/Salto1.png" type="Texture" id=14]
+[ext_resource path="res://Art/Level 2/Heroe/Saltando/Salto2.png" type="Texture" id=15]
+[ext_resource path="res://Art/Level 2/Heroe/Saltando/Salto3.png" type="Texture" id=16]
+[ext_resource path="res://Art/Level 2/Heroe/Saltando/Salto4.png" type="Texture" id=17]
+[ext_resource path="res://Art/Level 2/Heroe/Muerte/Muerte1.png" type="Texture" id=18]
+[ext_resource path="res://Art/Level 2/Heroe/Muerte/Muerte2.png" type="Texture" id=19]
+[ext_resource path="res://Art/Level 2/Heroe/Muerte/Muerte3.png" type="Texture" id=20]
+[ext_resource path="res://Art/Level 2/Heroe/Muerte/Muerte4.png" type="Texture" id=21]
+[ext_resource path="res://Art/Level 2/Heroe/Muerte/Muerte5.png" type="Texture" id=22]
+[ext_resource path="res://Art/Level 2/Heroe/Muerte/Muerte6.png" type="Texture" id=23]
+[ext_resource path="res://Art/Level 2/Heroe/Muerte/Muerte7.png" type="Texture" id=24]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 14.9803
+height = 22.4315
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Muerte",
+"speed": 5.0
+} ]
+
+[node name="Personaje" type="KinematicBody2D" index="0"]
+
+position = Vector2( 93.2544, 4.33408 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+gravity = null
+basePropulse = null
+movement = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -2.04392, 7.22878 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( -2.59304, 3.10202 )
+scale = Vector2( 0.758908, 0.838458 )
+frames = SubResource( 2 )
+animation = "Idle"
+frame = 4
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+
