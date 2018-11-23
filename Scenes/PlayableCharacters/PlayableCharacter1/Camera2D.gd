@@ -28,6 +28,9 @@ func _on_Player_hit():
 	timer.start()
 
 
+func moverseHaciaLaOtraCamara(otraCamara):
+	self.position += (otraCamara.position - self.position) .normalized()
+
 func dejarDeMover():
 	moverCamara = false
 	offset.x = offsetX

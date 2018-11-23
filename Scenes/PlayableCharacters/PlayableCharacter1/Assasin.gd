@@ -21,9 +21,15 @@ var puedoMoverme = true
 var meGolpiaron = false
 var puedoSaltar = false
 var timer
+var sprite
+var camera
+var AnimationController
 
 func _ready():
 	name = "PlayerCaballero"
+	AnimationController = $AnimationController
+	sprite = get_node("AnimatedSprite")
+	camera = get_node("Camera2D")
 	vidas = $Life.vida
 	Life = $Life
 	attack = false
@@ -44,9 +50,6 @@ func _process(delta):
 	$CharacterController.Caer(delta)
 	$StateSystem.update_state() #Update the state
 
-func sprite():
-	return self.get_node("AnimatedSprite")
-
 func golpieAlguien(ray):
 	if (ray.is_colliding() and
 	    ray.get_collider() != null and
@@ -60,7 +63,8 @@ func colisionAtaque():
 
 func teclaAtaque():
 	if (Input.is_action_just_pressed("ui_attack") and 
-	    !meGolpiaron and !meMori() and !block) :
+	    !meGolpiaron and !meMori() and !block and !attack) :
+		$CharacterController.fuerzaSaltoRestante = $CharacterController.gravedad - 2
 		attack = true
 		colisionAtaque()
 
@@ -73,6 +77,7 @@ func Ataque(ray):
 	ray.enabled = false
 	attack = false
 	puedoMoverme = true
+	
 
 func fall():
 	if(!block): caida = $CharacterController.Gravedad()
@@ -102,7 +107,7 @@ func puedoSaltar():
 
 func jump():
 	if (!block and Input.is_action_just_pressed("ui_up") and
-	    !meGolpiaron and !meMori()):
+	    !meGolpiaron and !meMori() and !attack):
 		$CharacterController.Salto(puedoSaltar)
 
 func fuiGolpeado(golpeador):

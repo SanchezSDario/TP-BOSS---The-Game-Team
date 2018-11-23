@@ -13,6 +13,7 @@ var estoyAtacando = false
 var estoyMuriendo = false
 var timer
 var life
+var fuiGolpeado
 export var puntaje = 0
 
 func _ready():
@@ -41,17 +42,23 @@ func borrar():
 	self.queue_free()
 
 func seguidores():
-	if seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and  seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
+	if (seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and
+	    seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and
+	    !estoyMuriendo and !seguidorDer.get_collider().meMori() and !fuiGolpeado):
 		collision = CharacterController.Movimiento(1)
 		state_identifier = "WalkRight"
 		if(!$WalkSound.playing): $WalkSound.play()
-	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
+	elif (seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and
+	      seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and
+	      !estoyMuriendo and !seguidorIzq.get_collider().meMori() and ! fuiGolpeado):
 		collision = CharacterController.Movimiento(-1)
 		state_identifier = "WalkLeft"
 		if(!$WalkSound.playing): $WalkSound.play()
 	elif !estoyAtacando:
-		if($WalkSound.playing): $WalkSound.stop()
-		state_identifier = "Idle"
+		if(fuiGolpeado): state_identifier = "Hit"
+		else:
+			if($WalkSound.playing): $WalkSound.stop()
+			state_identifier = "Idle"
 
 func collision():
 	if self.collision != null and self.collision.collider.name.begins_with("Player"):
@@ -60,20 +67,26 @@ func collision():
 		collisionShape.disabled = false
 
 func Atacar(ray):
-	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori() and !collisionShape.disabled:
+	if (ray.is_colliding() and ray.get_collider() != null and
+	    ray.get_collider().name.begins_with("Player") and !estoyAtacando and
+	    !estoyMuriendo and !ray.get_collider().meMori() and
+	    !collisionShape.disabled and !voyAtacar and !fuiGolpeado):
 		if($WalkSound.playing): $WalkSound.stop()
 		voyAtacar = true
 		ray.enabled = false
 		Ataque(ray)
 
 func golpie(ray):
-	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo and !collisionShape.disabled:
+	if (ray.is_colliding() and ray.get_collider() != null and
+	    ray.get_collider().name.begins_with("Player") and !estoyMuriendo and
+	    !collisionShape.disabled and !fuiGolpeado):
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):
 	life.vida -= 1
 	print("UGH")
 	if life.vida > 0:
+		fuiGolpeado = true
 		$HitSound.play()
 		$AnimatedSprite.position.y += 3
 		var gravedadAnterior = CharacterController.gravedad
@@ -87,6 +100,7 @@ func fuiGolpeado(golpeador):
 		collisionShape.disabled = false
 		collisionShape.position.y -= 1000
 		state_identifier = "Idle"
+		fuiGolpeado = false
 		$AnimatedSprite.position.y -= 3
 	else:
 		$DeathSound.play()
@@ -102,12 +116,19 @@ func Ataque(ray):
 	state_identifier = "Attack"
 	estoyAtacando = true
 	$AnimatedSprite.position.y -= 3.5
-	ray.enabled = true
-	yield(get_tree().create_timer(0.8),"timeout")
-	$SlashSound.play()
-	golpie(ray)
-	$AnimatedSprite.position.y += 3.5
-	state_identifier = "Idle"
-	yield(get_tree().create_timer(0.5),"timeout")
-	estoyAtacando = false
-	voyAtacar = false
+	if(!fuiGolpeado):
+		ray.enabled = true
+		yield(get_tree().create_timer(0.8),"timeout")
+		if(!fuiGolpeado and !estoyMuriendo):
+			$SlashSound.play()
+			golpie(ray)
+			$AnimatedSprite.position.y += 4
+			state_identifier = "Idle"
+			yield(get_tree().create_timer(0.5),"timeout")
+			estoyAtacando = false
+			voyAtacar = false
+		else:
+			$AnimatedSprite.position.y += 4
+			yield(get_tree().create_timer(0.5),"timeout")
+			estoyAtacando = false
+			voyAtacar = false

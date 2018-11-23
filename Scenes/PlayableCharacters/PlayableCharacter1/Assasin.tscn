@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki1.png" type="Texture" id=2]
@@ -54,6 +54,7 @@
 [ext_resource path="res://FX&Sounds/death.wav" type="AudioStream" id=52]
 [ext_resource path="res://FX&Sounds/slash.wav" type="AudioStream" id=53]
 [ext_resource path="res://FX&Sounds/block.wav" type="AudioStream" id=54]
+[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/AnimationController.gd" type="Script" id=55]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -235,5 +236,9 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="AnimationController" type="Node" parent="." index="14"]
+
+script = ExtResource( 55 )
 
 
