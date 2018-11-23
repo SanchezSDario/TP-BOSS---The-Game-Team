@@ -147,7 +147,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Player" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 47.6011, 302.773 )
+position = Vector2( 96.683, 254.819 )
 
 [node name="Minotauros" type="Node" parent="." index="5"]
 
@@ -182,7 +182,7 @@ position = Vector2( 5868.34, 182.032 )
 [node name="Theme" type="AudioStreamPlayer" parent="." index="7"]
 
 stream = ExtResource( 7 )
-volume_db = 0.0
+volume_db = -5.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0

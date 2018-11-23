@@ -31,6 +31,7 @@ func select_animation():
 		"WalkLeft": 
 			flip_h = true
 			sprite_animation = "Run"
+		"Walk": sprite_animation = "Run"
 		"Jump": sprite_animation = "Jump"
 		"Attack": sprite_animation ="Attack"
 		"Hit": sprite_animation = "Hit"

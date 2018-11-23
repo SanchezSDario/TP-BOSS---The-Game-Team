@@ -34,15 +34,16 @@ func _process(delta):
 	if self.visible:
 		seguidores()
 		collision = CharacterController.Gravedad()
-		Atacar(rayAtaqueDer)
-		Atacar(rayAtaqueIzq)
+		if(!fuiGolpeado):
+			Atacar(rayAtaqueDer)
+			Atacar(rayAtaqueIzq)
 		collision()
 
 func borrar():
 	self.queue_free()
 
 func seguidores():
-	if (seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and
+	if (seguidorDer.is_colliding() and seguidorDer.get_collider() != null and
 	    seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and
 	    !estoyMuriendo and !seguidorDer.get_collider().meMori() and !fuiGolpeado):
 		collision = CharacterController.Movimiento(1)
@@ -83,10 +84,10 @@ func golpie(ray):
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):
+	$WalkSound.stop()
+	fuiGolpeado = true
 	life.vida -= 1
-	print("UGH")
 	if life.vida > 0:
-		fuiGolpeado = true
 		$HitSound.play()
 		$AnimatedSprite.position.y += 3
 		var gravedadAnterior = CharacterController.gravedad
@@ -104,6 +105,8 @@ func fuiGolpeado(golpeador):
 		$AnimatedSprite.position.y -= 3
 	else:
 		$DeathSound.play()
+		$WalkSound.stop()
+		$SlashSound.stop()
 		CharacterController.gravedad = 0
 		self.collisionShape.disabled = true
 		collisionShape.position.y += 1000

@@ -16,6 +16,7 @@ var timer
 var life
 var patternCounter = 0
 export var puntaje = 0
+var atemorize
 
 func _ready():
 	timer = Timer.new()
@@ -44,6 +45,7 @@ func stabPattern():
 	   (patternCounter >= 4 and patternCounter <= 6) or
 	   (patternCounter >= 8 and patternCounter <= 10)):
 		stab()
+	else: atemorize = false
 
 func searchAndDestroyPattern():
 	if((patternCounter >= 2 and patternCounter <= 4) or
@@ -69,13 +71,21 @@ func stabbing():
 	    seguidorIzq.get_collider() != null and 
 		seguidorDer.get_collider().name.begins_with("Player")and
 		!voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori()):
+			if(!atemorize):
+				atemorize = true
+				$StabShout.play()
 			stab_right()
-	if (seguidorIzq.is_colliding() and
+	elif (seguidorIzq.is_colliding() and
 	    seguidorIzq.get_collider() != null and 
 		seguidorIzq.get_collider().name.begins_with("Player")and
 		!voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori()):
+			if(!atemorize):
+				atemorize = true
+				$StabShout.play()
 			stab_left()
-	elif(!stabbing): state_identifier = "Idle"
+	else: 
+		if(atemorize): state_identifier = "Walk"
+		else: state_identifier = "Idle"
 
 func stab_right():
 	stabbing = true
@@ -142,6 +152,7 @@ func Atacar(ray):
 
 func golpie(ray):
 	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
+		$StabHit.play()
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):
@@ -173,6 +184,7 @@ func Ataque(ray):
 	estoyAtacando = true
 	ray.enabled = true
 	yield(get_tree().create_timer(0.6),"timeout")
+	$Slash.play()
 	golpie(ray)
 	state_identifier = "Idle"
 	yield(get_tree().create_timer(0.5),"timeout")

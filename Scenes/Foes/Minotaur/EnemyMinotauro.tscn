@@ -203,7 +203,7 @@ shape = SubResource( 3 )
 [node name="SlashSound" type="AudioStreamPlayer2D" parent="." index="8"]
 
 stream = ExtResource( 54 )
-volume_db = 0.0
+volume_db = -2.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Scenes/Foes/DarkEmperor/EnemyDarkEmperor.gd" type="Script" id=1]
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei1.png" type="Texture" id=2]
@@ -37,6 +37,9 @@
 [ext_resource path="res://Scenes/Foes/DarkEmperor/AnimatedSprite.gd" type="Script" id=35]
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=37]
+[ext_resource path="res://FX&Sounds/DESI2.wav" type="AudioStream" id=38]
+[ext_resource path="res://FX&Sounds/DarkEmperorStab.wav" type="AudioStream" id=39]
+[ext_resource path="res://FX&Sounds/DESlash.wav" type="AudioStream" id=40]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -160,6 +163,39 @@ process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = false
+
+[node name="StabShout" type="AudioStreamPlayer2D" parent="." index="9"]
+
+stream = ExtResource( 38 )
+volume_db = -2.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="StabHit" type="AudioStreamPlayer2D" parent="." index="10"]
+
+stream = ExtResource( 39 )
+volume_db = 2.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Slash" type="AudioStreamPlayer2D" parent="." index="11"]
+
+stream = ExtResource( 40 )
+volume_db = -3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 
