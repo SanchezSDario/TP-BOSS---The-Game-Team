@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki1.png" type="Texture" id=2]
@@ -9,19 +9,19 @@
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh2.png" type="Texture" id=7]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh3.png" type="Texture" id=8]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Hit/kh4.png" type="Texture" id=9]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj1.png" type="Texture" id=10]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj2.png" type="Texture" id=11]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj3.png" type="Texture" id=12]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka1.png" type="Texture" id=13]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka2.png" type="Texture" id=14]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka3.png" type="Texture" id=15]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka4.png" type="Texture" id=16]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka5.png" type="Texture" id=17]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka6.png" type="Texture" id=18]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka7.png" type="Texture" id=19]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka8.png" type="Texture" id=20]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka9.png" type="Texture" id=21]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka10.png" type="Texture" id=22]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka1.png" type="Texture" id=10]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka2.png" type="Texture" id=11]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka3.png" type="Texture" id=12]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka4.png" type="Texture" id=13]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka5.png" type="Texture" id=14]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka6.png" type="Texture" id=15]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka7.png" type="Texture" id=16]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka8.png" type="Texture" id=17]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka9.png" type="Texture" id=18]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Attack/ka10.png" type="Texture" id=19]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj1.png" type="Texture" id=20]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj2.png" type="Texture" id=21]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Jump/kj3.png" type="Texture" id=22]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw1.png" type="Texture" id=23]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw2.png" type="Texture" id=24]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Walk/kw3.png" type="Texture" id=25]
@@ -50,6 +50,10 @@
 [ext_resource path="res://Scenes/Components/CharacterController.tscn" type="PackedScene" id=48]
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Camera2D.gd" type="Script" id=49]
 [ext_resource path="res://Scenes/Components/Life.tscn" type="PackedScene" id=50]
+[ext_resource path="res://FX&Sounds/hit.wav" type="AudioStream" id=51]
+[ext_resource path="res://FX&Sounds/death.wav" type="AudioStream" id=52]
+[ext_resource path="res://FX&Sounds/slash.wav" type="AudioStream" id=53]
+[ext_resource path="res://FX&Sounds/block.wav" type="AudioStream" id=54]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -64,14 +68,14 @@ animations = [ {
 "name": "Hit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
@@ -187,5 +191,49 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 3.65549, -17.7461 )
 shape = SubResource( 2 )
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." index="10"]
+
+stream = ExtResource( 51 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." index="11"]
+
+stream = ExtResource( 52 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="SlashSound" type="AudioStreamPlayer2D" parent="." index="12"]
+
+stream = ExtResource( 53 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BlockSound" type="AudioStreamPlayer2D" parent="." index="13"]
+
+stream = ExtResource( 54 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

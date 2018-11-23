@@ -44,10 +44,13 @@ func seguidores():
 	if seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and  seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
 		collision = CharacterController.Movimiento(1)
 		state_identifier = "WalkRight"
+		if(!$WalkSound.playing): $WalkSound.play()
 	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
 		collision = CharacterController.Movimiento(-1)
 		state_identifier = "WalkLeft"
+		if(!$WalkSound.playing): $WalkSound.play()
 	elif !estoyAtacando:
+		if($WalkSound.playing): $WalkSound.stop()
 		state_identifier = "Idle"
 
 func collision():
@@ -58,6 +61,7 @@ func collision():
 
 func Atacar(ray):
 	if ray.is_colliding() and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori() and !collisionShape.disabled:
+		if($WalkSound.playing): $WalkSound.stop()
 		voyAtacar = true
 		ray.enabled = false
 		Ataque(ray)
@@ -70,23 +74,25 @@ func fuiGolpeado(golpeador):
 	life.vida -= 1
 	print("UGH")
 	if life.vida > 0:
+		$HitSound.play()
 		$AnimatedSprite.position.y += 3
 		var gravedadAnterior = CharacterController.gravedad
 		collisionShape.disabled = true
-		collisionShape.position.x += 1000
+		collisionShape.position.y += 1000
 		CharacterController.gravedad = 0
 #		estoyMuriendo = true
 		state_identifier = "Hit"
 		yield(get_tree().create_timer(0.6),"timeout")
 		estoyMuriendo = false
 		collisionShape.disabled = false
-		collisionShape.position.x -= 1000
+		collisionShape.position.y -= 1000
 		state_identifier = "Idle"
 		$AnimatedSprite.position.y -= 3
 	else:
+		$DeathSound.play()
 		CharacterController.gravedad = 0
 		self.collisionShape.disabled = true
-		collisionShape.position.x += 1000
+		collisionShape.position.y += 1000
 		estoyMuriendo = true
 		state_identifier = "Death"
 		timer.start()
@@ -98,6 +104,7 @@ func Ataque(ray):
 	$AnimatedSprite.position.y -= 3.5
 	ray.enabled = true
 	yield(get_tree().create_timer(0.8),"timeout")
+	$SlashSound.play()
 	golpie(ray)
 	$AnimatedSprite.position.y += 3.5
 	state_identifier = "Idle"

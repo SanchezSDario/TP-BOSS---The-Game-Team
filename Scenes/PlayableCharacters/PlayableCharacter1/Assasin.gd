@@ -67,6 +67,7 @@ func teclaAtaque():
 func Ataque(ray):
 	puedoMoverme = false
 	yield(get_tree().create_timer(0.3),"timeout")
+	$SlashSound.play()
 	ray.enabled = true
 	yield(get_tree().create_timer(0.3),"timeout")
 	ray.enabled = false
@@ -106,6 +107,7 @@ func jump():
 
 func fuiGolpeado(golpeador):
 	if(!block):
+		$HitSound.play()
 		$CharacterController.fuerzaSaltoRestante = 0
 		Life.perdiVida()
 		print(Life.vida)
@@ -114,9 +116,12 @@ func fuiGolpeado(golpeador):
 		yield(get_tree().create_timer(0.5),"timeout")
 		meGolpiaron = false
 		if Life.vida == 0: morir()
-	else: soporte = true
+	else:
+		$BlockSound.play()
+		soporte = true
 
 func morir():
+	$DeathSound.play()
 	muerto = true
 	$CharacterController.gravedad = 0
 	$CollisionShape2D.disabled = true
