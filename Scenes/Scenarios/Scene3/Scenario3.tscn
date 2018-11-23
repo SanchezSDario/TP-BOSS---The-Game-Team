@@ -194,7 +194,6 @@ itemElegido = 0
 [node name="EnemyBarril6" parent="Elementos/Barriles" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 3438.6, 166.139 )
-itemElegido = 0
 
 [node name="EnemyBarril7" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
@@ -442,7 +441,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="MusicaBoss" type="AudioStreamPlayer" parent="." index="7"]
 
 stream = ExtResource( 17 )
-volume_db = 0.0
+volume_db = 7.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0

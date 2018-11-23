@@ -7,9 +7,9 @@ var botonPersonaje1
 var botonPersonaje2
 var botonPersonaje3
 func _ready():
-	botonPersonaje1 = get_node("Personaje1")
-	botonPersonaje2 = get_node("Personaje2")
-	botonPersonaje3 = get_node("Personaje3")
+	botonPersonaje1 = get_node("TextureRect/Personaje1")
+	botonPersonaje2 = get_node("TextureRect2/Personaje2")
+	botonPersonaje3 = get_node("TextureRect3/Personaje3")
 	botonPersonaje1.connect("pressed",self,"PonerPersonaje1")
 	botonPersonaje2.connect("pressed",self,"PonerPersonaje2")
 	botonPersonaje3.connect("pressed",self,"PonerPersonaje3")

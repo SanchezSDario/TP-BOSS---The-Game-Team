@@ -170,23 +170,25 @@ func rebote():
 	if caida != null and caida.collider.name.begins_with("Enemy") and !caida.collider.name.begins_with("EnemyBarril")  :
 		CharacterController.fuerzaSaltoRestante -= 1
 		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.global_position.y  :
-			self.position.y -= 6
+		#	self.position.y -= 6
 			self.position.x += 3
 		elif self.position.y < caida.collider.global_position.y :
-			self.position.x -= 3
-			self.position.y -= 6
+		#	self.position.x -= 6
+			self.position.y -= 1
 	if caida != null and caida.collider.name.begins_with("EnemyEs"):
 		#Parche
 		if self.AnimationController.sprite.flip_h and self.position.y < caida.collider.global_position.y :
-			self.position.y -= 6
+		#	self.position.y -= 6
 			self.position.x += 3
 		elif self.position.y < caida.collider.global_position.y :
-			self.position.x -= 3
-			self.position.y -= 6
+			self.position.x -= 1
+		#	self.position.y -= 6
 		
 		
 func Mori():
 	self.visible = false
+	yield(get_tree().create_timer(3),"timeout")
+	get_tree().change_scene("res://Scenes/MenuDeEleccionDePersonajes/Selector.tscn")
  	
 func fuiGolpeado(golpeador):
 	print("AY")	

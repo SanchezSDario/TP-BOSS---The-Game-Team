@@ -33,7 +33,7 @@ func _ready():
 	sprite = get_node("AnimatedSpriteController/AnimatedSprite")
 	set_process(false)
 	yield(get_tree().create_timer(0.2),"timeout")
-	player = get_parent().get_node("Player")
+	
 	
 
 	

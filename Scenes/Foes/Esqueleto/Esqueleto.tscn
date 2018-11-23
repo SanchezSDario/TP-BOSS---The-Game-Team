@@ -60,7 +60,7 @@
 
 custom_solver_bias = 0.0
 radius = 3.23369
-height = 14.9559
+height = 14.1682
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -118,7 +118,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 frames = SubResource( 2 )
 animation = "Normal"
-frame = 9
+frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]

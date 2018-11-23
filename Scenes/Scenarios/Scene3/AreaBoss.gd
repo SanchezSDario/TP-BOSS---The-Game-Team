@@ -19,6 +19,7 @@ func fijarCamara(target):
 		moverse = true
 		audioAnterior.stop()
 		audio.play(0)
+		boss.player = target
 		#cameraBoss.current = true
 		#boss.set_process(true)
 		#self.queue_free()
