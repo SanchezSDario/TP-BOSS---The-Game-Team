@@ -34,9 +34,8 @@ func _process(delta):
 	if self.visible:
 		seguidores()
 		collision = CharacterController.Gravedad()
-		if(!fuiGolpeado):
-			Atacar(rayAtaqueDer)
-			Atacar(rayAtaqueIzq)
+		Atacar(rayAtaqueDer)
+		Atacar(rayAtaqueIzq)
 		collision()
 
 func borrar():
@@ -75,7 +74,7 @@ func Atacar(ray):
 		if($WalkSound.playing): $WalkSound.stop()
 		voyAtacar = true
 		ray.enabled = false
-		Ataque(ray)
+		if(!fuiGolpeado): Ataque(ray)
 
 func golpie(ray):
 	if (ray.is_colliding() and ray.get_collider() != null and
@@ -86,6 +85,8 @@ func golpie(ray):
 func fuiGolpeado(golpeador):
 	$WalkSound.stop()
 	fuiGolpeado = true
+	$AttackRight.enabled = false
+	$AttackLeft.enabled = false
 	life.vida -= 1
 	if life.vida > 0:
 		$HitSound.play()
@@ -94,10 +95,11 @@ func fuiGolpeado(golpeador):
 		collisionShape.disabled = true
 		collisionShape.position.y += 1000
 		CharacterController.gravedad = 0
-#		estoyMuriendo = true
 		state_identifier = "Hit"
-		yield(get_tree().create_timer(0.6),"timeout")
+		yield(get_tree().create_timer(0.8),"timeout")
 		estoyMuriendo = false
+		$AttackRight.enabled = true
+		$AttackLeft.enabled = true
 		collisionShape.disabled = false
 		collisionShape.position.y -= 1000
 		state_identifier = "Idle"
@@ -119,19 +121,18 @@ func Ataque(ray):
 	state_identifier = "Attack"
 	estoyAtacando = true
 	$AnimatedSprite.position.y -= 3.5
+	ray.enabled = true
+	yield(get_tree().create_timer(0.7),"timeout")
 	if(!fuiGolpeado):
-		ray.enabled = true
-		yield(get_tree().create_timer(0.8),"timeout")
-		if(!fuiGolpeado and !estoyMuriendo):
-			$SlashSound.play()
-			golpie(ray)
-			$AnimatedSprite.position.y += 4
-			state_identifier = "Idle"
-			yield(get_tree().create_timer(0.5),"timeout")
-			estoyAtacando = false
-			voyAtacar = false
-		else:
-			$AnimatedSprite.position.y += 4
-			yield(get_tree().create_timer(0.5),"timeout")
-			estoyAtacando = false
-			voyAtacar = false
+		$SlashSound.play()
+		golpie(ray)
+		$AnimatedSprite.position.y += 4
+		state_identifier = "Idle"
+		yield(get_tree().create_timer(0.5),"timeout")
+		estoyAtacando = false
+		voyAtacar = false
+	else:
+		$AnimatedSprite.position.y += 4
+		yield(get_tree().create_timer(0.5),"timeout")
+		estoyAtacando = false
+		voyAtacar = false

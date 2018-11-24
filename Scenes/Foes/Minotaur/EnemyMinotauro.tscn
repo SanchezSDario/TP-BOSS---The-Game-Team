@@ -98,7 +98,7 @@ func _ready():
 	minotaur = get_parent()
 	frames.set_animation_speed(\"Idle\", 12)
 	frames.set_animation_speed(\"Walk\", 12)
-	frames.set_animation_speed(\"Attack\", 12)
+	frames.set_animation_speed(\"Attack\", 15)
 	frames.set_animation_speed(\"Hit\", 12)
 	frames.set_animation_speed(\"Death\", 6)
 	frames.set_animation_loop(\"Attack\", false)
@@ -131,7 +131,7 @@ custom_solver_bias = 0.0
 radius = 12.1937
 height = 40.2268
 
-[node name="EnemyMinotauro" type="KinematicBody2D" index="0"]
+[node name="EnemyMinotauro" type="KinematicBody2D"]
 
 position = Vector2( 371.258, 198.58 )
 input_pickable = false

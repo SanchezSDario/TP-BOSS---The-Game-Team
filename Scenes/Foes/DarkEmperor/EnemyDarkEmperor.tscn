@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scenes/Foes/DarkEmperor/EnemyDarkEmperor.gd" type="Script" id=1]
 [ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei1.png" type="Texture" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://FX&Sounds/DESI2.wav" type="AudioStream" id=38]
 [ext_resource path="res://FX&Sounds/DarkEmperorStab.wav" type="AudioStream" id=39]
 [ext_resource path="res://FX&Sounds/DESlash.wav" type="AudioStream" id=40]
+[ext_resource path="res://FX&Sounds/DarkEmperorDeath.wav" type="AudioStream" id=41]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -81,7 +82,7 @@ custom_solver_bias = 0.0
 radius = 20.0
 height = 20.0
 
-[node name="EnemyDarkEmperor" type="KinematicBody2D" index="0"]
+[node name="EnemyDarkEmperor" type="KinematicBody2D"]
 
 position = Vector2( 620, 280 )
 input_pickable = false
@@ -108,7 +109,7 @@ gravedad = 2.0
 
 [node name="Life" parent="." index="2" instance=ExtResource( 37 )]
 
-vida = 20
+vida = 15
 powerUp = 0
 
 [node name="AttackRight" type="RayCast2D" parent="." index="3"]
@@ -190,6 +191,17 @@ area_mask = 1
 
 stream = ExtResource( 40 )
 volume_db = -3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Death" type="AudioStreamPlayer2D" parent="." index="12"]
+
+stream = ExtResource( 41 )
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

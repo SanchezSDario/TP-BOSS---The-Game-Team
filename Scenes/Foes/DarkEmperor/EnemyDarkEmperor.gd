@@ -14,6 +14,7 @@ var estoyAtacando = false
 var estoyMuriendo = false
 var timer
 var life
+var fuiGolpeado
 var patternCounter = 0
 export var puntaje = 0
 var atemorize
@@ -38,23 +39,34 @@ func _process(delta):
 		patternCounter += 1*delta
 		stabPattern()
 		searchAndDestroyPattern()
+		idle_pattern()
 		reset()
+		collision()
 
 func stabPattern():
-	if((patternCounter >= 0 and patternCounter <= 2) or
-	   (patternCounter >= 4 and patternCounter <= 6) or
-	   (patternCounter >= 8 and patternCounter <= 10)):
-		stab()
+	if(stabbing_condition()): stab()
 	else: atemorize = false
 
 func searchAndDestroyPattern():
-	if((patternCounter >= 2 and patternCounter <= 4) or
-	   (patternCounter >= 6 and patternCounter <= 8) or
-	   (patternCounter >= 10 and patternCounter <= 11)):
+	if((patternCounter >= 2 and patternCounter <= 5) or
+	   (patternCounter >= 8 and patternCounter <= 11) or
+	   (patternCounter >= 14 and patternCounter <= 16)):
 		searchAndDestroy()
 
+func stabbing_condition():
+	return ((patternCounter >= 0 and patternCounter <= 2) or
+	        (patternCounter >= 6 and patternCounter <= 8) or
+	        (patternCounter >= 12 and patternCounter <= 14))
+
+func idle_pattern():
+	if((patternCounter >=5 and patternCounter <= 6) or
+	   (patternCounter >= 11 and patternCounter <= 12) or
+	   (patternCounter >= 16 and patternCounter <= 15)):
+		state_identifier = "Idle"
+		pass
+
 func reset():
-	if(patternCounter > 11): patternCounter = 0
+	if(patternCounter > 15): patternCounter = 0
 
 func searchAndDestroy():
 		seguidores()
@@ -67,10 +79,9 @@ func stab():
 	collision()
 
 func stabbing():
-	if (seguidorDer.is_colliding() and
-	    seguidorIzq.get_collider() != null and 
-		seguidorDer.get_collider().name.begins_with("Player")and
-		!voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori()):
+	if (seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and 
+	    seguidorDer.get_collider().name.begins_with("Player") and
+	    !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori()):
 			if(!atemorize):
 				atemorize = true
 				$StabShout.play()
@@ -102,8 +113,7 @@ func stab_left():
 	stab_damage($AttackLeft)
 
 func stab_damage(ray):
-	if (ray.is_colliding() and
-	    ray.get_collider() != null and
+	if (ray.is_colliding() and ray.get_collider() != null and
 	    ray.get_collider().name.begins_with("Player") and
 	    !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori()):
 		voyAtacar = true
@@ -125,10 +135,14 @@ func borrar():
 	self.queue_free()
 
 func seguidores():
-	if seguidorDer.is_colliding() and seguidorIzq.get_collider() != null and  seguidorDer.get_collider().name.begins_with("Player")and !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori():
+	if (seguidorDer.is_colliding() and seguidorDer.get_collider() != null and
+	    seguidorDer.get_collider().name.begins_with("Player") and
+	    !voyAtacar and !estoyMuriendo and !seguidorDer.get_collider().meMori()):
 		collision = CharacterController.Movimiento(1)
 		state_identifier = "WalkRight"
-	elif seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and seguidorIzq.get_collider().name.begins_with("Player") and !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori():
+	elif (seguidorIzq.is_colliding() and seguidorIzq.get_collider() != null and
+	      seguidorIzq.get_collider().name.begins_with("Player") and
+	      !voyAtacar and !estoyMuriendo and !seguidorIzq.get_collider().meMori()):
 		collision = CharacterController.Movimiento(-1)
 		state_identifier = "WalkLeft"
 	elif !estoyAtacando:
@@ -141,8 +155,7 @@ func collision():
 		collisionShape.disabled = false
 
 func Atacar(ray):
-	if (ray.is_colliding() and
-	    ray.get_collider() != null and
+	if (ray.is_colliding() and ray.get_collider() != null and
 	    ray.get_collider().name.begins_with("Player") and
 	    !estoyAtacando and !estoyMuriendo and !ray.get_collider().meMori()):
 		voyAtacar = true
@@ -151,31 +164,34 @@ func Atacar(ray):
 		Ataque(ray)
 
 func golpie(ray):
-	if ray.is_colliding()  and ray.get_collider() != null and ray.get_collider().name.begins_with("Player") and !estoyMuriendo:
-		$StabHit.play()
+	if (ray.is_colliding() and ray.get_collider() != null and
+	    ray.get_collider().name.begins_with("Player") and !estoyMuriendo):
+		if(stabbing_condition()): $StabHit.play()
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):
 	life.vida -= 1
+	fuiGolpeado = true
 	if life.vida > 0:
 		var gravedadAnterior = CharacterController.gravedad
 		collisionShape.disabled = true
 		collisionShape.position.x += 1000
 		CharacterController.gravedad = 0
-		state_identifier = "Hit"
 		yield(get_tree().create_timer(0.6),"timeout")
 		estoyMuriendo = false
+		fuiGolpeado = false
 		collisionShape.disabled = false
 		collisionShape.position.x -= 1000
 		state_identifier = "Idle"
-		$AnimatedSprite.position.y -= 3
 	else:
+		$StabShout.stop()
+		$Death.play()
 		CharacterController.gravedad = 0
 		self.collisionShape.disabled = true
 		collisionShape.position.x += 1000
 		estoyMuriendo = true
 		$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
-		position.y += 13
+		position.y += 10
 		state_identifier = "Death"
 		timer.start()
 		GameManager.puntaje += puntaje
