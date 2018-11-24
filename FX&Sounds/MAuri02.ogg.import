@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MAuri02.ogg-350b33ab9915fdd7f1f9bb1a8742958b.oggstr"
+
+[deps]
+
+source_file="res://FX&Sounds/MAuri02.ogg"
+dest_files=[ "res://.import/MAuri02.ogg-350b33ab9915fdd7f1f9bb1a8742958b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

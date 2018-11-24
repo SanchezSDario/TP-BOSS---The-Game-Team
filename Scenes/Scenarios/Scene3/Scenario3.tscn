@@ -20,7 +20,7 @@
 [ext_resource path="res://Scenes/Scenarios/Scene3/AreaBoss.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Foes/BOSS/BOSS3.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Scenarios/Scene3/Items/PocionDash.tscn" type="PackedScene" id=20]
-[ext_resource path="res://FX&Sounds/Transition Zone (YM2612 chipsound).ogg" type="AudioStream" id=21]
+[ext_resource path="res://FX&Sounds/MAuri02.ogg" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 
