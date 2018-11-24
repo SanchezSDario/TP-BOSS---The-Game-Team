@@ -339,12 +339,13 @@ _sections_unfolded = [ "Margin" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TextureRect3/Personaje3" index="0"]
 
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 73.25, 79.5085 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 5 )
 animation = "default"
 frame = 3
 playing = true
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 

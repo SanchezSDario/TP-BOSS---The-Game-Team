@@ -12,6 +12,9 @@ func _ready():
 	timer.wait_time = 0.6
 	add_child(timer)
 	timer.connect("timeout",self,"dejarDeMover")
+	yield(get_tree().create_timer(0.2),"timeout")
+	offsetX = offset.x
+	offsetY = offset.y
 	
 
 func _process(delta):

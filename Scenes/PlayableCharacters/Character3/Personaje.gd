@@ -204,6 +204,7 @@ func fuiGolpeado(golpeador):
 			timer.start()
 			set_process(false)
 			self.vidas -= 1
+			yield(get_tree().create_timer(0.2),"timeout")
 			collisionShape.disabled = true
 			
 		
