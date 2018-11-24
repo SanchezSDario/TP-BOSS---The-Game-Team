@@ -81,7 +81,7 @@ custom_solver_bias = 0.0
 radius = 20.0
 height = 20.0
 
-[node name="EnemyDarkEmperor" type="KinematicBody2D"]
+[node name="EnemyDarkEmperor" type="KinematicBody2D" index="0"]
 
 position = Vector2( 620, 280 )
 input_pickable = false
@@ -108,7 +108,7 @@ gravedad = 2.0
 
 [node name="Life" parent="." index="2" instance=ExtResource( 37 )]
 
-vida = 3
+vida = 20
 powerUp = 0
 
 [node name="AttackRight" type="RayCast2D" parent="." index="3"]

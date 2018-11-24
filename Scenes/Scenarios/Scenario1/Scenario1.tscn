@@ -151,6 +151,8 @@ position = Vector2( 96.683, 254.819 )
 
 [node name="Minotauros" type="Node" parent="." index="5"]
 
+editor/display_folded = true
+
 [node name="EnemyMinotauro" parent="Minotauros" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 370.306, 299.243 )

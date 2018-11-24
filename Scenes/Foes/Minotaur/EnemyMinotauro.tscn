@@ -131,7 +131,7 @@ custom_solver_bias = 0.0
 radius = 12.1937
 height = 40.2268
 
-[node name="EnemyMinotauro" type="KinematicBody2D"]
+[node name="EnemyMinotauro" type="KinematicBody2D" index="0"]
 
 position = Vector2( 371.258, 198.58 )
 input_pickable = false
@@ -151,7 +151,7 @@ script = SubResource( 2 )
 
 [node name="Life" parent="." index="1" instance=ExtResource( 52 )]
 
-vida = 2
+vida = 5
 powerUp = 0
 
 [node name="CharacterController" parent="." index="2" instance=ExtResource( 53 )]

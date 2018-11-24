@@ -89,10 +89,10 @@ func collision():
 	if(collision != null): jump = false
 
 func move():
-	if (Input.is_action_pressed("ui_right") and
+	if (Input.is_action_pressed("ui_right") and !muerto and
 	    puedoMoverme and !meGolpiaron and !meMori() and !block):
 		collision = $CharacterController.Movimiento(1)
-	elif (Input.is_action_pressed("ui_left") and
+	elif (Input.is_action_pressed("ui_left") and !muerto and
 	      puedoMoverme and !meGolpiaron and !meMori() and !block):
 		collision = $CharacterController.Movimiento(-1)
 
@@ -107,7 +107,7 @@ func puedoSaltar():
 
 func jump():
 	if (!block and Input.is_action_just_pressed("ui_up") and
-	    !meGolpiaron and !meMori() and !attack):
+	    !meGolpiaron and !meMori() and !attack and !muerto):
 		$CharacterController.Salto(puedoSaltar)
 
 func fuiGolpeado(golpeador):
@@ -115,7 +115,6 @@ func fuiGolpeado(golpeador):
 		$HitSound.play()
 		$CharacterController.fuerzaSaltoRestante = 0
 		Life.perdiVida()
-		print(Life.vida)
 		$Camera2D._on_Player_hit()
 		meGolpiaron = true
 		yield(get_tree().create_timer(0.5),"timeout")

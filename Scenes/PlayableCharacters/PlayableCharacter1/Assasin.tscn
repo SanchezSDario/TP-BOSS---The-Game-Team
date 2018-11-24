@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki1.png" type="Texture" id=2]
@@ -55,6 +55,15 @@
 [ext_resource path="res://FX&Sounds/slash.wav" type="AudioStream" id=53]
 [ext_resource path="res://FX&Sounds/block.wav" type="AudioStream" id=54]
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/AnimationController.gd" type="Script" id=55]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida1m.png" type="Texture" id=56]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida2.png" type="Texture" id=57]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida3m.png" type="Texture" id=58]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida1.png" type="Texture" id=59]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida3.png" type="Texture" id=60]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida2m.png" type="Texture" id=61]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida0m.png" type="Texture" id=62]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida4.png" type="Texture" id=63]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida0.png" type="Texture" id=64]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -100,6 +109,75 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 height = 37.7574
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends CanvasLayer
+
+var vidas
+var Personaje
+var mostrarVida = false
+var powerUps
+var animationPowerup
+
+func _ready():
+	vidas = get_node(\"Sprite\")
+	Personaje = get_parent()
+
+func _process(delta):
+	mostrarVidas()
+
+func mostrarVidas():
+	vidas.play(\"Vida\" + String(Personaje.Life.vida))"
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 56 ) ],
+"loop": true,
+"name": "Vida3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 57 ) ],
+"loop": true,
+"name": "Vida4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ) ],
+"loop": true,
+"name": "Vida7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 59 ) ],
+"loop": true,
+"name": "Vida2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 60 ) ],
+"loop": true,
+"name": "Vida6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 61 ) ],
+"loop": true,
+"name": "Vida5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 62 ) ],
+"loop": true,
+"name": "Vida1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 63 ) ],
+"loop": true,
+"name": "Vida8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 64 ) ],
+"loop": true,
+"name": "Vida0",
+"speed": 5.0
+} ]
 
 [node name="Assasin" type="KinematicBody2D"]
 
@@ -165,7 +243,7 @@ script = ExtResource( 49 )
 
 [node name="Life" parent="." index="6" instance=ExtResource( 50 )]
 
-vida = 10
+vida = 8
 powerUp = 0
 
 [node name="AttackCollisionDer" type="RayCast2D" parent="." index="7"]
@@ -240,5 +318,21 @@ area_mask = 1
 [node name="AnimationController" type="Node" parent="." index="14"]
 
 script = ExtResource( 55 )
+
+[node name="HUD" type="CanvasLayer" parent="." index="15"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = SubResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="HUD" index="0"]
+
+position = Vector2( 940.901, 27.2735 )
+scale = Vector2( 0.573095, 0.459963 )
+frames = SubResource( 4 )
+animation = "Vida0"
 
 
