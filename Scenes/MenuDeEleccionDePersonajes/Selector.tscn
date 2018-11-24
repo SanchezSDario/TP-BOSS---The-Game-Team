@@ -288,6 +288,7 @@ position = Vector2( 112.833, 125.818 )
 scale = Vector2( 4.3, 4.3 )
 frames = SubResource( 4 )
 animation = "Idle"
+frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -342,7 +343,7 @@ position = Vector2( 73.25, 79.5085 )
 scale = Vector2( 3.5, 3.5 )
 frames = SubResource( 5 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 

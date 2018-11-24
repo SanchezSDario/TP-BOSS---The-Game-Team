@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Foes/DarkEmperor/EnemyDarkEmperor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://FX&Sounds/Scene1Theme.ogg" type="AudioStream" id=7]
 
-[node name="Scenario1" type="Node" index="0"]
+[node name="Scenario1" type="Node"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 

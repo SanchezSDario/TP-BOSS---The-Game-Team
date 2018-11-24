@@ -15,15 +15,15 @@ func _ready():
 	botonPersonaje3.connect("pressed",self,"PonerPersonaje3")
 	
 func PonerPersonaje1():
-	GameManager.personajeActual = personaje1
-	get_tree().change_scene("res://Scenes/SelectorDeNiveles/SelectorNivel.tscn")
+	
+	get_tree().change_scene("res://Scenes/Scenarios/Scene3/Scenario3.tscn")
 	
 func PonerPersonaje2():
-	GameManager.personajeActual = personaje2
-	get_tree().change_scene("res://Scenes/SelectorDeNiveles/SelectorNivel.tscn")
+	
+	get_tree().change_scene("res://Scenes/Scenarios/Scene3/Scenario3.tscn")
 	
 func PonerPersonaje3():
-	GameManager.personajeActual = personaje3
-	get_tree().change_scene("res://Scenes/SelectorDeNiveles/SelectorNivel.tscn")
+	
+	get_tree().change_scene("res://Scenes/Scenarios/Scenario1/Scenario1.tscn")
 
 

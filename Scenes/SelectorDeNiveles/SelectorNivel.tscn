@@ -1,31 +1,36 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://Scenes/MenuDeEleccionDePersonajes/Selector.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/PlayableCharacters/Character3/Personaje.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/Assasin.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/MenuDeEleccionDePersonajes/Fondo.png" type="Texture" id=4]
-[ext_resource path="res://Art/Font/Ancient Modern Tales.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=6]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile001.png" type="Texture" id=7]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=8]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=9]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile004.png" type="Texture" id=10]
-[ext_resource path="res://Art/Foes/BOSS3/Idle/tile005.png" type="Texture" id=11]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki1.png" type="Texture" id=12]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki2.png" type="Texture" id=13]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki3.png" type="Texture" id=14]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/Idle/ki4.png" type="Texture" id=15]
-[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei1.png" type="Texture" id=16]
-[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei2.png" type="Texture" id=17]
-[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei3.png" type="Texture" id=18]
-[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei4.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/SelectorDeNiveles/SelectorNivel.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/MenuDeEleccionDePersonajes/Fondo.png" type="Texture" id=2]
+[ext_resource path="res://Art/Font/Ancient Modern Tales.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile000.png" type="Texture" id=4]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile001.png" type="Texture" id=5]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile002.png" type="Texture" id=6]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile003.png" type="Texture" id=7]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile004.png" type="Texture" id=8]
+[ext_resource path="res://Art/Foes/BOSS3/Idle/tile005.png" type="Texture" id=9]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal2.png" type="Texture" id=10]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal3.png" type="Texture" id=11]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal4.png" type="Texture" id=12]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal5.png" type="Texture" id=13]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal6.png" type="Texture" id=14]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal7.png" type="Texture" id=15]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal8.png" type="Texture" id=16]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal9.png" type="Texture" id=17]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal10.png" type="Texture" id=18]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal11.png" type="Texture" id=19]
+[ext_resource path="res://Art/Foes/Summoner/Normal/Normal12.png" type="Texture" id=20]
+[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei1.png" type="Texture" id=21]
+[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei2.png" type="Texture" id=22]
+[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei3.png" type="Texture" id=23]
+[ext_resource path="res://Art/Foes/DarkEmperor/DarkEmperorIdle/dei4.png" type="Texture" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 80
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 5 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=2]
@@ -50,7 +55,7 @@ tracks/0/keys = {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Normal",
 "speed": 8.0
@@ -59,22 +64,22 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 5.0
+"speed": 8.0
 } ]
 
 [sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="CanvasLayer" type="CanvasLayer" index="0"]
+[node name="CanvasLayer" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -82,8 +87,8 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
-personaje1 = ExtResource( 2 )
-personaje2 = ExtResource( 3 )
+personaje1 = null
+personaje2 = null
 personaje3 = null
 
 [node name="MarginContainer" type="MarginContainer" parent="." index="0"]
@@ -116,7 +121,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Margin" ]
@@ -173,14 +178,14 @@ blend_times = [  ]
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 
-anchor_left = 0.0
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 55.0
-margin_top = -269.0
-margin_right = 206.0
-margin_bottom = -57.0
+margin_left = -259.0
+margin_top = -298.0
+margin_right = -108.0
+margin_bottom = -86.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -223,20 +228,20 @@ position = Vector2( 89.8098, 99.1406 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
 animation = "Normal"
-frame = 2
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="TextureRect2" type="TextureRect" parent="." index="2"]
 
-anchor_left = 1.0
+anchor_left = 0.0
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.0
 anchor_bottom = 1.0
-margin_left = -201.0
-margin_top = -278.0
-margin_right = -1.0
-margin_bottom = -45.0
+margin_left = 73.0
+margin_top = -284.0
+margin_right = 273.0
+margin_bottom = -51.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -271,11 +276,11 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TextureRect2/Personaje2" index="0"]
 
-position = Vector2( 112.833, 125.818 )
+position = Vector2( 79.0085, 102.491 )
 scale = Vector2( 4.3, 4.3 )
 frames = SubResource( 4 )
 animation = "Idle"
-frame = 2
+frame = 7
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -330,7 +335,7 @@ position = Vector2( 69.7509, 67.8449 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
 animation = "default"
-frame = 3
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

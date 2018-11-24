@@ -51,7 +51,7 @@ func fuiGolpeado(golpeador):
 		get_parent().add_child(scene_instance)
 		scene_instance.set_name("Enemy" + String(proximo))
 		scene_instance.position = posicion()
-	if !golpeador.sprite.flip_h:
+	if !golpeador.position.x < self.position.x:
 		movimiento *= -1
 	fuiGolpeado = true
 	yield(get_tree().create_timer(0.5),"timeout")
