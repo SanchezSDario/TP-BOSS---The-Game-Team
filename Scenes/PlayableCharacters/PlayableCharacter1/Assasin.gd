@@ -24,9 +24,11 @@ var timer
 var sprite
 var camera
 var AnimationController
+var CharacterController
 
 func _ready():
 	name = "PlayerCaballero"
+	CharacterController = $CharacterController
 	AnimationController = $AnimationController
 	sprite = get_node("AnimatedSprite")
 	camera = get_node("Camera2D")
@@ -156,3 +158,8 @@ func block():
 		yield(get_tree().create_timer(1),"timeout")
 		$CharacterController.gravedad = 20
 		block = false
+
+func potenciarVelocidadDeMovimiento():
+	CharacterController.velocidadMovimiento += 1.5
+	yield(get_tree().create_timer(5),"timeout")
+	CharacterController.velocidadMovimiento -= 1.5

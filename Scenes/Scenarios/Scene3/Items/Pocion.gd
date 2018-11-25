@@ -14,7 +14,20 @@ func _ready():
 	collisionShape = get_node("CollisionShape2D")
 
 func sumarVida(target):
-	if target.name.begins_with("Player") and potas == pociones.vida:
+	if target.name.begins_with("PlayerCaballero") and potas == pociones.vida:
+		if target.Life.vida < 8:
+			audioPick.play(0)	
+			target.Life.vida += 1
+			self.visible = false
+			self.collisionShape.disabled = true
+		else:
+			self.queue_free()
+	elif target.name.begins_with("PlayerCaballero") and potas == pociones.dash:
+			audioPick.play(0)	
+			target.potenciarVelocidadDeMovimiento()
+			self.visible = false
+			self.collisionShape.disabled = true
+	elif target.name.begins_with("Player") and potas == pociones.vida:
 		if target.Life.vida < 6:
 			audioPick.play(0)	
 			target.Life.vida += 1
@@ -30,7 +43,6 @@ func sumarVida(target):
 			self.collisionShape.disabled = true
 		else: 
 			queue_free()	
-			
 func _on_AudioStreamPlayer_finished():
 	queue_free()			
 	
