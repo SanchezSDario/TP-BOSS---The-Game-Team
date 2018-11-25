@@ -108,6 +108,7 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer" index="0"]
 
+modulate = Color( 0.203125, 0.203125, 0.203125, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -124,7 +125,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
+_sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" index="1"]
 
@@ -159,7 +160,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.160773, 0, 0, 1 )
-text = "Choose your hero"
+text = "Boss Select"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -228,7 +229,7 @@ position = Vector2( 89.8098, 99.1406 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )
 animation = "Normal"
-frame = 5
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -280,7 +281,7 @@ position = Vector2( 79.0085, 102.491 )
 scale = Vector2( 4.3, 4.3 )
 frames = SubResource( 4 )
 animation = "Idle"
-frame = 7
+frame = 6
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -335,7 +336,6 @@ position = Vector2( 69.7509, 67.8449 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
 animation = "default"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
