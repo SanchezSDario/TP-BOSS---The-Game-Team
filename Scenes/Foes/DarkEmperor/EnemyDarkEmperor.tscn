@@ -97,8 +97,8 @@ puntaje = 0
 position = Vector2( 7.99998, -9.72094 )
 scale = Vector2( 1.57143, 1.44186 )
 frames = SubResource( 1 )
-animation = "Stab"
-flip_h = true
+animation = "Attack"
+frame = 5
 script = ExtResource( 35 )
 
 [node name="CharacterController" parent="." index="1" instance=ExtResource( 36 )]
@@ -112,29 +112,7 @@ gravedad = 2.0
 vida = 15
 powerUp = 0
 
-[node name="AttackRight" type="RayCast2D" parent="." index="3"]
-
-visible = false
-position = Vector2( 20, -10 )
-scale = Vector2( 1, 10 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 50, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="AttackLeft" type="RayCast2D" parent="." index="4"]
-
-visible = false
-position = Vector2( 0, -10 )
-scale = Vector2( 1, 10 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( -55, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="VissionRight" type="RayCast2D" parent="." index="5"]
+[node name="VissionRight" type="RayCast2D" parent="." index="3"]
 
 position = Vector2( 10, -10 )
 enabled = true
@@ -142,7 +120,7 @@ exclude_parent = true
 cast_to = Vector2( 1000, 0 )
 collision_mask = 1
 
-[node name="VissionLeft" type="RayCast2D" parent="." index="6"]
+[node name="VissionLeft" type="RayCast2D" parent="." index="4"]
 
 position = Vector2( 0, -10 )
 enabled = true
@@ -150,20 +128,19 @@ exclude_parent = true
 cast_to = Vector2( -1000, 0 )
 collision_mask = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 
-visible = false
 position = Vector2( 10, -10 )
 shape = SubResource( 2 )
 
-[node name="AttackTimer" type="Timer" parent="." index="8"]
+[node name="AttackTimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = false
 
-[node name="StabShout" type="AudioStreamPlayer2D" parent="." index="9"]
+[node name="StabShout" type="AudioStreamPlayer2D" parent="." index="7"]
 
 stream = ExtResource( 38 )
 volume_db = -2.0
@@ -174,7 +151,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="StabHit" type="AudioStreamPlayer2D" parent="." index="10"]
+[node name="StabHit" type="AudioStreamPlayer2D" parent="." index="8"]
 
 stream = ExtResource( 39 )
 volume_db = 2.0
@@ -185,7 +162,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Slash" type="AudioStreamPlayer2D" parent="." index="11"]
+[node name="Slash" type="AudioStreamPlayer2D" parent="." index="9"]
 
 stream = ExtResource( 40 )
 volume_db = -3.0
@@ -196,7 +173,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Death" type="AudioStreamPlayer2D" parent="." index="12"]
+[node name="Death" type="AudioStreamPlayer2D" parent="." index="10"]
 
 stream = ExtResource( 41 )
 volume_db = 0.0
@@ -206,6 +183,26 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="AttackRight" type="RayCast2D" parent="." index="11"]
+
+position = Vector2( 30, -10 )
+scale = Vector2( 1, 10 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 40, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="AttackLeft" type="RayCast2D" parent="." index="12"]
+
+position = Vector2( -10, -10 )
+scale = Vector2( 1, 10 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -43, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 
