@@ -134,6 +134,7 @@ func morir():
 	name = "Muerto"
 	yield(get_tree().create_timer(5),"timeout")
 	queue_free()
+	get_tree().change_scene("res://Scenes/MenuDeEleccionDePersonajes/Selector.tscn")
 
 func soportar_golpe(delta):
 	if(soporte):

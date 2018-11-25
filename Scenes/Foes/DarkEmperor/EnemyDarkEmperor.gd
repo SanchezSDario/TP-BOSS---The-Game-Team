@@ -18,6 +18,7 @@ var fuiGolpeado
 var patternCounter = 0
 export var puntaje = 0
 var atemorize
+var golpie
 
 func _ready():
 	timer = Timer.new()
@@ -94,8 +95,8 @@ func stabbing():
 				atemorize = true
 				$StabShout.play()
 			stab_left()
-	else: 
-		if(atemorize): state_identifier = "Walk"
+	else:
+		if(atemorize and !golpie): state_identifier = "Walk"
 		else: state_identifier = "Idle"
 
 func stab_right():
@@ -126,6 +127,9 @@ func stab_attack(ray):
 	yield(get_tree().create_timer(0.2),"timeout")
 	golpie(ray)
 	state_identifier = "Idle"
+	if(golpie):
+		yield(get_tree().create_timer(1),"timeout")
+		golpie = false
 	yield(get_tree().create_timer(0.5),"timeout")
 	stabbing = false
 	estoyAtacando = false
@@ -167,6 +171,7 @@ func golpie(ray):
 	if (ray.is_colliding() and ray.get_collider() != null and
 	    ray.get_collider().name.begins_with("Player") and !estoyMuriendo):
 		if(stabbing_condition()): $StabHit.play()
+		golpie = true
 		CharacterController.Golpie(ray.get_collider(),"Player",self)
 
 func fuiGolpeado(golpeador):
@@ -194,6 +199,8 @@ func fuiGolpeado(golpeador):
 		position.y += 10
 		state_identifier = "Death"
 		timer.start()
+		yield(get_tree().create_timer(5),"timeout")
+		get_tree().change_scene("res://Scenes/MenuDeEleccionDePersonajes/Selector.tscn")
 		GameManager.puntaje += puntaje
 
 func Ataque(ray):
@@ -202,7 +209,9 @@ func Ataque(ray):
 	yield(get_tree().create_timer(0.6),"timeout")
 	$Slash.play()
 	golpie(ray)
-	state_identifier = "Idle"
+	if(golpie):
+		yield(get_tree().create_timer(1),"timeout")
+		golpie = false
 	yield(get_tree().create_timer(0.5),"timeout")
 	estoyAtacando = false
 	voyAtacar = false

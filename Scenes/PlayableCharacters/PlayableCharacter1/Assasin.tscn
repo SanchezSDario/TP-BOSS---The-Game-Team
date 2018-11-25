@@ -55,15 +55,15 @@
 [ext_resource path="res://FX&Sounds/slash.wav" type="AudioStream" id=53]
 [ext_resource path="res://FX&Sounds/block.wav" type="AudioStream" id=54]
 [ext_resource path="res://Scenes/PlayableCharacters/PlayableCharacter1/AnimationController.gd" type="Script" id=55]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida1m.png" type="Texture" id=56]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida2.png" type="Texture" id=57]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida3m.png" type="Texture" id=58]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida1.png" type="Texture" id=59]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida3.png" type="Texture" id=60]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida2.png" type="Texture" id=56]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida1.png" type="Texture" id=57]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida1m.png" type="Texture" id=58]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida0.png" type="Texture" id=59]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida0m.png" type="Texture" id=60]
 [ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida2m.png" type="Texture" id=61]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida0m.png" type="Texture" id=62]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida4.png" type="Texture" id=63]
-[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida0.png" type="Texture" id=64]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida3.png" type="Texture" id=62]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida3m.png" type="Texture" id=63]
+[ext_resource path="res://Art/Sprites/PlayableCharacters/PlayableCharacter1/vida4.png" type="Texture" id=64]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -135,27 +135,27 @@ func mostrarVidas():
 animations = [ {
 "frames": [ ExtResource( 56 ) ],
 "loop": true,
-"name": "Vida3",
+"name": "Vida4",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 57 ) ],
 "loop": true,
-"name": "Vida4",
+"name": "Vida2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 58 ) ],
 "loop": true,
-"name": "Vida7",
+"name": "Vida3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 59 ) ],
 "loop": true,
-"name": "Vida2",
+"name": "Vida0",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 60 ) ],
 "loop": true,
-"name": "Vida6",
+"name": "Vida1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 61 ) ],
@@ -165,17 +165,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 62 ) ],
 "loop": true,
-"name": "Vida1",
+"name": "Vida6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 63 ) ],
 "loop": true,
-"name": "Vida8",
+"name": "Vida7",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 64 ) ],
 "loop": true,
-"name": "Vida0",
+"name": "Vida8",
 "speed": 5.0
 } ]
 
