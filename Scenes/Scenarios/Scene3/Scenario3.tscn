@@ -27,7 +27,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 35.9678, 407.654 )
 
-[node name="Scenario3" type="Node"]
+[node name="Scenario3" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -197,12 +197,12 @@ position = Vector2( 3438.6, 166.139 )
 
 [node name="EnemyBarril7" parent="Elementos/Barriles" index="2" instance=ExtResource( 9 )]
 
-position = Vector2( 7502.75, 166.139 )
+position = Vector2( 7373.03, 168.192 )
 itemElegido = 0
 
 [node name="EnemyBarril4" parent="Elementos/Barriles" index="3" instance=ExtResource( 9 )]
 
-position = Vector2( 7280.86, 167.282 )
+position = Vector2( 7280.86, 169.233 )
 
 [node name="CajasTriple" type="Node2D" parent="Elementos" index="6"]
 
@@ -304,7 +304,6 @@ position = Vector2( 7.16238, -12.7234 )
 
 [node name="EnemigosEsqueletos" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 342.676, 213 )
 _sections_unfolded = [ "Transform" ]
 
@@ -373,7 +372,6 @@ position = Vector2( 487.682, 43.983 )
 
 [node name="Maguitos" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( 0, 95 )
 _sections_unfolded = [ "Transform" ]
 
@@ -381,31 +379,47 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 4397.56, 82.5503 )
 
-[node name="EnemyMaguito8" parent="Maguitos" index="1" instance=ExtResource( 14 )]
+[node name="EnemyMaguito10" parent="Maguitos" index="1" instance=ExtResource( 14 )]
+
+position = Vector2( 5253.43, 82.5503 )
+
+[node name="EnemyMaguito11" parent="Maguitos" index="2" instance=ExtResource( 14 )]
+
+position = Vector2( 5577.25, 85.964 )
+
+[node name="EnemyMaguito12" parent="Maguitos" index="3" instance=ExtResource( 14 )]
+
+position = Vector2( 5878.14, 82.0626 )
+
+[node name="EnemyMaguito13" parent="Maguitos" index="4" instance=ExtResource( 14 )]
+
+position = Vector2( 6483.35, 86.4517 )
+
+[node name="EnemyMaguito8" parent="Maguitos" index="5" instance=ExtResource( 14 )]
 
 position = Vector2( 4067.5, 89.1661 )
 
-[node name="EnemyMaguito7" parent="Maguitos" index="2" instance=ExtResource( 14 )]
+[node name="EnemyMaguito7" parent="Maguitos" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 3117.93, 71.7353 )
 
-[node name="EnemyMaguito6" parent="Maguitos" index="3" instance=ExtResource( 14 )]
+[node name="EnemyMaguito6" parent="Maguitos" index="7" instance=ExtResource( 14 )]
 
 position = Vector2( 2923.83, 85.8779 )
 
-[node name="EnemyMaguito5" parent="Maguitos" index="4" instance=ExtResource( 14 )]
+[node name="EnemyMaguito5" parent="Maguitos" index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 2385.93, 77.0997 )
 
-[node name="EnemyMaguito4" parent="Maguitos" index="5" instance=ExtResource( 14 )]
+[node name="EnemyMaguito4" parent="Maguitos" index="9" instance=ExtResource( 14 )]
 
 position = Vector2( 1782.67, 169.758 )
 
-[node name="EnemyMaguito3" parent="Maguitos" index="6" instance=ExtResource( 14 )]
+[node name="EnemyMaguito3" parent="Maguitos" index="10" instance=ExtResource( 14 )]
 
 position = Vector2( 983.86, 85.3902 )
 
-[node name="EnemyMaguito2" parent="Maguitos" index="7" instance=ExtResource( 14 )]
+[node name="EnemyMaguito2" parent="Maguitos" index="11" instance=ExtResource( 14 )]
 
 position = Vector2( 636.635, 82.9519 )
 

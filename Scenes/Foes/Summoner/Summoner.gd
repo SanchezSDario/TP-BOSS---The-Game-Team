@@ -13,6 +13,7 @@ var esqueleto
 var siguiente = 0
 export var puntaje = 0
 export var cantidadEsqueletos = 0
+var audio
 func _ready():
 	timer = Timer.new()
 	timer.wait_time = 15
@@ -24,6 +25,7 @@ func _ready():
 	CharacterController = get_node("CharacterController")
 	rayAtaqueDer = get_node("rayAtaqueDer")
 	rayAtaqueIzq = get_node("rayAtaqueIzq")
+	audio = get_node("AudioStreamPlayer2D")
 
 
 func _process(delta):
@@ -48,6 +50,7 @@ func Ataque():
 		voyAtacar = true
 		siguiente += 1
 		AnimationController.Ataque()
+		audio.play(0)
 		yield(get_tree().create_timer(1),"timeout")
   ### poner bicho
 		esqueleto = get_node("EnemyEsquletoVerde" + String(siguiente))

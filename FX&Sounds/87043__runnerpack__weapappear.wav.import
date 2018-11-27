@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/87043__runnerpack__weapappear.wav-1d14b936f3b5f4d885ce4ece8c08b051.sample"
+
+[deps]
+
+source_file="res://FX&Sounds/87043__runnerpack__weapappear.wav"
+dest_files=[ "res://.import/87043__runnerpack__weapappear.wav-1d14b936f3b5f4d885ce4ece8c08b051.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
